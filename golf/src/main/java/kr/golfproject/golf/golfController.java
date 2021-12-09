@@ -35,6 +35,15 @@ public class golfController {
 		return "login";
 	}
 	
+	// 
+	
+	// 로그인 버튼 클릭
+	@RequestMapping("/tbl_member_Login.do")
+	public String tbl_member_Login(String id, String pwd) {
+		
+		return "redirect:/";
+	}
+	
 	// 회원 가입 페이지 접속 : http://localhost:13131/golf/join.html
 	@RequestMapping("/join")
 	public String join() {

@@ -66,10 +66,9 @@
 									<input class="join_control email" name="user_email" id="user_email" placeholder="이메일 주소" style="font-style: normal;" required="" aria-required="true">
 									<div class="hidden-text user_email" id = "hidden-user_email">이메일 주소</div>
 									<select class="email_type" id = "email_type">
-										<option>@gmail.com</option>
-										<option>@naver.com</option>
-										<option>@daum.net</option>
-										<option>직접입력</option>
+										<option value="google" selected>@gmail.com</option>
+										<option value="naver">@naver.com</option>
+										<option value="daum">@daum.net</option>
 									</select>
 								</div>
 								<!-- 에러메시지(hidden) -->
@@ -149,18 +148,18 @@
 								<div class="monthbox box">
 									<select class="select_month" name="month" id = "month" tabindex="-1">
 										<option id = "month_text">월</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
+										<option value = "1">1</option>
+										<option value = "2">2</option>
+										<option value = "3">3</option>
+										<option value = "4">4</option>
+										<option value = "5">5</option>
+										<option value = "6">6</option>
+										<option value = "7">7</option>
+										<option value = "8">8</option>
+										<option value = "9">9</option>
+										<option value = "10">10</option>
+										<option value = "11">11</option>
+										<option value = "12">12</option>
 									</select>
 									<div class="hidden-text month" id ="hidden-month">월</div>
 								</div>
@@ -237,6 +236,37 @@
 		ga('create', 'UA-80463319-4', 'auto');
 		ga('send', 'pageview');
 	</script>
+	
+	<!-- 로그인  -->
+	<script type="text/javascript">
+	// 로그인 버튼을 누르면 발생하는 함수
+	function login_btn(){
+		var id = $("#username").val();
+	    var pwd = $("#password").val();
+	    if (!(id && pwd)){
+	        $('#hidden-text-pwd').css({
+	            "color" : "#FF4444",
+	        })
+	        $('#password').css({
+	            "border" : "1px solid #FF4444",
+	        })
+	    }
+	    
+	    // 로그인 실행함수넣어라
+	    $.ajax({
+        	url : "${cpath}/tbl_member_Login.do",
+        	type : "post",
+        	data : {"m_id":id, "m_pwd":pwd},
+        	//data : frmData,
+        	success : function(){alert('로그인에 성공했습니다!'); location.href = "index.html";},
+        	error : function(){alert("error"); }  
+    	});
+	    
+	    
+	}
+	</script>
+	
+	<!-- 회원가입 -->
 	<script type="text/javascript">
 	// 회원가입 버튼 클릭시 발생하는 작업
 	function submit_join(){ 
@@ -247,9 +277,17 @@
 		if ($("#user_id_group").hasClass("active")){
 			id = $("#user_id").val();
 		}
-		if ($("#user_email_group").hasClass("active")){
-			id = $("#user_email").val();
-		}
+		if ($("#email_group").hasClass("active")){
+			if($("#email_type").val()=="google"){
+				id = $("#user_email").val()+"@gmail.com";
+			};
+			if($("#email_type").val()=="naver"){
+				id = $("#user_email").val()+"@naver.com";
+			};
+			if($("#email_type").val()=="daum"){
+				id = $("#user_email").val()+"@daum.net";
+			};
+		};
 		var pwd = $("#user_pwd").val();
 		
 		var phone = null;
@@ -304,11 +342,17 @@
 			score = $("#score").val();
 		}
 		
+		var admin_yn = "N";
+		if (id=="admin" && pwd=="1234" && name=="admin admin"){
+			alert("관리자입니다");
+			admin_yn = "Y";
+		};
+		
 		$.ajax({
 	        	//url : "${cpath}/tbl_member_Join.do",
 	        	url : "${pageContext.request.contextPath}/tbl_member_Join.do",
 	        	type : "post",
-	        	data : {"m_pwd":pwd, "m_name":name, "m_phone":phone, "m_id":id, "m_gender":gender, "m_birthdate":birthdate, "iron_distance":iron_distance, "driver_distance":driver_distance, "m_score":score},
+	        	data : {"m_pwd":pwd, "m_name":name, "m_phone":phone, "m_id":id, "m_gender":gender, "m_birthdate":birthdate, "iron_distance":iron_distance, "driver_distance":driver_distance, "m_score":score, "admin_yn":admin_yn},
 	        	//data : frmData,
 	        	success : function(){alert('가입에 성공했습니다!.'); location.href = "index.html";},
 	        	error : function(){alert("error"); }  

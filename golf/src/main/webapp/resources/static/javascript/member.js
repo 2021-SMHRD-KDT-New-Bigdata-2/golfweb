@@ -97,22 +97,6 @@ function login_goto_pwd(){
     }
 }
 
-// 로그인 버튼을 누르면 발생하는 함수
-function login_btn(){
-    // 현재는 임의로 비밀번호를 1234를 입력안할경우 로그인 오류로 설정, DB 구축후에 수정예정
-    var valid = $("#password").val();
-    if (valid === "1234"){
-        location.href = "index.html";
-    }else{
-        $('#hidden-text-pwd').css({
-            "color" : "#FF4444",
-        })
-        $('#password').css({
-            "border" : "1px solid #FF4444",
-        })
-    }
-}
-
 // 아이디 기입/미기입시 상시변화
 $('#username').on("propertychange change keyup paste input",function(){
     var valid = $("#username").val();
@@ -760,13 +744,22 @@ function go_join_detail(){
     var valid_id_success = $("#id_group").hasClass("success");
     var valid_pwd_fail = $("#password_group").hasClass("fail");
     var valid_pwd_success = $("#password_group").hasClass("success");
+    var id = null;
     
     // id 형식에 따른 id값 반환
     if ($("#user_id_group").hasClass("active")){
-        var id = $("#user_id").val();
+        id = $("#user_id").val();
     };
     if ($("#email_group").hasClass("active")){
-        var id = $("#user_email").val();
+        if($("#email_type").val()=="google"){
+			id = $("#user_email").val()+"@gmail.com";
+		};
+		if($("#email_type").val()=="naver"){
+			id = $("#user_email").val()+"@naver.com";
+		};
+		if($("#email_type").val()=="daum"){
+			id = $("#user_email").val()+"@daum.net";
+		};
     };
 
     // 모두 잘 적은 경우

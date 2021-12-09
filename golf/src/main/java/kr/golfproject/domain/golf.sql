@@ -116,3 +116,4 @@ ALTER TABLE tbl_swing
         
 select * from tbl_member;
 
+delete from tbl_member;
