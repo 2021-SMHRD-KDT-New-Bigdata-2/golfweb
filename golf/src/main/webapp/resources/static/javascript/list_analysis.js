@@ -80,8 +80,8 @@ function move_page_num(pgnum,prevpgnum) {
     }else{
         $(page_idtext).css({
             "color": "#fff",
-            "border-color": "#85CE36",
-            "background-color": "#85CE36",
+            "border-color": "#44bd32",
+            "background-color": "#44bd32",
         })
     
         $(prepage_idtext).css({

@@ -43,11 +43,23 @@
 		<div class = "app" id = "app">
 						<!-- 헤더 -->
 			<header class = "header">
-				<div class = "header-block header-block-buttons">
-					<!-- <a href="" class="btn btn-sm header-btn">
-						<i class="fa fa-github-alt"></i>
-						<span>여기에 뭐 넣어야하나</span>
-					</a> -->
+				<!-- 상단툴바 -->
+				<div class = "upper-toolbar">
+					<div class= "upper-tool first-tool">
+						<a class = "upper-link" href = "upload_movie.html">
+							<div class = "upper-link-text">자세교정받기</div>
+						</a>
+					</div>
+					<div class= "upper-tool second-tool">
+						<a class = "upper-link" href = "test_list.html">
+							<div class = "upper-link-text">나의 교정 목록</div>
+						</a>
+					</div>
+					<div class= "upper-tool third-tool">
+						<a class = "upper-link" href = "">
+							<div class = "upper-link-text">골프 정보</div>
+						</a>
+					</div>
 				</div>
 				<!--로그인/회원가입/회원정보가 들어갈 박스-->
 				<div class="header-block header-block-nav">

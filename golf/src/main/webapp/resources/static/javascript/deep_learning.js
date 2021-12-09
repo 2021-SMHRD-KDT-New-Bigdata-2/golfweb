@@ -1,11 +1,11 @@
 function progress_change() {
-    document.getElementById("progress-text").innerHTML = "100% Complete";
-    document.getElementById("compare-text").innerHTML = "분석완료!";
+    document.getElementById("progress-text").innerHTML = "분석완료!";
+   // document.getElementById("compare-text").innerHTML = "분석완료!";
     $("#progress-bar").css({
         "width": "100%",
     });
     $("#compare-text").css({
-        "color": "#ff4444",
+        "color": "#00d2d3",
         "font-weight": "600",
     });
     $("#hidden-text-result").css({
@@ -18,8 +18,8 @@ function progress_change() {
 };
 
 function progress_change2() {
-    document.getElementById("progress-text").innerHTML = "60% Complete";
-    document.getElementById("compare-text").innerHTML = "분석중...";
+    document.getElementById("progress-text").innerHTML = "로딩중...";
+  //  document.getElementById("compare-text").innerHTML = "분석중...";
     document.getElementById("hidden-text-result").innerHTML = "상세정보 열기";
     $("#progress-bar").css({
         "width": "60%",

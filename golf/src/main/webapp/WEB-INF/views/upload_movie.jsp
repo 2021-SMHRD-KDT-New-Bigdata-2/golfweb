@@ -8,6 +8,10 @@
 	<title> Title </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
@@ -32,11 +36,23 @@
 		<div class = "app" id = "app">
 			<!-- 헤더 -->
 			<header class = "header">
-				<div class = "header-block header-block-buttons">
-					<!-- <a href="" class="btn btn-sm header-btn">
-						<i class="fa fa-github-alt"></i>
-						<span>여기에 뭐 넣어야하나</span>
-					</a> -->
+				<!-- 상단툴바 -->
+				<div class = "upper-toolbar">
+					<div class= "upper-tool first-tool">
+						<a class = "upper-link" href = "upload_movie.html">
+							<div class = "upper-link-text">자세교정받기</div>
+						</a>
+					</div>
+					<div class= "upper-tool second-tool">
+						<a class = "upper-link" href = "test_list.html">
+							<div class = "upper-link-text">나의 교정 목록</div>
+						</a>
+					</div>
+					<div class= "upper-tool third-tool">
+						<a class = "upper-link" href = "">
+							<div class = "upper-link-text">골프 정보</div>
+						</a>
+					</div>
 				</div>
 				<!--로그인/회원가입/회원정보가 들어갈 박스-->
 				<div class="header-block header-block-nav">
@@ -156,7 +172,7 @@
 				</div>
 			</a>
 			<!-- 사이드 툴바-->
-			<aside class="sidebar">
+			<aside class="sidebar fixed">
 				<div class="hamburger">
 					<div class="line"></div>
 					<div class="line"></div>
@@ -262,7 +278,7 @@
 									
 									<form name="form_movie" class = "filebox preview-image col-sm-9" action = "백앤드 url" method="post" enctype="multipart/form-data" style="display: inline-block;">
 										<input id = "upload-name" class="upload-name" value="" disabled="disabled" style="width:500px; height:40px;">
-										<label class="btn btn-primary btn-sm" for="input_file" style="font-size: 20px;margin-left: 10px;">업로드</label>
+										<label class="btn btn-primary btn-sm" for="input_file" style="font-size: 18px;margin-left: 10px;border-color: #44bd32;background-color: #44bd32;height: 40px;padding: 0.5rem 0.5rem 0px 0.5rem;">업로드</label>
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
 									<a href="video_compared.html">

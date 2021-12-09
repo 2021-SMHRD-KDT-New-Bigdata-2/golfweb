@@ -128,7 +128,7 @@ $(function() {
     $('#swing_type-iron').click(function(){
         $('#swing_type-iron').css({
             "color": "#fff",
-            "background-color": "#78bd2e"
+            "background-color": "#44bd32"
         });
         $('#swing_type-driver').css({
             "color": "#78bd2e",
@@ -144,7 +144,7 @@ $(function() {
         });
         $('#swing_type-driver').css({
             "color": "#fff",
-            "background-color": "#78bd2e"
+            "background-color": "#44bd32"
         });
         return false;
     });

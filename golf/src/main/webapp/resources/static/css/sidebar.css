@@ -52,6 +52,13 @@ h2 {
     /* transform: translateX(0%); */
 }
 
+.sidebar.fixed {
+    transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateX(0%);
+    /* transform: translateX(0%); */
+    left: 0px;
+}
+
 .sidebar.expanded {
     transform: translateX(0%);
     left: 0px;
