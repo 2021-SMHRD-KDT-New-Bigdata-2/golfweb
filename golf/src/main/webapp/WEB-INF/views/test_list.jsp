@@ -8,6 +8,12 @@
 	<title> Title </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- 구글폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
@@ -35,7 +41,7 @@
 						</a>
 					</div>
 					<div class= "upper-tool third-tool">
-						<a class = "upper-link" href = "">
+						<a class = "upper-link" href = "video_compared.html">
 							<div class = "upper-link-text">골프 정보</div>
 						</a>
 					</div>
@@ -253,7 +259,7 @@
 										<video id="video1" class="list_video" muted>
 											<source id="movie_src1" type="video/mp4" src=""/>
 										</video>
-										<div class="analysis_list-textbox">
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
 											<div class="analysis_list-title">시험용 타이틀 1 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 											<div class="analysis_list-writer">작성자1 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 											<div class="analysis_list-swingtype">드라이버</div>

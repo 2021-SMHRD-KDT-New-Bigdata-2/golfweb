@@ -210,6 +210,13 @@
 					<div class="image_essential_text" id ="image_essential_text">회원가입에 필요한 필수기재사항입니다.</div>
 				</div>
 			</div>
+			
+			<!-- 홈으로 돌아가는 버튼 -->
+            <div class="text-center go-to-home">
+                <a href="index.html" class="btn btn-secondary btn-sm go-to-home">
+                    <i class="fa fa-arrow-left"></i> 홈으로 돌아가기
+                 </a>
+            </div>
 		</div>
 	</div>
 	<!--사용할 자바스크립트, js파일 임포트하는 부분-->

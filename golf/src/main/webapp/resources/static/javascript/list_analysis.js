@@ -134,33 +134,161 @@ function move_page_num(pgnum,prevpgnum) {
 };
 
 // 목록의 썸네일 사이즈 조정
-// $(function() {
-//     var height1 = document.getElementById('video1').clientHeight;
-//     var height2 = document.getElementById('video2').clientHeight;
-//     var height3 = document.getElementById('video3').clientHeight;
-//     var height4 = document.getElementById('video4').clientHeight;
-//     var height5 = document.getElementById('video5').clientHeight;
-//     var height6 = document.getElementById('video6').clientHeight;
+$(window).load(setTimeout(function () {
+	var height1 = document.getElementById('video1').clientHeight;
+    var height2 = document.getElementById('video2').clientHeight;
+    var height3 = document.getElementById('video3').clientHeight;
+    var height4 = document.getElementById('video4').clientHeight;
+    var height5 = document.getElementById('video5').clientHeight;
+    var height6 = document.getElementById('video6').clientHeight;
+    var width = document.getElementById('analysis_list-textbox').clientWidth;
+    
+    var list_h = [height1, height2,height3, height4, height5, height6];
+    var min = Math.min.apply(null, list_h);
+    var defalut_h = "270px";
+    
+    var limit_h=min;
+    
+    if((height1/width)>0.46){
+    	$("#video1").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video1").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height2/width)>0.46){
+    	$("#video2").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video2").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height3/width)>0.46){
+    	$("#video3").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video3").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height4/width)>0.46){
+    	$("#video4").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video4").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    
+    if((height5/width)>0.46){
+    	$("#video5").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video5").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height6/width)>0.46){
+    	$("#video6").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video6").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+},200));
 
-//     var compare = [height1, height2, height3, height4, height5,height6];
-//     var minimum = Math.min.apply(null, compare);
-
-//     $("#video1").css({
-//         "height": minimum,
-//     });
-//     $("#video2").css({
-//         "height": minimum,
-//     });
-//     $("#video3").css({
-//         "height": minimum,
-//     });
-//     $("#video4").css({
-//         "height": minimum,
-//     });
-//     $("#video5").css({
-//         "height": minimum,
-//     });
-//     $("#video6").css({
-//         "height": minimum,
-//     });
-// });
+// 창크기에 따른 영상크기감지
+$(window).resize(function(){
+	var height1 = document.getElementById('video1').clientHeight;
+    var height2 = document.getElementById('video2').clientHeight;
+    var height3 = document.getElementById('video3').clientHeight;
+    var height4 = document.getElementById('video4').clientHeight;
+    var height5 = document.getElementById('video5').clientHeight;
+    var height6 = document.getElementById('video6').clientHeight;
+    var width = document.getElementById('analysis_list-textbox').clientWidth;
+    
+    var list_h = [height1, height2,height3, height4, height5, height6];
+    var min = Math.min.apply(null, list_h);
+    var defalut_h = "260px";
+    
+    var limit_h=min;
+    
+    if((height1/width)>0.46){
+    	$("#video1").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video1").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height2/width)>0.46){
+    	$("#video2").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video2").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height3/width)>0.46){
+    	$("#video3").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video3").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height4/width)>0.46){
+    	$("#video4").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video4").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    
+    if((height5/width)>0.46){
+    	$("#video5").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video5").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+    
+    if((height6/width)>0.46){
+    	$("#video6").css({
+    		"max-height" : limit_h,
+    	});
+    }else{
+    	$("#video6").css({
+    		"max-height" : defalut_h,
+    	});
+    };
+});
+	
+    
+    

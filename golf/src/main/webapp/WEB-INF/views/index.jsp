@@ -6,6 +6,11 @@
 <head>
     <meta charset="utf-8" />
     
+    <!-- 구글폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    
     <!--<link href="style.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/mainpage.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
@@ -56,7 +61,7 @@
 						</a>
 					</div>
 					<div class= "upper-tool third-tool">
-						<a class = "upper-link" href = "">
+						<a class = "upper-link" href = "video_compared.html">
 							<div class = "upper-link-text">골프 정보</div>
 						</a>
 					</div>

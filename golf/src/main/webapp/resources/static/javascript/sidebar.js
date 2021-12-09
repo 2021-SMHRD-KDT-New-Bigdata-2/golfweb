@@ -80,3 +80,17 @@ $(window).load(function () {
     window.requestAnimationFrame(svgCurve);
 
 });
+
+// 창이 줄어들면 상단툴바 숨김
+$(window).resize(function(){
+//	alert(window.outerWidth);
+	if(window.outerWidth<1400){
+		$(".upper-toolbar").css({
+    		"visibility" : "hidden",
+    	});
+	}else{
+		$(".upper-toolbar").css({
+    		"visibility" : "visible",
+    	});
+	};
+});

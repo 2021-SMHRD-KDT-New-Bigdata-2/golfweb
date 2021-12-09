@@ -7,6 +7,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title> Title </title>
 	<meta name="description" content="">
+	
+	<!-- 구글폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css?ver=1">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css?ver=1">
@@ -45,7 +51,7 @@
 						</a>
 					</div>
 					<div class= "upper-tool third-tool">
-						<a class = "upper-link" href = "">
+						<a class = "upper-link" href = "video_compared.html">
 							<div class = "upper-link-text">골프 정보</div>
 						</a>
 					</div>
@@ -226,7 +232,7 @@
 			<h2></h2>
 
 			<!--동영상 띄우는 박스-->
-			<article class="content dashboard-page">
+			<article class="content dashboard-page" style="left: 10px;">
 				<div class="title-search-block">
 					<div class="title-block">
 						<div class="row">
@@ -283,7 +289,7 @@
 						<div class="progress" id="progress" style="height:50px;left: 40px;">
 							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id ="progress-bar"
 								role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-								style="width: 100%;height: 50px;padding-top: 15px;">
+								style="width: 60%;height: 50px;padding-top: 15px;">
 								<span id="progress-text">로딩중...</span>
 							</div>
 						</div>
