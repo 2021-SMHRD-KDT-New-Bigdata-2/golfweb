@@ -1,0 +1,607 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Title </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/sidebar.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Theme initialization -->
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<style>
+		input[type="checkbox"]{
+
+		width: 30px; /*Desired width*/
+
+		height: 30px; /*Desired height*/
+
+		cursor: pointer;
+		}
+	</style>
+</head>
+
+<body class = "loaded">
+	<div class = "main-wrapper">
+		<div class = "app" id = "app">
+			<!-- 헤더 -->
+			<header class = "header">
+				<div class = "header-block header-block-buttons">
+					<!-- <a href="" class="btn btn-sm header-btn">
+						<i class="fa fa-github-alt"></i>
+						<span>여기에 뭐 넣어야하나</span>
+					</a> -->
+				</div>
+				<!--로그인/회원가입/회원정보가 들어갈 박스-->
+				<div class="header-block header-block-nav">
+					<!-- 검색창(장식용) -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="search-bar">
+							<input type="text" class="form-control mainpage" placeholder="Search">
+						</div>
+						<div class="search-button">
+							<button type="submit" class="btn btn-primary nav_bar search-btn">검색</button>
+						</div>
+					</form>
+
+					<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
+					<ul class="nav-profile logout_state" id ="logout_state">
+						<!-- <a href = "login.html">
+							<button class = "btn btn-primary nav_bar login">로그인</button>
+						</a>
+						<a href = "join.html">
+							<button class = "btn btn-primary nav_bar join">회원가입</button>
+						</a> -->
+
+						<div class="form-group upright" style="width: 130px;">
+							<a href="login.html" class="navbar-link login">로그인</a>
+							<a href="join.html" class="navbar-link join">회원가입</a>
+						</div>
+					</ul>
+
+					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
+					<ul class="nav-profile login_state" id ="login_state">
+						<li class="notifications new">
+							<a href="" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-bell-o"></i>
+								<sup>
+									<span class="counter">3</span>
+								</sup>
+							</a>
+							<div class="dropdown-menu notifications-dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+								<ul class="notifications-container">
+									<li>
+										<a href="" class="notification-item">
+											<div class="img-col">
+												<div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
+											</div>
+											<div class="body-col">
+												<p>
+													<span class="accent">Zack Alien</span> pushed new commit:
+													<span class="accent">Fix page load performance issue</span>. </p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="" class="notification-item">
+											<div class="img-col">
+												<div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
+											</div>
+											<div class="body-col">
+												<p>
+													<span class="accent">Amaya Hatsumi</span> started new task:
+													<span class="accent">Dashboard UI design.</span>. </p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="" class="notification-item">
+											<div class="img-col">
+												<div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
+											</div>
+											<div class="body-col">
+												<p>
+													<span class="accent">Andy Nouman</span> deployed new version of
+													<span class="accent">NodeJS REST Api V3</span>
+												</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<footer>
+									<ul>
+										<li>
+											<a href=""> View All </a>
+										</li>
+									</ul>
+								</footer>
+							</div>
+						</li>
+						<li class="profile dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40')"> </div>
+								<span class="name"> John Doe </span>
+							</a>
+							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
+								<a class="dropdown-item" href="#">
+									<i class="fa fa-user icon"></i> Profile </a>
+								<a class="dropdown-item" href="#">
+									<i class="fa fa-bell icon"></i> Notifications </a>
+								<a class="dropdown-item" href="#">
+									<i class="fa fa-gear icon"></i> Settings </a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#" onclick="logout()">
+									<i class="fa fa-power-off icon"></i> Logout </a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</header>
+
+			<!--로고와 사이트 이름 배치할 박스-->
+			<a href="index.html" class="sidebar-link">
+				<div class = "sidebar-header">
+					<div class="brand">
+						<div class="logo">
+							<p class = "logo_image"></p>
+						</div>
+						<span class = "site_name">GolfBorn</span>
+					</div>
+				</div>
+			</a>
+			<!-- 사이드 툴바-->
+			<aside class="sidebar">
+				<div class="hamburger">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+				<div class="sidebar-container">
+					
+					<!--툴바에 메뉴 배치-->
+					<nav class = "menu">
+						<ul class = "sidebar-menu menu metismenu" id="sidebar-menu"  style="height: 0px;">
+							<li>
+								<a href="index.html">
+									<i class="fa fa-home"></i>
+									메인페이지
+								</a>
+							</li>
+
+							<li class = "active open">
+								<a href>
+									<i class="fa fa-th-large"></i>
+									스윙자세교정
+									<i class="fa arrow"></i>
+								</a>
+								<ul class="sidebar-nav collapse in">
+									<li class = "active">
+										<a href="upload_movie.html"> 자세교정받기 </a>
+									</li>
+									<li>
+										<a href="test_list.html"> 나의 교정 목록 </a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="fa fa-bar-chart"></i> 골프 정보
+									<i class="fa arrow"></i>
+								</a>
+								<ul class="sidebar-nav collapse" style="height: 0px;">
+									<li>
+										<a href="plot_chart.html"> 정보1 </a>
+									</li>
+									<li>
+										<a href="charts-morris.html"> 정보2 </a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z" />
+				</svg>
+			</aside>
+			<h2></h2>
+
+			<!--동영상 띄우는 박스-->
+			<article class="content dashboard-page">
+				<div class="title-search-block">
+					<div class="title-block">
+						<div class="row">
+							<div class="col-md-6">
+								<h3 class="title"> 딥러닝 진행중...</h3>
+								<p class="title-description"> 코멘트. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="section">
+					<div class="row sameheight-container">
+						<div class="col-xl-4">
+							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg" style="height: 488px;width: 750px;display: inline-block;position: absolute;top: 0;left: 15px;">
+								<div class="card-header">
+									<div class="header-block" style="width: 60%;">						
+										<div class="title" style="font-size:20px;margin-top: 1%;"> 유저가 적은 분석 타이틀 </div>
+									</div>
+								</div>
+								<div class="card-block">
+									<!-- <video src = "" controls autoplay="true" muted></video> -->
+									<div class="upload_sign" id = "upload_sign">
+										<div class="col-md-3 col-sm-4"></div>
+									</div>
+
+									<div class="videobox compare" id="videobox">
+										<video class = "video_compare" id="a_video" muted>
+											<source id="movie_src" type="video/mp4" src=""/>
+										</video>
+									</div>	
+								</div>
+							</div>
+
+							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg" style="height: 488px; width: 750px; display: inline-block; position: absolute; top: 0px; left: 780px;">
+								<div class="card-header">
+									<div class="header-block" style="width: 60%;">						
+										<div class="title" style="font-size:20px;margin-top: 1%;"> 딥러닝 분석 영상 </div>
+									</div>
+								</div>
+								<div class="card-block">
+									<!-- <video src = "" controls autoplay="true" muted></video> -->
+									<div class="upload_sign" id = "upload_sign">
+										<div class="col-md-3 col-sm-4"></div>
+									</div>
+
+									<div class="videobox compare" id="videobox">
+										<video class = "video_compare" id="a_video" muted>
+											<source id="movie_src" type="video/mp4" src=""/>
+										</video>
+									</div>	
+								</div>
+							</div>
+						</div>
+						<div class="progress" id="progress" style="height:50px;left: 40px;">
+							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id ="progress-bar"
+								role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+								style="width: 60%; height: 50px;">
+								<span id="progress-text">60% Complete</span>
+							</div>
+						</div>
+
+						<div class="compare-text" id="compare-text">
+							분석중...
+						</div>
+
+						<!-- 분석완료시 띄울 토글과 분석결과 박스 -->
+						<div class="result_box">
+							<a class = "toggle" id = "toggle">
+								<div class="hidden-text-result" id="hidden-text-result">
+									상세정보 열기
+								</div>
+							</a>
+							<div class="hidden-contents" id = "hidden-contents">
+								<section class="section">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Basic example </h3>
+													</div>
+													<section class="example">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+																<tr>
+																	<th scope="row">2</th>
+																	<td>Jacob</td>
+																	<td>Thornton</td>
+																	<td>@fat</td>
+																</tr>
+																<tr>
+																	<th scope="row">3</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Striped rows </h3>
+													</div>
+													<section class="example">
+														<table class="table table-striped">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+																<tr>
+																	<th scope="row">2</th>
+																	<td>Jacob</td>
+																	<td>Thornton</td>
+																	<td>@fat</td>
+																</tr>
+																<tr>
+																	<th scope="row">3</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Bordered </h3>
+													</div>
+													<section class="example">
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+																<tr>
+																	<th scope="row">2</th>
+																	<td>Jacob</td>
+																	<td>Thornton</td>
+																	<td>@fat</td>
+																</tr>
+																<tr>
+																	<th scope="row">3</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Hover rows </h3>
+													</div>
+													<section class="example">
+														<table class="table table-hover">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+																<tr>
+																	<th scope="row">2</th>
+																	<td>Jacob</td>
+																	<td>Thornton</td>
+																	<td>@fat</td>
+																</tr>
+																<tr>
+																	<th scope="row">3</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Inverse table </h3>
+													</div>
+													<section class="example">
+														<table class="table table-inverse">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+																<tr>
+																	<th scope="row">2</th>
+																	<td>Jacob</td>
+																	<td>Thornton</td>
+																	<td>@fat</td>
+																</tr>
+																<tr>
+																	<th scope="row">3</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+																<tr>
+																	<th scope="row">4</th>
+																	<td>Larry</td>
+																	<td>the Bird</td>
+																	<td>@twitter</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Small tables &amp; Thead options </h3>
+													</div>
+													<section class="example">
+														<p>Default thead</p>
+														<table class="table table-sm">
+															<thead class="thead-default">
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+															</tbody>
+														</table>
+														<p></p>
+														<p></p>
+														<p>Inverse thead</p>
+														<table class="table table-sm">
+															<thead class="thead-inverse">
+																<tr>
+																	<th>#</th>
+																	<th>First Name</th>
+																	<th>Last Name</th>
+																	<th>Username</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<th scope="row">1</th>
+																	<td>Mark</td>
+																	<td>Otto</td>
+																	<td>@mdo</td>
+																</tr>
+															</tbody>
+														</table>
+													</section>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+
+
+						<div class="instance btn" style="position: relative;top: 600px;">
+							<button type="button" class="btn btn-primary" onclick="progress_change()">임시버튼</button>
+						</div>
+						<div class="instance btn" style="position: relative;top: 600px;">
+							<button type="button" class="btn btn-primary" onclick="progress_change2()">되돌리기</button>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+
+	<!--사용할 자바스크립트, js파일 임포트하는 부분-->
+	<script>
+		(function(i, s, o, g, r, a, m)
+		{
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function()
+			{
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-80463319-4', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
+</body>
+</html>

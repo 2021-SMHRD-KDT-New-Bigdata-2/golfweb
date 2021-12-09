@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+   xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+   http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <!-- Root Context: defines shared resources visible to all other web components -->
+   
+   <!-- DB연결(Spring에서 제공해주는 API-X, HikariCP(DBCP) API) -->
+   <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="jdbcUrl" value="jdbc:mysql://project-db-stu.ddns.net:3307/golf"/>
+      <property name="username" value="golf"/>
+      <property name="password" value="123456"/>
+    </bean>
+    <!-- Connection POOL을 만드는 부분 -->   
+   <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+       <constructor-arg ref="hikariConfig"></constructor-arg>
+   </bean>
+   <!-- BoardMapper인터페이스와 내부적으로 연결되어 실제로 동작시키는 API -->
+   <!-- spring-mybatis API(->SqlSessionFactoryBean)  -->   
+   <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+       <property name="dataSource" ref="dataSource"/>
+   </bean>      
+   <!-- BoardMapper들을 Spring Conatainer에 객체를 생성(new X)하는 부분(Scan) -->
+   <mybatis-spring:scan base-package="kr.golfproject.mapper"/>
+   
+</beans>

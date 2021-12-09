@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "kr.golfproject.mapper.tbl_memberMapper">
+    <!-- 회원가입 -->
+    <insert id = "tbl_member_Join" parameterType="kr.golfproject.domain.tbl_member">
+        insert into tbl_member(m_pwd, m_name, m_phone, m_id, m_gender, m_birthdate, iron_distance, driver_distance, m_score) values(#{m_pwd}, #{m_name}, #{m_phone}, #{m_id}, #{m_gender}, #{m_birthdate}, #{iron_distance}, #{driver_distance}, #{m_score})
+    </insert>
+    
+    <!-- 로그인 -->
+    
+</mapper>
