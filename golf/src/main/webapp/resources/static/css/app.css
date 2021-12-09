@@ -55,7 +55,8 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   left: 0;
-  background-color: #f0f3f6;
+  /*옛날 색깔 : #f0f3f6*/
+  background-color: #fff;
   -webkit-box-shadow: 0 0 3px #ccc;
           box-shadow: 0 0 3px #ccc;
   -webkit-transition: left 0.3s ease, padding-left 0.3s ease;
@@ -1760,7 +1761,8 @@ span a {
         display: none; } }
 
 .header {
-  background-color: #d7dde4;
+/*옛날색깔 : #d7dde4*/
+  background-color: #44bd32;
   height: 90px;
   position: absolute;
   left: 300px;
@@ -2717,7 +2719,8 @@ span a {
   padding-left: 25px;
   line-height: 90px;
   font-size: 30px; 
-  background-color: #d7dde4;
+  /*옛날 색깔 : #d7dde4*/
+  background-color: #44bd32;
   color: #4f5f6f;}
   @media (max-width: 767px) {
     .sidebar-header .brand {
@@ -3828,10 +3831,10 @@ article.content.dashboard-page {
 }
 
 .swing_type {
-  float: right;
-  position: absolute;
-  right: 2%;
-  top: 2%;
+   float: right;
+   position: absolute;
+   right: 2%;
+   margin-top: 0.5%;
 }
 
 button.btn.btn-primary.btn-sm.swing_type {

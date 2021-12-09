@@ -9,8 +9,8 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS import해오는 부분 -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css?ver=1">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css?ver=1">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Theme initialization -->
