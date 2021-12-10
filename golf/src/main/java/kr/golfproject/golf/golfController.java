@@ -2,6 +2,8 @@ package kr.golfproject.golf;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,7 +37,19 @@ public class golfController {
 		return "login";
 	}
 	
-	// 
+	// 로그인시 아이디 입력버튼 클릭
+	@RequestMapping("/tbl_member_submit_ID.do")
+	public String tbl_member_submit_ID(String id, HttpSession session) {
+		// 아이디 인증 mapper 연동
+		String check_id = mapper.tbl_member_submit_ID(id);
+		
+		// 아이디 체크 여부에 따라서 세션(HttpSession)을 만들기
+		if(check_id!=null) {
+			session.setAttribute("check_id", check_id);	
+		}
+		
+		return "login";
+	}
 	
 	// 로그인 버튼 클릭
 	@RequestMapping("/tbl_member_Login.do")

@@ -237,36 +237,6 @@
 		ga('send', 'pageview');
 	</script>
 	
-	<!-- 로그인  -->
-	<script type="text/javascript">
-	// 로그인 버튼을 누르면 발생하는 함수
-	function login_btn(){
-		var id = $("#username").val();
-	    var pwd = $("#password").val();
-	    if (!(id && pwd)){
-	        $('#hidden-text-pwd').css({
-	            "color" : "#FF4444",
-	        })
-	        $('#password').css({
-	            "border" : "1px solid #FF4444",
-	        })
-	    }
-	    
-	    // 로그인 실행함수넣어라
-	    $.ajax({
-        	url : "${cpath}/tbl_member_Login.do",
-        	type : "post",
-        	data : {"m_id":id, "m_pwd":pwd},
-        	//data : frmData,
-        	success : function(){alert('로그인에 성공했습니다!'); location.href = "index.html";},
-        	error : function(){alert("error"); }  
-    	});
-	    
-	    
-	}
-	</script>
-	
-	<!-- 회원가입 -->
 	<script type="text/javascript">
 	// 회원가입 버튼 클릭시 발생하는 작업
 	function submit_join(){ 

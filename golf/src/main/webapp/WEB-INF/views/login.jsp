@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -35,9 +38,9 @@
                 </header>
                 <div class="auth-content">
                     <p class="text-center login_text" id = "logintext">로그인</p>
-                    <form id="login-form" action="/index.html" method="post" novalidate="novalidate">
+                    <form id="login-form" action="/index.html" method="post" novalidate="novalidate" onkeyup=pushenter()>
                         <!-- ID 입력 박스 -->
-                        <div class = "ID_box" id = "ID_box">
+                        <div class = "ID_box active" id = "ID_box">
                             <div class="form-group" id = "form-group">
                                 <!-- 아이디 입력 -->
                                 <input type="email" class="form-control underlined" name="username" id="username" placeholder="아이디 또는 이메일" style="font-style: normal;" required="" aria-required="true"> 
@@ -55,7 +58,7 @@
     
                             <!-- 하단 버튼 -->
                             <div class="form-group">
-                                <button id = "submit_id" type="submit" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_goto_pwd()">다음</button>
+                                <button id = "submit_id" type="button" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_goto_pwd()">다음</button>
                                 <p class="text-muted text-center">
                                     <a href="join.html" class="create_id" tabindex="-1">계정만들기</a>
                                 </p>
@@ -81,7 +84,7 @@
                             </div>
                             <!-- 하단메뉴 -->
                             <div class="form-group pwd2">
-                                <button id="submit_pwd" type="submit" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_btn()" tabindex="-1">다음</button>
+                                <button id="submit_pwd" type="button" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_btn()" tabindex="-1">다음</button>
                                 <p class="text-muted text-center">
                                     <a href="searchpwd.html" class="search_pwd" tabindex="-1">비밀번호 찾기</a>
                                 </p>
@@ -121,6 +124,79 @@
 		ga('create', 'UA-80463319-4', 'auto');
 		ga('send', 'pageview');
 	</script>
+	
+	<script type="text/javascript">
+	// 아이디 입력 후 다음버튼 누르면 발생하는 함수
+	function login_goto_pwd(){
+		var id = $("#username").val();
+		$.ajax({
+			url : "${cpath}/tbl_member_submit_ID.do",
+        	type : "post",
+        	data : {"m_id":id},
+        	//data : frmData,
+        	success : function(){
+        				$('#ID_box').animate({
+        		            left : '-120%',
+        		        })
+        		        $('#pwd_box').animate({
+        		            left : '10%',
+        		        })
+        		
+        		        $("#logintext").text(id);
+        		        
+        		        $('#submit_id').attr("type", "button");
+        		
+        		        // 탭순서 변경
+        		        document.getElementById('username').tabIndex = "-1";
+        		        document.getElementById('submit_id').tabIndex = "-1";
+        		        document.getElementById('password').tabIndex = "1";
+        		        document.getElementById('submit_pwd').tabIndex = "2";
+        		     	
+        		        // 보여주는 박스에 active클래스 부여/ 숨기는 박스에서는 삭제
+        		        $("#pwd_box").addClass("active");
+        		        $("#ID_box").removeClass("active");
+        		        
+        		        // 시간지연해서 0.4초후 비밀번호 input 창에 포커스 주기
+        		        setTimeout(function(){document.getElementById("password").focus();},400);
+        				},
+        				
+			error : function(){ alert("error");
+								$('#hidden-text').css({
+									 "color" : "#FF4444",
+								});
+							}
+			
+			
+			});	
+		};
+		
+	</script>
+	
+	<script type="text/javascript">
+	// 로그인 버튼을 누르면 발생하는 함수
+	function login_btn(){
+		var id = $("#username").val();
+	    var pwd = $("#password").val();
+	    if (!(id && pwd)){
+	        $('#hidden-text-pwd').css({
+	            "color" : "#FF4444",
+	        })
+	        $('#password').css({
+	            "border" : "1px solid #FF4444",
+	        })
+	    }
+	    
+	    $.ajax({
+        	url : "${cpath}/tbl_member_Login.do",
+        	type : "post",
+        	data : {"m_id":id, "m_pwd":pwd},
+        	//data : frmData,
+        	success : function(){alert('로그인에 성공했습니다!'); location.href = "index.html";},
+        	error : function(){alert("error"); }  
+    	});
+	};
+	</script>
+	
     <script src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>

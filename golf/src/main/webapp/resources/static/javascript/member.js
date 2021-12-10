@@ -65,38 +65,6 @@ $(function() {
     })
 });
 
-// ID 작성하고 버튼을 누르면 발생하는 함수
-function login_goto_pwd(){
-    // 현재는 임의로 아이디를 admin를 입력안할경우 로그인 오류로 설정, DB 구축후에 수정예정
-    var valid = $("#username").val();
-    if (valid === "admin"){
-        $('#ID_box').animate({
-            left : '-120%',
-        })
-        $('#pwd_box').animate({
-            left : '10%',
-        })
-
-        $("#logintext").text(valid);
-        
-        $('#submit_id').attr("type", "button");
-
-        // 탭순서 변경
-        document.getElementById('username').tabIndex = "-1";
-        document.getElementById('submit_id').tabIndex = "-1";
-        document.getElementById('password').tabIndex = "1";
-        document.getElementById('submit_pwd').tabIndex = "2";
-
-        // 시간지연해서 0.4초후 비밀번호 input 창에 포커스 주기
-        setTimeout(function(){document.getElementById("password").focus();},400);
-
-    }else{
-        $('#hidden-text').css({
-            "color" : "#FF4444",
-        })
-    }
-}
-
 // 아이디 기입/미기입시 상시변화
 $('#username').on("propertychange change keyup paste input",function(){
     var valid = $("#username").val();
@@ -874,6 +842,15 @@ function pushenter() {
         };
         if ($("#detailed_box").hasClass("active")){
             document.getElementById('submit_join2').click();
+            return false;
+        };
+        
+        if ($("#ID_box").hasClass("active")){
+            document.getElementById('submit_id').click();
+            return false;
+        };
+        if ($("#pwd_box").hasClass("active")){
+            document.getElementById('submit_pwd').click();
             return false;
         };
     };
