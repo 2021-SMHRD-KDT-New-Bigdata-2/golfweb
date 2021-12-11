@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var fileTarget = $('.filebox .upload-hidden');
-    var directory = 'http://localhost:13131/golf/resources/static/testmovie/';
+    var directory = 'http://localhost:13131/golf/resources/static/movie/';
  
      fileTarget.on('change', function(){
          if(window.FileReader){

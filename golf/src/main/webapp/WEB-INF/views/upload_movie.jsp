@@ -18,10 +18,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/vendor.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/sidebar.css">
+	<link rel="stylesheet" href="${cpath}/resources/static/css/app.css">
+	<link rel="stylesheet" href="${cpath}/resources/static/css/vendor.css">
+	<link rel="stylesheet" href="${cpath}/resources/static/css/app.scss">
+	<link rel="stylesheet" href="${cpath}/resources/static/css/sidebar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Theme initialization -->
 	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -217,14 +217,16 @@
 										</video>
 									</div>
 									
-									<form name="form_movie" class = "filebox preview-image col-sm-9" action = "백앤드 url" method="post" enctype="multipart/form-data" style="display: inline-block;">
+									<form name="form_movie" class = "filebox preview-image col-sm-9" enctype="multipart/form-data" style="display: inline-block;">
 										<input id = "upload-name" class="upload-name" value="" disabled="disabled" style="width:500px; height:40px;">
 										<label class="btn btn-primary btn-sm" for="input_file" style="font-size: 18px;margin-left: 10px;border-color: #44bd32;background-color: #44bd32;height: 40px;padding: 0.5rem 0.5rem 0px 0.5rem;">업로드</label>
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
-									<a href="video_compared.html">
-										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기">
-									</a>
+									
+										<input type="button" class="btn btn-warning" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="전송" id="uploadClick">
+										<a href="video_compared.html">
+										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick">
+										</a>
 								</div>
 							</div>
 						</div>
@@ -258,6 +260,33 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
+	<script>
+	$(document).ready(function(){
+	    $("#uploadClick").on("click",function(e){
+	        var formData = new FormData();
+	        var inputFile =$("input[name='input_file']");
+	        var files=inputFile[0].files;
+	        console.log(files);
+	        for(var i =0;i<files.length;i++){
+	            formData.set("uploadfile",files[i]);
+	            console.log(formData);
+	        }
+	        $.ajax({
+	            url: '${cpath}/uploadAjaxAction',
+	            processData:false,
+	            contentType: false,
+	            data: formData,
+	            type: 'POST',
+	            success: function(result){
+	                alert("uploaded");
+	            }
+	        });
+	    })
+	})
+
+
+	
+	</script>
 	<script>
 	$(function() {
 		var check_login_state = null;

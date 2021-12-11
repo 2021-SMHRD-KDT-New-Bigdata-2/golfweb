@@ -1,21 +1,38 @@
 package kr.golfproject.golf;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.jdbc.log.Log;
 
 import kr.golfproject.domain.tbl_member;
+import kr.golfproject.domain.tbl_upload;
 import kr.golfproject.mapper.tbl_memberMapper;
 
 
 @Controller
 public class golfController {
-	// REST API 만들기=>method 
+	
+
+	
+	// REST API 만들기=>method
+	
 	@Autowired
 	tbl_memberMapper mapper;
 	
@@ -98,5 +115,27 @@ public class golfController {
 	public String video_compared() {
 		return "video_compared";
 	}
+	@PostMapping("/uploadAjaxAction")
+	public void uploadAjax(MultipartFile[] uploadfile) {
+		System.out.println("업로드중!!");
+		//업로드 실제 경로
+		String uploadfolder = "C:\\Users\\smhrd\\git\\golfweb\\golf\\src\\main\\webapp\\resources\\static\\movie";
+		for (MultipartFile mulitipartFile : uploadfile) {
+			System.out.println("업로드파일이름 : "+mulitipartFile.getOriginalFilename());
+			System.out.println("파일 크기 : "+mulitipartFile.getSize());
+			String upload_file = mulitipartFile.getOriginalFilename();
+			upload_file=upload_file.substring(upload_file.lastIndexOf("\\")+1);
+			File savefile = new File(uploadfolder,upload_file);
+			try {
+				mulitipartFile.transferTo(savefile);	
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
+		
 }
+
+
+
 
