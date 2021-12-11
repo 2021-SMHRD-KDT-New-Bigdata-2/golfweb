@@ -189,7 +189,7 @@
         	},
         	error : function(){
         		if (!(id && pwd)){
-        			alert("비밀번호를 입력해주세요.")
+        			//alert("비밀번호를 입력해주세요.")
         	        $('#hidden-text-pwd').css({
         	            "color" : "#FF4444",
         	        });

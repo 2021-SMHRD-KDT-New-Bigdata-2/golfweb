@@ -78,77 +78,19 @@
 
 					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
 					<ul class="nav-profile login_state" id ="login_state">
-						<li class="notifications new">
-							<a href="" data-toggle="dropdown" aria-expanded="false">
-								<i class="fa fa-bell-o"></i>
-								<sup>
-									<span class="counter">3</span>
-								</sup>
-							</a>
-							<div class="dropdown-menu notifications-dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
-								<ul class="notifications-container">
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Zack Alien</span> pushed new commit:
-													<span class="accent">Fix page load performance issue</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Amaya Hatsumi</span> started new task:
-													<span class="accent">Dashboard UI design.</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Andy Nouman</span> deployed new version of
-													<span class="accent">NodeJS REST Api V3</span>
-												</p>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<footer>
-									<ul>
-										<li>
-											<a href=""> View All </a>
-										</li>
-									</ul>
-								</footer>
-							</div>
-						</li>
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40')"> </div>
-								<span class="name"> John Doe </span>
+								<div class="img profile" style="margin-right: 5px;"> </div>
+								<span class="name" id="profile-name"> Name </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-user icon"></i> Profile </a>
+									<i class="fa fa-user icon"></i> 프로필 </a>
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-bell icon"></i> Notifications </a>
-								<a class="dropdown-item" href="#">
-									<i class="fa fa-gear icon"></i> Settings </a>
+									<i class="fa fa-gear icon"></i> 설정 </a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" onclick="logout()">
-									<i class="fa fa-power-off icon"></i> Logout </a>
+									<i class="fa fa-power-off icon"></i> 로그아웃 </a>
 							</div>
 						</li>
 					</ul>

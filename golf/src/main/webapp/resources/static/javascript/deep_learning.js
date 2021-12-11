@@ -48,8 +48,73 @@ $('#toggle').click(function() {
     }else{
         document.getElementById("hidden-text-result").innerHTML = "상세정보 닫기";
         $(".content.dashboard-page").css({
-            "min-height": "2000px",
+            "min-height": "3000px",
         });
         $("#hidden-contents").addClass("open");
     }
+});
+
+// 자세교정시점 선택시 액션
+$('#picture_link1').click(function() {
+	if($(this).hasClass("column1")){
+		var test = document.getElementById("columnimage1"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link2').click(function() {
+	if($(this).hasClass("column2")){
+		var test = document.getElementById("columnimage2"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link3').click(function() {
+	if($(this).hasClass("column3")){
+		var test = document.getElementById("columnimage3"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link4').click(function() {
+	if($(this).hasClass("column4")){
+		var test = document.getElementById("columnimage4"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link5').click(function() {
+	if($(this).hasClass("column5")){
+		var test = document.getElementById("columnimage5"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link6').click(function() {
+	if($(this).hasClass("column6")){
+		var test = document.getElementById("columnimage6"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
+});
+$('#picture_link7').click(function() {
+	if($(this).hasClass("column7")){
+		var test = document.getElementById("columnimage7"); 
+		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$(".picture_selected").css({
+			"background-image": style,
+		});
+	};
 });

@@ -87,81 +87,22 @@
 
 					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
 					<ul class="nav-profile login_state" id ="login_state">
-						<li class="notifications new">
-							<a href="" data-toggle="dropdown" aria-expanded="false">
-								<i class="fa fa-bell-o"></i>
-								<sup>
-									<span class="counter">3</span>
-								</sup>
-							</a>
-							<div class="dropdown-menu notifications-dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
-								<ul class="notifications-container">
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Zack Alien</span> pushed new commit:
-													<span class="accent">Fix page load performance issue</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Amaya Hatsumi</span> started new task:
-													<span class="accent">Dashboard UI design.</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Andy Nouman</span> deployed new version of
-													<span class="accent">NodeJS REST Api V3</span>
-												</p>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<footer>
-									<ul>
-										<li>
-											<a href=""> View All </a>
-										</li>
-									</ul>
-								</footer>
-							</div>
-						</li>
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40')"> </div>
-								<span class="name"> John Doe </span>
+								<div class="img profile" style="margin-right: 5px;"> </div>
+								<span class="name" id="profile-name"> Name </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-user icon"></i> Profile </a>
+									<i class="fa fa-user icon"></i> 프로필 </a>
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-bell icon"></i> Notifications </a>
-								<a class="dropdown-item" href="#">
-									<i class="fa fa-gear icon"></i> Settings </a>
+									<i class="fa fa-gear icon"></i> 설정 </a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" onclick="logout()">
-									<i class="fa fa-power-off icon"></i> Logout </a>
+									<i class="fa fa-power-off icon"></i> 로그아웃 </a>
 							</div>
 						</li>
 					</ul>
-				</div>
 			</header>
 
 			<!--로고와 사이트 이름 배치할 박스-->
@@ -310,6 +251,143 @@
 							<div class="hidden-contents" id = "hidden-contents">
 								<section class="section">
 									<div class="row">
+										<div class="col-md-6" style="max-width: 70%;max-height: 900px;">
+											<div class="card fortable" style="height: 100%">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> 자세교정위치표시 </h3>
+													</div>
+													<div class = "image_box">
+														<div class="sizer">
+															<p class = "picture_selected"></p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6" style="max-width: 33.7%;max-height: 900px;">
+											<div class="card fortable" style="height: 100%">
+												<div class="card-block">
+													<div class="card-title-block">
+														<h3 class="title"> Comment </h3>
+													</div>
+													<div class="detail_scripts">
+														<div class="detail_script_box">
+															<div class="swing_recommend head">
+																<div class="recommend-title">머리동작</div>
+																<div class="recommend-text head-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend shoulder">
+																<div class="recommend-title">어깨동작</div>
+																<div class="recommend-text shoulder-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend arm">
+																<div class="recommend-title">팔동작</div>
+																<div class="recommend-text arm-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend waist">
+																<div class="recommend-title">허리동작</div>
+																<div class="recommend-text waist-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend pelvis">
+																<div class="recommend-title">골반동작</div>
+																<div class="recommend-text pelvis-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend knee">
+																<div class="recommend-title">무릎동작</div>
+																<div class="recommend-text knee-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend foot">
+																<div class="recommend-title">발동작</div>
+																<div class="recommend-text foot-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+															<div class="swing_recommend cg">
+																<div class="recommend-title">무게중심</div>
+																<div class="recommend-text cg-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="row">
+										<div class="col-md-6" style="max-width: 100%;">
+											<div class="card fortable">
+												<div class="card-block picture_select">
+													<div class="card-title-block">
+														<h3 class="title"> 자세교정 시점 </h3>
+													</div>
+													<div class = "select_picture_box">
+														<a class = "move_left" onclick = "">
+															<em class="fa fa-angle-left select_picture"></em>
+														</a>
+														<section class="select_point">
+															<div class="pictures_to_select">
+																<a class = "picture_link column1" id="picture_link1" href="#" role="button">
+																	<div class="picture_column column1">
+																		<div class="apicture">
+																			<p class = "aimage column1" id="columnimage1"></p>
+																		</div>
+																	</div>
+																</a>
+																<a class = "picture_link column2" id="picture_link2" href="#" role="button">
+																	<div class="picture_column column2">
+																			<div class="apicture">
+																				<p class = "aimage column2" id="columnimage2"></p>
+																			</div>
+																	</div>
+																</a>	
+																<a class = "picture_link column3" id="picture_link3" href="#" role="button">
+																	<div class="picture_column column3">
+																			<div class="apicture">
+																				<p class = "aimage column3" id="columnimage3"></p>
+																			</div>
+																	</div>
+																</a>
+																<a class = "picture_link column4" id="picture_link4" href="#" role="button">	
+																	<div class="picture_column column4">
+																			<div class="apicture">
+																				<p class = "aimage column4" id="columnimage4"></p>
+																			</div>
+																	</div>
+																</a>
+																<a class = "picture_link column5" id="picture_link5" href="#" role="button">
+																	<div class="picture_column column5">
+																			<div class="apicture">
+																				<p class = "aimage column5" id="columnimage5"></p>
+																			</div>
+																	</div>
+																</a>
+																<a class = "picture_link column6" id="picture_link6" href="#" role="button">
+																	<div class="picture_column column6">
+																			<div class="apicture">
+																				<p class = "aimage column6" id="columnimage6"></p>
+																			</div>
+																	</div>
+																</a>
+																<a class = "picture_link column7" id="picture_link7" href="#" role="button">
+																	<div class="picture_column column7">
+																			<div class="apicture">
+																				<p class = "aimage column7" id="columnimage7"></p>
+																			</div>
+																	</div>
+																</a>
+															</div>
+														</section>
+														<a class = "move_right" onclick = "">
+															<em class="fa fa-angle-right select_picture"></em>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+								</section>
+								
+								<section class="section">
+									<div class="row">
 										<div class="col-md-6">
 											<div class="card fortable">
 												<div class="card-block">
@@ -385,194 +463,6 @@
 																	<td>Larry</td>
 																	<td>the Bird</td>
 																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
-													</section>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section class="section">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block">
-													<div class="card-title-block">
-														<h3 class="title"> Bordered </h3>
-													</div>
-													<section class="example">
-														<table class="table table-bordered">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-																<tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																</tr>
-																<tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
-													</section>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block">
-													<div class="card-title-block">
-														<h3 class="title"> Hover rows </h3>
-													</div>
-													<section class="example">
-														<table class="table table-hover">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-																<tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																</tr>
-																<tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
-													</section>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section class="section">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block">
-													<div class="card-title-block">
-														<h3 class="title"> Inverse table </h3>
-													</div>
-													<section class="example">
-														<table class="table table-inverse">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-																<tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																</tr>
-																<tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-																<tr>
-																	<th scope="row">4</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
-													</section>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block">
-													<div class="card-title-block">
-														<h3 class="title"> Small tables &amp; Thead options </h3>
-													</div>
-													<section class="example">
-														<p>Default thead</p>
-														<table class="table table-sm">
-															<thead class="thead-default">
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-															</tbody>
-														</table>
-														<p></p>
-														<p></p>
-														<p>Inverse thead</p>
-														<table class="table table-sm">
-															<thead class="thead-inverse">
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
 																</tr>
 															</tbody>
 														</table>
