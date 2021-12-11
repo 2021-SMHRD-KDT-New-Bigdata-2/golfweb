@@ -275,35 +275,35 @@
 														<div class="detail_script_box">
 															<div class="swing_recommend head">
 																<div class="recommend-title">머리동작</div>
-																<div class="recommend-text head-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text head-text" id="head-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend shoulder">
 																<div class="recommend-title">어깨동작</div>
-																<div class="recommend-text shoulder-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text shoulder-text" id="shoulder-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend arm">
 																<div class="recommend-title">팔동작</div>
-																<div class="recommend-text arm-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text arm-text" id="arm-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend waist">
 																<div class="recommend-title">허리동작</div>
-																<div class="recommend-text waist-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text waist-text" id="waist-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend pelvis">
 																<div class="recommend-title">골반동작</div>
-																<div class="recommend-text pelvis-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text pelvis-text" id="pelvis-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend knee">
 																<div class="recommend-title">무릎동작</div>
-																<div class="recommend-text knee-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text knee-text" id="knee-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend foot">
 																<div class="recommend-title">발동작</div>
-																<div class="recommend-text foot-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text foot-text" id="foot-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend cg">
 																<div class="recommend-title">무게중심</div>
-																<div class="recommend-text cg-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+																<div class="recommend-text cg-text" id="cg-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 														</div>
 													</div>

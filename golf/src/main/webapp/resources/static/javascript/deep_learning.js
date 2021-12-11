@@ -118,3 +118,239 @@ $('#picture_link7').click(function() {
 		});
 	};
 });
+
+// 분석텍스트창 클릭시 내용을 모두 보여주는 함수
+$('.recommend-text').click(function() { 
+	if($(this).hasClass("head-text")){
+		if ($("#head-text").hasClass("open")){
+			$("#head-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".head-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.head").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#head-text").addClass("open");
+			// 설명창 펴기
+			$(".head-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.head").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("shoulder-text")) {
+		if ($("#shoulder-text").hasClass("open")){
+			$("#shoulder-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".shoulder-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.shoulder").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#shoulder-text").addClass("open");
+			// 설명창 펴기
+			$(".shoulder-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.shoulder").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("arm-text")) {
+		if ($("#arm-text").hasClass("open")){
+			$("#arm-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".arm-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.arm").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#arm-text").addClass("open");
+			// 설명창 펴기
+			$(".arm-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.arm").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("waist-text")) {
+		if ($("#waist-text").hasClass("open")){
+			$("#waist-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".waist-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.waist").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#waist-text").addClass("open");
+			// 설명창 펴기
+			$(".waist-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.waist").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("pelvis-text")) {
+		if ($("#pelvis-text").hasClass("open")){
+			$("#pelvis-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".pelvis-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.pelvis").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#pelvis-text").addClass("open");
+			// 설명창 펴기
+			$(".pelvis-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.pelvis").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("knee-text")) {
+		if ($("#knee-text").hasClass("open")){
+			$("#knee-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".knee-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.knee").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#knee-text").addClass("open");
+			// 설명창 펴기
+			$(".knee-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.knee").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("foot-text")) {
+		if ($("#foot-text").hasClass("open")){
+			$("#foot-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".foot-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.foot").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#foot-text").addClass("open");
+			// 설명창 펴기
+			$(".foot-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.foot").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		};
+	};
+	if($(this).hasClass("cg-text")) {
+		if ($("#cg-text").hasClass("open")){
+			$("#cg-text").removeClass("open");
+			// 이미 설명창이 펴졌으면 설명창 접기
+			$(".cg-text").css({
+				"-webkit-line-clamp": "2",
+				"display": "-webkit-box",
+				"overflow": "hidden",
+				"padding-bottom": "0",
+			});
+			$(".swing_recommend.cg").css({
+				"height": "97px",
+				"max-height": "100px",
+			});
+		}else{
+			$("#cg-text").addClass("open");
+			// 설명창 펴기
+			$(".cg-text").css({
+				"-webkit-line-clamp": "inherit",
+				"display": "inline-block",
+				"overflow": "visible",
+				"padding-bottom": "9px",
+			});
+			$(".swing_recommend.cg").css({
+				"height": "auto",
+				"max-height": "none",
+			});
+		}; 
+	};
+});
