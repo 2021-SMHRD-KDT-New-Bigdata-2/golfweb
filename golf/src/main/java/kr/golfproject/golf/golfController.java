@@ -39,23 +39,32 @@ public class golfController {
 	
 	// 로그인시 아이디 입력버튼 클릭
 	@RequestMapping("/tbl_member_submit_ID.do")
-	public String tbl_member_submit_ID(String id, HttpSession session) {
+	public String tbl_member_submit_ID(String m_id, HttpSession session) {
 		// 아이디 인증 mapper 연동
-		String check_id = mapper.tbl_member_submit_ID(id);
+		String check_id = mapper.member_submit_ID(m_id);
 		
 		// 아이디 체크 여부에 따라서 세션(HttpSession)을 만들기
 		if(check_id!=null) {
 			session.setAttribute("check_id", check_id);	
+			return "login";
+		} else {
+			return "error";
 		}
-		
-		return "login";
 	}
 	
 	// 로그인 버튼 클릭
 	@RequestMapping("/tbl_member_Login.do")
-	public String tbl_member_Login(String id, String pwd) {
-		
-		return "redirect:/";
+	public String Login(tbl_member vo_forLogin, HttpSession session) {
+		// 아이디, 비번 mapper 연동
+		tbl_member vo = mapper.Login(vo_forLogin);
+		if(vo!=null) {
+			session.setAttribute("member_info", vo);
+			session.setAttribute("login_state", "Y");
+			return "login";
+		} else {
+			return "error";
+		}
+		//return "redirect:/";
 	}
 	
 	// 회원 가입 페이지 접속 : http://localhost:13131/golf/join.html

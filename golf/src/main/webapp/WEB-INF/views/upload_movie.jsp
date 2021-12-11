@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="kr.golfproject.domain.tbl_member"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 
@@ -72,14 +73,7 @@
 					</form>
 
 					<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
-					<ul class="nav-profile logout_state" id ="logout_state">
-						<!-- <a href = "login.html">
-							<button class = "btn btn-primary nav_bar login">로그인</button>
-						</a>
-						<a href = "join.html">
-							<button class = "btn btn-primary nav_bar join">회원가입</button>
-						</a> -->
-
+					<ul class="nav-profile logout_state active" id ="logout_state">
 						<div class="form-group upright" style="width: 130px;">
 							<a href="login.html" class="navbar-link login">로그인</a>
 							<a href="join.html" class="navbar-link join">회원가입</a>
@@ -88,77 +82,19 @@
 
 					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
 					<ul class="nav-profile login_state" id ="login_state">
-						<li class="notifications new">
-							<a href="" data-toggle="dropdown" aria-expanded="false">
-								<i class="fa fa-bell-o"></i>
-								<sup>
-									<span class="counter">3</span>
-								</sup>
-							</a>
-							<div class="dropdown-menu notifications-dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
-								<ul class="notifications-container">
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Zack Alien</span> pushed new commit:
-													<span class="accent">Fix page load performance issue</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Amaya Hatsumi</span> started new task:
-													<span class="accent">Dashboard UI design.</span>. </p>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="" class="notification-item">
-											<div class="img-col">
-												<div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
-											</div>
-											<div class="body-col">
-												<p>
-													<span class="accent">Andy Nouman</span> deployed new version of
-													<span class="accent">NodeJS REST Api V3</span>
-												</p>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<footer>
-									<ul>
-										<li>
-											<a href=""> View All </a>
-										</li>
-									</ul>
-								</footer>
-							</div>
-						</li>
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40')"> </div>
-								<span class="name"> John Doe </span>
+								<div class="img profile" style="margin-right: 5px;"> </div>
+								<span class="name" id="profile-name"> Name </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-user icon"></i> Profile </a>
+									<i class="fa fa-user icon"></i> 프로필 </a>
 								<a class="dropdown-item" href="#">
-									<i class="fa fa-bell icon"></i> Notifications </a>
-								<a class="dropdown-item" href="#">
-									<i class="fa fa-gear icon"></i> Settings </a>
+									<i class="fa fa-gear icon"></i> 설정 </a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" onclick="logout()">
-									<i class="fa fa-power-off icon"></i> Logout </a>
+									<i class="fa fa-power-off icon"></i> 로그아웃 </a>
 							</div>
 						</li>
 					</ul>
@@ -316,11 +252,80 @@
 		ga('create', 'UA-80463319-4', 'auto');
 		ga('send', 'pageview');
 	</script>
-
+	
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
+	<script>
+	$(function() {
+		var check_login_state = null;
+		var ls = "<%=session.getAttribute("login_state")%>";
+	 	if(ls != null){
+			check_login_state = ls;
+		} else {
+			check_login_state = "N";
+		}; 
+		
+		if(check_login_state=="Y"){
+	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+	        $("#login_state").addClass("active");
+	        $("#logout_state").removeClass("active");
+	    }else{
+	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+	        $("#logout_state").addClass("active");
+	        $("#login_state").removeClass("active");
+      	};
+	});
+	</script>
+	
+	<script>
+	function maintain_login(){
+		var check_login_state = null;
+		var ls = "<%=session.getAttribute("login_state")%>";
+	 	if(ls != null){
+			check_login_state = ls;
+		} else {
+			check_login_state = "N";
+		}; 
+		
+		if(check_login_state=="Y"){
+	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+	        $("#login_state").addClass("active");
+	        $("#logout_state").removeClass("active");
+	    }else{
+	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+	        $("#logout_state").addClass("active");
+	        $("#login_state").removeClass("active");
+      	};
+	};
+	</script>
+	
+	<script>
+		// 로그인 후 페이지에 생길 변화
+		$(function() {
+			var name = "Name";
+			if ($("#login_state").hasClass("active")){
+				<%tbl_member vo=(tbl_member)session.getAttribute("member_info");%>
+				name = "<%=vo.getM_name()%>";
+			}
+			document.getElementById('profile-name').innerHTML = name;
+		});
+	</script>
+	
+	<script>
+	// 로그아웃
+	function logout(){
+	    // 세션 삭제
+	    <%//session.invalidate();%>
+		<%//session.setAttribute("login_state",null);%>
+		
+		// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+      	$("#logout_state").addClass("active");
+    	$("#login_state").removeClass("active");
+	};
+	</script>
+	
 </body>
 </html>

@@ -2827,7 +2827,9 @@ a.sidebar-link:hover {
 .header .header-block-nav .profile .name {
   display: inline-block;
   margin-right: 9px;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #fff;
+   }
   @media (max-width: 767px) {
     .header .header-block-nav .profile .name {
       display: none; } }
@@ -2852,7 +2854,7 @@ a.sidebar-link:hover {
   .header .header-block-nav .profile-dropdown-menu a {
     padding: 10px 15px; }
     .header .header-block-nav .profile-dropdown-menu a .icon {
-      color: #85CE36;
+      color: #44bd32;
       text-align: center;
       width: 16px; }
     .header .header-block-nav .profile-dropdown-menu a span {
@@ -2874,15 +2876,26 @@ a.sidebar-link:hover {
       margin-top: 8px; } }
 
 ul.nav-profile.login_state {
-  display: none;
+    display: none;
+    color: black;
+    position: relative;
+    float: right;
+}
+
+ul.nav-profile.login_state.active {
+  display: table;
 }
 
 ul.nav-profile.logout_state {
   position: relative;
-  display: table;
+  display: none;
   float: right;
   right: 3%;
   margin-top: 1%;
+}
+
+ul.nav-profile.logout_state.active {
+  display: table;
 }
 
 button.btn.btn-primary.nav_bar {
@@ -3770,7 +3783,7 @@ form.navbar-form.navbar-right {
   position: absolute;
   display: inline-block;
   top: 35%;
-  right: 190px;
+  right: 240px;
 }
 
 button.btn.btn-primary.nav_bar.search-btn {
@@ -3963,15 +3976,15 @@ a.upper-link:hover {
 }
 
 .upper-tool.first-tool {
-   right: 960px;
+   right: 990px;
 }
 
 .upper-tool.second-tool {
-   right: 740px;
+   right: 770px;
 }
 
 .upper-tool.third-tool {
-   right: 520px;
+   right: 550px;
 }
 
 .upper-tool:hover {
@@ -3998,4 +4011,8 @@ a.upper-link:hover {
     position: absolute;
     top: 12.5%;
     left: 0;
+}
+
+.img.profile {
+    background-image: url(http://localhost:13131/golf/resources/static/images/프로필그림.jpg);
 }

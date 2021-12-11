@@ -7,13 +7,13 @@
     </insert>
     
     <!-- 로그인 전 아이디 판별 -->
-    <select id = "tbl_member_submit_ID" resultType= "kr.golfproject.domain.tbl_member" parameterType="kr.golfproject.domain.tbl_member" >
+    <select id = "member_submit_ID" resultType= "String" parameterType="String" >
         select m_name from tbl_member where m_id = #{m_id}
     </select>
     
     <!-- 로그인 -->
-    <select id = "tbl_member_Login" resultType="kr.golfproject.domain.tbl_member" parameterType="kr.golfproject.domain.tbl_member">
-        select * from tbl_member where m_id = #{m_id} and m_pwd = #{m_pwd} 
+    <select id = "Login" resultType="kr.golfproject.domain.tbl_member" parameterType="kr.golfproject.domain.tbl_member">
+        select * from tbl_member where m_id = #{m_id} and m_pwd = #{m_pwd}
     </select>
     
 </mapper>

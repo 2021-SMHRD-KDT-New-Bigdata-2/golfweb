@@ -58,7 +58,7 @@
     
                             <!-- 하단 버튼 -->
                             <div class="form-group">
-                                <button id = "submit_id" type="button" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_goto_pwd()">다음</button>
+                                <button id = "submit_id" type="submit" class="btn btn-block btn-primary" style="font-size: 18px; width: 100px; height:45px; float: right;" onclick="login_goto_pwd()">다음</button>
                                 <p class="text-muted text-center">
                                     <a href="join.html" class="create_id" tabindex="-1">계정만들기</a>
                                 </p>
@@ -145,7 +145,8 @@
         		        $("#logintext").text(id);
         		        
         		        $('#submit_id').attr("type", "button");
-        		
+        		        $('#submit_pwd').attr("type", "submit");
+        		        
         		        // 탭순서 변경
         		        document.getElementById('username').tabIndex = "-1";
         		        document.getElementById('submit_id').tabIndex = "-1";
@@ -165,8 +166,7 @@
 									 "color" : "#FF4444",
 								});
 							}
-			
-			
+
 			});	
 		};
 		
@@ -177,22 +177,29 @@
 	function login_btn(){
 		var id = $("#username").val();
 	    var pwd = $("#password").val();
-	    if (!(id && pwd)){
-	        $('#hidden-text-pwd').css({
-	            "color" : "#FF4444",
-	        })
-	        $('#password').css({
-	            "border" : "1px solid #FF4444",
-	        })
-	    }
 	    
 	    $.ajax({
         	url : "${cpath}/tbl_member_Login.do",
         	type : "post",
         	data : {"m_id":id, "m_pwd":pwd},
         	//data : frmData,
-        	success : function(){alert('로그인에 성공했습니다!'); location.href = "index.html";},
-        	error : function(){alert("error"); }  
+        	success : function(){
+       						alert('로그인에 성공했습니다!'); 
+       						location.href = "index.html";
+        	},
+        	error : function(){
+        		if (!(id && pwd)){
+        			alert("비밀번호를 입력해주세요.")
+        	        $('#hidden-text-pwd').css({
+        	            "color" : "#FF4444",
+        	        });
+        	        $('#password').css({
+        	            "border" : "1px solid #FF4444",
+        	        });
+        	    }else{
+        	    	alert("틀린 비밀번호입니다.")
+        	    };
+        	}  
     	});
 	};
 	</script>

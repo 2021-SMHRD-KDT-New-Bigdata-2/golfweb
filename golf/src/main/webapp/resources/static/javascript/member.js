@@ -1,23 +1,3 @@
-// 메인페이지에서의 로그인 상태
-function login(){
-    $("#logout_state").css({
-        "display": "none"
-    })
-    $("#login_state").css({
-        "display": "table"
-    })
-}
-
-// 메인페이지에서의 로그아웃 상태
-function logout(){
-    $("#logout_state").css({
-        "display": "table"
-    })
-    $("#login_state").css({
-        "display": "none"
-    })
-}
-
 // 로그인창의 input에 마우스 클릭시 액션
 // ID_box
 $(function() {

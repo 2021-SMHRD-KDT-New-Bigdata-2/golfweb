@@ -62,7 +62,7 @@
 					</form>
 
 					<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
-					<ul class="nav-profile logout_state" id ="logout_state">
+					<ul class="nav-profile logout_state active" id ="logout_state">
 						<!-- <a href = "login.html">
 							<button class = "btn btn-primary nav_bar login">로그인</button>
 						</a>
@@ -435,5 +435,26 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
     <script src="${pageContext.request.contextPath}/resources/static/javascript/list_analysis.js"></script>
+    <script>
+	$(function() {
+		var check_login_state = null;
+		var ls = "<%=session.getAttribute("login_state")%>";
+	 	if(ls != null){
+			check_login_state = ls;
+		} else {
+			check_login_state = "N";
+		}; 
+
+		if(check_login_state=="Y"){
+	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+	        $("#login_state").addClass("active");
+	        $("#logout_state").removeClass("active");
+	    }else{
+	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+	        $("#logout_state").addClass("active");
+	        $("#login_state").removeClass("active");
+      	};
+	});
+	</script>
 </body>
 </html>

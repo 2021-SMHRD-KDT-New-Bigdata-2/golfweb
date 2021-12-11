@@ -242,7 +242,7 @@
 	function submit_join(){ 
 		var lastname = $("#lastname").val();
 		var firstname = $("#firstname").val();
-		var name = lastname + " " + firstname;
+		var name = lastname + firstname;
 		var id = "";
 		if ($("#user_id_group").hasClass("active")){
 			id = $("#user_id").val();
