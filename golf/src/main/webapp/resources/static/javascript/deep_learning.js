@@ -609,17 +609,17 @@ $('.recommend-text').click(function() {
 });
 
 // 자세교정지점에 마우스를 대면 해당 설명에 하이라이트 부여
-// 머리
+//머리
 $('#point_link_head').hover(function() {
 	$("#recommend-title-head").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#head-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.head").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-head").css({
@@ -637,14 +637,14 @@ $('#point_link_head').hover(function() {
 // 어꺠
 $('#point_link_shoulder').hover(function() {
 	$("#recommend-title-shoulder").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#shoulder-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.shoulder").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-shoulder").css({
@@ -662,14 +662,14 @@ $('#point_link_shoulder').hover(function() {
 // 팔
 $('#point_link_arm').hover(function() {
 	$("#recommend-title-arm").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#arm-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.arm").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-arm").css({
@@ -687,14 +687,14 @@ $('#point_link_arm').hover(function() {
 // 허리
 $('#point_link_waist').hover(function() {
 	$("#recommend-title-waist").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#waist-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.waist").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-waist").css({
@@ -712,14 +712,14 @@ $('#point_link_waist').hover(function() {
 // 골반
 $('#point_link_pelvis').hover(function() {
 	$("#recommend-title-pelvis").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#pelvis-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.pelvis").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-pelvis").css({
@@ -737,14 +737,14 @@ $('#point_link_pelvis').hover(function() {
 // 무릎
 $('#point_link_knee').hover(function() {
 	$("#recommend-title-knee").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#knee-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.knee").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-knee").css({
@@ -762,14 +762,14 @@ $('#point_link_knee').hover(function() {
 // 발
 $('#point_link_foot').hover(function() {
 	$("#recommend-title-foot").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#foot-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.foot").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-foot").css({
@@ -787,14 +787,14 @@ $('#point_link_foot').hover(function() {
 // 무게중심
 $('#point_link_cg').hover(function() {
 	$("#recommend-title-cg").css({
-		"color": "#00B0FF",
-		"border-bottom":"1px solid #00B0FF",
+		"color": "blue",
+		"border-bottom":"1px solid blue",
 	});
 	$("#cg-text").css({
-		"color": "#00B0FF",
+		"color": "blue",
 	});
 	$(".swing_recommend.cg").css({
-		"border-bottom":"1px solid #00B0FF",
+		"border-bottom":"1px solid blue",
 	});
 }, function(){
 	$("#recommend-title-cg").css({
