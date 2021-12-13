@@ -27,7 +27,7 @@
 		
 		<!-- 멀티파트 추가부분 -->
 		<multipart-config>
-		    <location>C:\Users\smhrd\git\golfweb\golf\src\main\webapp\resources\static\moive</location>
+		    <location>C:\</location>
 		    <max-file-size>20971520</max-file-size>
 		    <max-request-size>41943040</max-request-size>
 		    <file-size-threshold>20971520</file-size-threshold>

@@ -121,7 +121,7 @@ public class golfController {
 		return "video_compared";
 	}
 	@PostMapping("/uploadAjaxAction")
-	public void uploadAjax(MultipartFile[] uploadfile) {
+	public String uploadAjax(MultipartFile[] uploadfile) {
 		System.out.println("업로드중!!");
 		//업로드 실제 경로
 		String uploadfolder = "C:\\Users\\smhrd\\git\\golfweb\\golf\\src\\main\\webapp\\resources\\static\\movie";
@@ -137,6 +137,7 @@ public class golfController {
 				e.printStackTrace();
 			}
 		}
+		return "redirect:/upload_movie";
 	}
 		
 }

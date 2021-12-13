@@ -280,6 +280,9 @@
 	            success: function(result){
 	                alert("uploaded");
 	            }
+	            error: function(){
+	            	alert("실패 시발!")
+	            }
 	        });
 	    })
 	})
