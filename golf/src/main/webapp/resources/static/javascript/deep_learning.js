@@ -59,63 +59,316 @@ $('#picture_link1').click(function() {
 	if($(this).hasClass("column1")){
 		var test = document.getElementById("columnimage1"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link1").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		
+		// 자세교정 지점들 표시하기
+		//$("#point_link").addClass("activated");
+		
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '100px',
+				top : '200px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '200px',
+				top : '100px',
+	        });
+			$('#point_link_arm').animate({
+				left: '400px',
+				top : '500px',
+	        });
+			$('#point_link_waist').animate({
+				left: '300px',
+				top : '600px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '600px',
+				top : '700px',
+	        });
+			$('#point_link_knee').animate({
+				left: '150px',
+				top : '750px',
+	        });
+			$('#point_link_foot').animate({
+				left: '600px',
+				top : '100px',
+	        });
+			$('#point_link_cg').animate({
+				left: '750px',
+				top : '350px',
+	        });
+			},200);
+		
 	};
 });
 $('#picture_link2').click(function() {
 	if($(this).hasClass("column2")){
 		var test = document.getElementById("columnimage2"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link2").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '750px',
+				top : '350px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '100px',
+				top : '200px',
+	        });
+			$('#point_link_arm').animate({
+				left: '400px',
+				top : '500px',
+	        });
+			$('#point_link_waist').animate({
+				left: '110px',
+				top : '870px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '440px',
+				top : '550px',
+	        });
+			$('#point_link_knee').animate({
+				left: '330px',
+				top : '220px',
+	        });
+			$('#point_link_foot').animate({
+				left: '400px',
+				top : '200px',
+	        });
+			$('#point_link_cg').animate({
+				left: '200px',
+				top : '100px',
+	        });
+			},200);
 	};
 });
 $('#picture_link3').click(function() {
 	if($(this).hasClass("column3")){
 		var test = document.getElementById("columnimage3"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link3").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '110px',
+				top : '120px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '220px',
+				top : '330px',
+	        });
+			$('#point_link_arm').animate({
+				left: '440px',
+				top : '550px',
+	        });
+			$('#point_link_waist').animate({
+				left: '110px',
+				top : '110px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '220px',
+				top : '220px',
+	        });
+			$('#point_link_knee').animate({
+				left: '220px',
+				top : '550px',
+	        });
+			$('#point_link_foot').animate({
+				left: '400px',
+				top : '200px',
+	        });
+			$('#point_link_cg').animate({
+				left: '600px',
+				top : '100px',
+	        });
+			},200);
 	};
 });
 $('#picture_link4').click(function() {
 	if($(this).hasClass("column4")){
 		var test = document.getElementById("columnimage4"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link4").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '110px',
+				top : '220px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '330px',
+				top : '300px',
+	        });
+			$('#point_link_arm').animate({
+				left: '600px',
+				top : '500px',
+	        });
+			$('#point_link_waist').animate({
+				left: '410px',
+				top : '570px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '440px',
+				top : '250px',
+	        });
+			$('#point_link_knee').animate({
+				left: '130px',
+				top : '620px',
+	        });
+			$('#point_link_foot').animate({
+				left: '300px',
+				top : '400px',
+	        });
+			$('#point_link_cg').animate({
+				left: '700px',
+				top : '500px',
+	        });
+			},200);
 	};
 });
 $('#picture_link5').click(function() {
 	if($(this).hasClass("column5")){
 		var test = document.getElementById("columnimage5"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link5").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '110px',
+				top : '330px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '140px',
+				top : '470px',
+	        });
+			$('#point_link_arm').animate({
+				left: '300px',
+				top : '700px',
+	        });
+			$('#point_link_waist').animate({
+				left: '210px',
+				top : '370px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '140px',
+				top : '750px',
+	        });
+			$('#point_link_knee').animate({
+				left: '230px',
+				top : '420px',
+	        });
+			$('#point_link_foot').animate({
+				left: '700px',
+				top : '700px',
+	        });
+			$('#point_link_cg').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			},200);
 	};
 });
 $('#picture_link6').click(function() {
 	if($(this).hasClass("column6")){
 		var test = document.getElementById("columnimage6"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link6").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_arm').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_waist').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_knee').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_foot').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			$('#point_link_cg').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			},200);
 	};
 });
 $('#picture_link7').click(function() {
 	if($(this).hasClass("column7")){
 		var test = document.getElementById("columnimage7"); 
 		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+		$("#picture_link7").addClass("selected");
 		$(".picture_selected").css({
 			"background-image": style,
 		});
+		setTimeout(function(){
+			$('#point_link_head').animate({
+				left: '750px',
+				top : '750px',
+	        });
+			$('#point_link_shoulder').animate({
+				left: '600px',
+				top : '600px',
+	        });
+			$('#point_link_arm').animate({
+				left: '500px',
+				top : '500px',
+	        });
+			$('#point_link_waist').animate({
+				left: '410px',
+				top : '570px',
+	        });
+			$('#point_link_pelvis').animate({
+				left: '440px',
+				top : '450px',
+	        });
+			$('#point_link_knee').animate({
+				left: '330px',
+				top : '320px',
+	        });
+			$('#point_link_foot').animate({
+				left: '200px',
+				top : '200px',
+	        });
+			$('#point_link_cg').animate({
+				left: '300px',
+				top : '300px',
+	        });
+			},200);
 	};
 });
 
@@ -354,3 +607,205 @@ $('.recommend-text').click(function() {
 		}; 
 	};
 });
+
+// 자세교정지점에 마우스를 대면 해당 설명에 하이라이트 부여
+// 머리
+$('#point_link_head').hover(function() {
+	$("#recommend-title-head").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#head-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.head").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-head").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#head-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.head").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 어꺠
+$('#point_link_shoulder').hover(function() {
+	$("#recommend-title-shoulder").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#shoulder-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.shoulder").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-shoulder").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#shoulder-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.shoulder").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 팔
+$('#point_link_arm').hover(function() {
+	$("#recommend-title-arm").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#arm-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.arm").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-arm").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#arm-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.arm").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 허리
+$('#point_link_waist').hover(function() {
+	$("#recommend-title-waist").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#waist-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.waist").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-waist").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#waist-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.waist").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 골반
+$('#point_link_pelvis').hover(function() {
+	$("#recommend-title-pelvis").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#pelvis-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.pelvis").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-pelvis").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#pelvis-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.pelvis").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 무릎
+$('#point_link_knee').hover(function() {
+	$("#recommend-title-knee").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#knee-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.knee").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-knee").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#knee-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.knee").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 발
+$('#point_link_foot').hover(function() {
+	$("#recommend-title-foot").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#foot-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.foot").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-foot").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#foot-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.foot").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
+// 무게중심
+$('#point_link_cg').hover(function() {
+	$("#recommend-title-cg").css({
+		"color": "#00B0FF",
+		"border-bottom":"1px solid #00B0FF",
+	});
+	$("#cg-text").css({
+		"color": "#00B0FF",
+	});
+	$(".swing_recommend.cg").css({
+		"border-bottom":"1px solid #00B0FF",
+	});
+}, function(){
+	$("#recommend-title-cg").css({
+		"color": "#212529",
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+	$("#cg-text").css({
+		"color": "#212529",
+	});
+	$(".swing_recommend.cg").css({
+		"border-bottom":"1px solid rgba(0, 0, 0, 0.125)",
+	});
+});
+
