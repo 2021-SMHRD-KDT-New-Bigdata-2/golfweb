@@ -282,7 +282,7 @@
 			data: formData,
 			type: 'POST',
 			success: function(result){
-				alert("uploaded");
+				
 				
 				var upload_file = result
 				
@@ -299,7 +299,7 @@
 					success: function(){
 						alert("드디어 성공!")
 					},
-					error :function(){alert("두번쨰실패")}
+					
 
 				})
 			},
