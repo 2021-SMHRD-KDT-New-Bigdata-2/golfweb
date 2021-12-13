@@ -184,7 +184,8 @@
         	data : {"m_id":id, "m_pwd":pwd},
         	//data : frmData,
         	success : function(){
-       						location.href = "index.html";
+        			window.sessionStorage.setItem("login_state","Y");
+       				location.href = "index.html";
         	},
         	error : function(){
         		if (!(id && pwd)){

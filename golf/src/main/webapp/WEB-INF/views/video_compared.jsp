@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="kr.golfproject.domain.tbl_member"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>    
 <!doctype html>
@@ -513,26 +514,17 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
-	<script>
-	$(function() {
-		var check_login_state = null;
-		var ls = "<%=session.getAttribute("login_state")%>";
-	 	if(ls != null){
-			check_login_state = ls;
-		} else {
-			check_login_state = "N";
-		}; 
 
-		if(check_login_state=="Y"){
-	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
-	        $("#login_state").addClass("active");
-	        $("#logout_state").removeClass("active");
-	    }else{
-	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
-	        $("#logout_state").addClass("active");
-	        $("#login_state").removeClass("active");
-      	};
-	});
+	<script>
+	function logout(){
+		$.ajax({
+        	url : "${cpath}/tbl_member_Logout.do",
+        	success : function(){
+        		window.sessionStorage.setItem("login_state","N");
+        		location.href = "index.html";
+        	},
+    	});
+	}
 	</script>
 </body>
 </html>

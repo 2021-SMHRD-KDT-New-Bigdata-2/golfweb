@@ -29,8 +29,6 @@ import kr.golfproject.mapper.tbl_memberMapper;
 @Controller
 public class golfController {
 	
-
-	
 	// REST API 만들기=>method
 	
 	@Autowired
@@ -83,6 +81,13 @@ public class golfController {
 		}
 		//return "redirect:/";
 	}
+	
+	// 로그아웃 버튼 클릭
+		@RequestMapping("/tbl_member_Logout.do")
+		public String Logout(HttpSession session) {
+			session.invalidate();
+			return "redirect:/";
+		}
 	
 	// 회원 가입 페이지 접속 : http://localhost:13131/golf/join.html
 	@RequestMapping("/join")
