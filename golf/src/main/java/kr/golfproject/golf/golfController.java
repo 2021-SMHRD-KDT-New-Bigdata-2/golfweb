@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mysql.jdbc.log.Log;
@@ -121,14 +122,16 @@ public class golfController {
 		return "video_compared";
 	}
 	@PostMapping("/uploadAjaxAction")
-	public String uploadAjax(MultipartFile[] uploadfile) {
+	public @ResponseBody String uploadAjax(MultipartFile[] uploadfile, HttpSession session) {
 		System.out.println("업로드중!!");
 		//업로드 실제 경로
+		String filename=null;
 		String uploadfolder = "C:\\Users\\smhrd\\git\\golfweb\\golf\\src\\main\\webapp\\resources\\static\\movie";
 		for (MultipartFile mulitipartFile : uploadfile) {
 			System.out.println("업로드파일이름 : "+mulitipartFile.getOriginalFilename());
 			System.out.println("파일 크기 : "+mulitipartFile.getSize());
 			String upload_file = mulitipartFile.getOriginalFilename();
+			filename=upload_file;
 			upload_file=upload_file.substring(upload_file.lastIndexOf("\\")+1);
 			File savefile = new File(uploadfolder,upload_file);
 			try {
@@ -137,9 +140,22 @@ public class golfController {
 				e.printStackTrace();
 			}
 		}
-		return "redirect:/upload_movie";
+		filename= filename.replace(".", "_");
+		System.out.println("세션저장 이름"+filename);
+		session.setAttribute("filename", filename);
+		return filename;
 	}
-		
+	@RequestMapping("/uploadata")
+	public void uploadate(tbl_upload vo){
+		String uploadfolder = "C:\\Users\\smhrd\\git\\golfweb\\golf\\src\\main\\webapp\\resources\\static\\movie\\";
+		String upload_file= vo.getUpload_file();
+		System.out.println(upload_file);
+		upload_file=upload_file.replace("_", ".");
+		vo.setUpload_file(upload_file);
+		String upload_path = uploadfolder+upload_file;
+		vo.setUpload_path(upload_path);
+		mapper.uploaddata(vo);
+	}
 }
 
 

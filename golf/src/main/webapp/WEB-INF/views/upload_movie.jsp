@@ -189,16 +189,16 @@
 								<div class="card-header">
 									<div class="header-block" style="width: 60%;">						
 										<div class="title" style="font-size:20px;margin-top: 1%;"> 제목입력: </div>
-										<input class= "input_title" type="text" name="textfield" style="width:500px;height:30px;position: absolute;top: 2%;margin-left: 10px;" placeholder="날짜/아이언/드라이버 디폴트">
+										<input id="upload_title" class= "input_title" type="text" name="textfield" style="width:500px;height:30px;position: absolute;top: 2%;margin-left: 10px;" placeholder="날짜/아이언/드라이버 디폴트">
 									</div>
 									<table class="swing_type">
 										<div class="title" style="font-size:20px;margin-top: 0.5%;margin-left: 12%;"> 스윙타입: </div>
 										<tr>
 											<td class = "swing iron-swing" id="swing_type-iron" style="font-size: 15px;">
-												아이언
+												<input type="radio" class="club_type" value="I" name="club_type">아이언
 											</td>
 											<td class = "swing driver-swing" id="swing_type-driver" style="font-size: 15px;">
-												드라이버 
+												<input type="radio" class="club_type" value="D" name="club_type"> 드라이버 
 											</td>
 										</tr>
 									</table>
@@ -223,9 +223,9 @@
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
 									
-										<input type="button" class="btn btn-warning" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="전송" id="uploadClick">
+										<input type="button" class="btn btn-warning" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="전송" id="uploadClick" onclick="upload(${member_info.m_idx})">
 										<a href="video_compared.html">
-										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick">
+										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" >
 										</a>
 								</div>
 							</div>
@@ -235,6 +235,9 @@
 			</article>
 		</div>
 	</div>
+	<script>
+		
+	</script>
 
 	<!--사용할 자바스크립트, js파일 임포트하는 부분-->
 	<script>
@@ -261,32 +264,50 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
 	<script>
-	$(document).ready(function(){
-	    $("#uploadClick").on("click",function(e){
-	        var formData = new FormData();
-	        
-	        var inputFile =$("input[name='input_file']");
-	        var files=inputFile[0].files;
-	        console.log(files);
-	        for(var i =0;i<files.length;i++){
-	            formData.set("uploadfile",files[i]);
-	            console.log(formData);
-	        }
-	        $.ajax({
-	            url: '${cpath}/uploadAjaxAction',
-	            processData:false,
-	            contentType: false,
-	            data: formData,
-	            type: 'POST',
-	            success: function(result){
-	                alert("uploaded");
-	            }
-	            error: function(){
-	            	alert("실패 시발!")
-	            }
-	        });
-	    })
-	})
+	
+	function upload(index){
+		var formData = new FormData();
+		var m_idx = index;   
+		var inputFile =$("input[name='input_file']");
+		var files=inputFile[0].files;
+		console.log(files);
+		for(var i =0;i<files.length;i++){
+			formData.set("uploadfile",files[i]);
+			console.log(formData);
+		}
+		$.ajax({
+			url: '${cpath}/uploadAjaxAction',
+			processData:false,
+			contentType: false,
+			data: formData,
+			type: 'POST',
+			success: function(result){
+				alert("uploaded");
+				
+				var upload_file = result
+				
+				console.log(upload_file);
+				var upload_title = $("#upload_title").val();
+				console.log(upload_title);
+				
+				console.log(index)
+				var club_type = $(".club_type").val();
+				console.log(club_type);
+				$.ajax({
+					url:"${cpath}/uploadata",
+					data: {"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
+					success: function(){
+						alert("드디어 성공!")
+					},
+					error :function(){alert("두번쨰실패")}
+
+				})
+			},
+			error: function(){alert("실패 시발!");}
+		});
+
+	}
+	
 
 	</script>
 	<script>
