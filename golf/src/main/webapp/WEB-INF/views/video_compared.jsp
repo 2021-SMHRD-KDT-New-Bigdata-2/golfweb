@@ -259,6 +259,30 @@
 														<h3 class="title"> 자세교정위치표시 </h3>
 													</div>
 													<div class = "image_box">
+														<a class="point_link uptomiddle" id = "point_link_head">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link uptomiddle" id = "point_link_shoulder">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link uptomiddle" id = "point_link_arm">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link uptomiddle" id = "point_link_waist">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link downtomiddle" id = "point_link_pelvis">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link downtomiddle" id = "point_link_knee">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link downtomiddle" id = "point_link_foot">
+															<div class="point_img"></div>
+														</a>
+														<a class="point_link downtomiddle" id = "point_link_cg">
+															<div class="point_img"></div>
+														</a>
 														<div class="sizer">
 															<p class = "picture_selected"></p>
 														</div>
@@ -275,35 +299,35 @@
 													<div class="detail_scripts">
 														<div class="detail_script_box">
 															<div class="swing_recommend head">
-																<div class="recommend-title">머리동작</div>
+																<div class="recommend-title" id = "recommend-title-head">머리동작</div>
 																<div class="recommend-text head-text" id="head-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend shoulder">
-																<div class="recommend-title">어깨동작</div>
+																<div class="recommend-title" id = "recommend-title-shoulder">어깨동작</div>
 																<div class="recommend-text shoulder-text" id="shoulder-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend arm">
-																<div class="recommend-title">팔동작</div>
+																<div class="recommend-title" id = "recommend-title-arm">팔동작</div>
 																<div class="recommend-text arm-text" id="arm-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend waist">
-																<div class="recommend-title">허리동작</div>
+																<div class="recommend-title" id = "recommend-title-waist">허리동작</div>
 																<div class="recommend-text waist-text" id="waist-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend pelvis">
-																<div class="recommend-title">골반동작</div>
+																<div class="recommend-title" id = "recommend-title-pelvis">골반동작</div>
 																<div class="recommend-text pelvis-text" id="pelvis-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend knee">
-																<div class="recommend-title">무릎동작</div>
+																<div class="recommend-title" id = "recommend-title-knee">무릎동작</div>
 																<div class="recommend-text knee-text" id="knee-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend foot">
-																<div class="recommend-title">발동작</div>
+																<div class="recommend-title" id = "recommend-title-foot">발동작</div>
 																<div class="recommend-text foot-text" id="foot-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 															<div class="swing_recommend cg">
-																<div class="recommend-title">무게중심</div>
+																<div class="recommend-title" id = "recommend-title-cg">무게중심</div>
 																<div class="recommend-text cg-text" id="cg-text">머가머가어쩌구저꺼구...길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
 															</div>
 														</div>

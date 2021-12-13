@@ -4104,7 +4104,7 @@ a.picture_link {
 }
 
 p.picture_selected {
-	background-image: url(http://localhost:13131/golf/resources/static/images/로오고.jpg);
+	/*background-image: url(http://localhost:13131/golf/resources/static/images/로오고.jpg);*/
 	width: 800px;
     height: 800px;
     background-size: 100% 100%;
@@ -4154,4 +4154,40 @@ p.picture_selected {
     height: 800px;
     overflow: scroll;
 }
+
+.image_box {
+    overflow: hidden;
+}
+
+.point_img {
+    background-image: url(http://localhost:13131/golf/resources/static/images/lockon.png);
+    width: 120px;
+    height: 120px;
+    background-position: 55% 50%;
+    background-size: 100% 100%;
+}
+
+a.point_link {
+    display: inline-block;
+    position: absolute;
+    transition-timing-function: linear;
+    transition-delay: 0.3s ease;
+    transition-property: font-size;
+    transition: all ease 2s 0s;
+}
+
+a.point_link.uptomiddle {
+    left: -200px;
+    top : 100px;
+}
+
+a.point_link.downtomiddle {
+    left: -200px;
+    top : 700px;
+}
+
+/*a.point_link.activated {
+    left: 100px;
+    top : 200px;
+}*/
 	
