@@ -184,7 +184,6 @@
         	data : {"m_id":id, "m_pwd":pwd},
         	//data : frmData,
         	success : function(){
-       						alert('로그인에 성공했습니다!'); 
        						location.href = "index.html";
         	},
         	error : function(){
