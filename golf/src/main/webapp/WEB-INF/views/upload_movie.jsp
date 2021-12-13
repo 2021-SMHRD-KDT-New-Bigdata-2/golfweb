@@ -264,6 +264,7 @@
 	$(document).ready(function(){
 	    $("#uploadClick").on("click",function(e){
 	        var formData = new FormData();
+	        
 	        var inputFile =$("input[name='input_file']");
 	        var files=inputFile[0].files;
 	        console.log(files);
