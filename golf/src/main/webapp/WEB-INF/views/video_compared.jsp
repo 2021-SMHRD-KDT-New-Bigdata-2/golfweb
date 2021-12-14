@@ -292,35 +292,35 @@
 														<div class="detail_script_box">
 															<div class="swing_recommend head">
 																<div class="recommend-title" id = "recommend-title-head">머리동작</div>
-																<div class="recommend-text head-text" id="head-text"></div>
+																<div class="recommend-text head-text" id="head-text">${head_action}</div>
 															</div>
 															<div class="swing_recommend shoulder">
 																<div class="recommend-title" id = "recommend-title-shoulder">어깨동작</div>
-																<div class="recommend-text shoulder-text" id="shoulder-text"></div>
+																<div class="recommend-text shoulder-text" id="shoulder-text">${shoulder_action}</div>
 															</div>
 															<div class="swing_recommend arm">
 																<div class="recommend-title" id = "recommend-title-arm">팔동작</div>
-																<div class="recommend-text arm-text" id="arm-text"></div>
+																<div class="recommend-text arm-text" id="arm-text">${arm_action}</div>
 															</div>
 															<div class="swing_recommend waist">
 																<div class="recommend-title" id = "recommend-title-waist">허리동작</div>
-																<div class="recommend-text waist-text" id="waist-text"></div>
+																<div class="recommend-text waist-text" id="waist-text">${waist_action}</div>
 															</div>
 															<div class="swing_recommend pelvis">
 																<div class="recommend-title" id = "recommend-title-pelvis">골반동작</div>
-																<div class="recommend-text pelvis-text" id="pelvis-text"></div>
+																<div class="recommend-text pelvis-text" id="pelvis-text">${core_action}</div>
 															</div>
 															<div class="swing_recommend knee">
 																<div class="recommend-title" id = "recommend-title-knee">무릎동작</div>
-																<div class="recommend-text knee-text" id="knee-text"></div>
+																<div class="recommend-text knee-text" id="knee-text">${knee_action}</div>
 															</div>
 															<div class="swing_recommend foot">
 																<div class="recommend-title" id = "recommend-title-foot">발동작</div>
-																<div class="recommend-text foot-text" id="foot-text"></div>
+																<div class="recommend-text foot-text" id="foot-text">${foot_action}</div>
 															</div>
 															<div class="swing_recommend cg">
 																<div class="recommend-title" id = "recommend-title-cg">무게중심</div>
-																<div class="recommend-text cg-text" id="cg-text"></div>
+																<div class="recommend-text cg-text" id="cg-text">${weight_center}</div>
 															</div>
 														</div>
 													</div>
@@ -529,18 +529,18 @@
 	<script>
 		$(function() {
 			//임시로 넣은 번호(차후 삭제)
-			var deep_seq = 1;
+			var deep_seq = 4;
 			
 			$.ajax({
 	        	url : "${cpath}/LoadSwing.do",
 	        	type : "post",
-	        	data : {"deep_seq":${deep_seq}},
+	        	data : {"deep_seq":deep_seq},
 	        	//data : frmData,
 	        	success : function(){},
 	        	error : function(){},
 	    	});
 			
-			document.getElementById('head-text').innerText = "${head_action}";
+			//document.getElementById('head-text').innerText = "${head_action}";
 			
 		});
 	</script>

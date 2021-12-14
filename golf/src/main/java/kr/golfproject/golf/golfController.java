@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +31,7 @@ import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 import kr.golfproject.mapper.tbl_memberMapper;
 
-
+@EnableAsync
 @Controller
 public class golfController {
 	
@@ -187,8 +189,9 @@ public class golfController {
 		return "video_compared";
 	};
 	
-	@RequestMapping("/LoadDeeplearning")
-	public void LoadDeeplearning(int deep_seq, HttpSession session) {
+	@Async
+	@RequestMapping("/LoadSwing")
+	public void LoadSwing(int deep_seq, HttpSession session) {
 		tbl_swing vo = mapper.loadswing(deep_seq);	
 		if(vo!=null) {
 			session.setAttribute("recent_upload_info", vo);
