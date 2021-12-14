@@ -122,12 +122,13 @@ delete from tbl_upload;
 select * from tbl_upload where m_idx = 34 order by upload_seq desc LIMIT 1;
 
 INSERT into tbl_deeplearning(upload_seq, deep_target, address, backswing, top, downswing, acceleration, impact, followthrough, finish, m_id) 
-values(124, "???", "어드레스", "백스윙", "탑", "다운스윙", "가속", "임팩트","팔로우스루","피니쉬","salja")
+values(124, "???", "_10.jpg", "백스윙", "_30.jpg", "_50.jpg", "가속", "_70.jpg","_90.jpg","피니쉬","salja")
 
 select * from tbl_deeplearning;
 delete from tbl_deeplearning;
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center) 
-values(4, "아이언", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "ㄴㄹㅇㅇㄴㅁㄴㅁㅇㄴㄹㄴㅇㄻ", "ㅊㅁㄴㅊㅁㄴㅊㄴㅁㅊㅁㄴㅊㅁㅊ", "ㄴㅇㄹㄴㅇㅍㄴㅇㅍㄴㅇㅍㄴㅇ","ㅍㄴㅇㅇㅍㅇㄴㅍㄴㅇㅍ","피니쉬","피니쉬")
+values(6, "아이언", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "ㄴㄹㅇㅇㄴㅁㄴㅁㅇㄴㄹㄴㅇㄻ", "ㅊㅁㄴㅊㅁㄴㅊㄴㅁㅊㅁㄴㅊㅁㅊ", "ㄴㅇㄹㄴㅇㅍㄴㅇㅍㄴㅇㅍㄴㅇ","ㅍㄴㅇㅇㅍㅇㄴㅍㄴㅇㅍ","피니쉬","피니쉬")
 
 select * from tbl_swing;
+delete from tbl_swing;

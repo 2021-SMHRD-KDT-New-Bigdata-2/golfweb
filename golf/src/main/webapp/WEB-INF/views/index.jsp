@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="kr.golfproject.domain.tbl_member"%> 
+<%@ page import="kr.golfproject.domain.tbl_upload"%> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -139,41 +143,39 @@
 	<div class="main-wrapper">
 
 			<!-- 헤더 -->
-			<header class="header">
+			<header class = "header">
 				<!-- 상단툴바 -->
-				<div class="upper-toolbar">
-					<div class="upper-tool first-tool">
-						<a class="upper-link" href="upload_movie.html">
-							<div class="upper-link-text">자세교정받기</div>
+				<div class = "upper-toolbar">
+					<div class= "upper-tool first-tool">
+						<a class = "upper-link" href = "upload_movie.html">
+							<div class = "upper-link-text">자세교정받기</div>
 						</a>
 					</div>
-					<div class="upper-tool second-tool">
-						<a class="upper-link" href="test_list.html">
-							<div class="upper-link-text">나의 교정 목록</div>
+					<div class= "upper-tool second-tool">
+						<a class = "upper-link" href = "test_list.html">
+							<div class = "upper-link-text">나의 교정 목록</div>
 						</a>
 					</div>
-					<div class="upper-tool third-tool">
-						<a class="upper-link" href="video_compared.html">
-							<div class="upper-link-text">골프 정보</div>
+					<div class= "upper-tool third-tool">
+						<a class = "upper-link" href = "video_compared.html">
+							<div class = "upper-link-text">골프 정보</div>
 						</a>
 					</div>
 				</div>
 				<!--로그인/회원가입/회원정보가 들어갈 박스-->
 				<div class="header-block header-block-nav">
 					<!-- 검색창(장식용) -->
-					<form class="navbar-form navbar-right" role="search"
-						style="top: 25%;">
+					<form class="navbar-form navbar-right" role="search" style="top: 25%;">
 						<div class="search-bar">
-							<input type="text" class="form-control mainpage"
-								placeholder="Search">
+							<input type="text" class="form-control mainpage" placeholder="Search">
 						</div>
 						<div class="search-button">
-							<button type="button" class="btn btn-primary nav_bar search-btn">검색</button>
+							<button type="submit" class="btn btn-primary nav_bar search-btn">검색</button>
 						</div>
 					</form>
 
 					<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
-					<ul class="nav-profile logout_state" id="logout_state">
+					<ul class="nav-profile logout_state active" id ="logout_state">
 						<!-- <a href = "login.html">
 							<button class = "btn btn-primary nav_bar login">로그인</button>
 						</a>
@@ -182,11 +184,29 @@
 						</a> -->
 
 						<div class="form-group upright" style="width: 130px;">
-							<a href="login.html" class="navbar-link login">로그인</a> <a
-								href="join.html" class="navbar-link join">회원가입</a>
+							<a href="login.html" class="navbar-link login">로그인</a>
+							<a href="join.html" class="navbar-link join">회원가입</a>
 						</div>
 					</ul>
-				</div>
+
+					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
+					<ul class="nav-profile login_state" id ="login_state">
+						<li class="profile dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<div class="img profile" style="margin-right: 5px;"> </div>
+								<span class="name" id="profile-name" style="font-size: 16px;"> ${login_name} </span>
+							</a>
+							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
+								<a class="dropdown-item" href="#">
+									<i class="fa fa-user icon"></i> 프로필 </a>
+								<a class="dropdown-item" href="#">
+									<i class="fa fa-gear icon"></i> 설정 </a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#" onclick="logout()">
+									<i class="fa fa-power-off icon"></i> 로그아웃 </a>
+							</div>
+						</li>
+					</ul>
 			</header>
 
 			<!--로고와 사이트 이름 배치할 박스-->
@@ -379,7 +399,7 @@
 					<h3 class="text-white mt-0">골프본의 회원이 되어보세요!</h3>
 					<hr class="divider divider-light" />
 					<p class="text-white-75 mb-4"></p>
-					<a class="btn btn-light btn-xl" href="#services">회원가입 하러가기</a>
+					<a class="btn btn-light btn-xl" href="join.html">회원가입 하러가기</a>
 				</div>
 			</div>
 		</div>
@@ -398,18 +418,14 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-	<script
-		src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/static/javascript/mainpage.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
 
 	<script
 		src="${pageContext.request.contextPath}/resources/static/javascript/scripts.js"></script>
@@ -418,6 +434,17 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
+	<script>
+	function logout(){
+		$.ajax({
+        	url : "${cpath}/tbl_member_Logout.do",
+        	success : function(){
+        		window.sessionStorage.setItem("login_state","N");
+        		location.href = "index.html";
+        	},
+    	});
+	}
+	</script>
 
 	<!-- Bootstrap core JS-->
 	<script

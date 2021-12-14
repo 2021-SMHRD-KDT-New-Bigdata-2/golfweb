@@ -527,28 +527,66 @@
 	
 	<!-- 자세교정 텍스트 출력 -->
 	<script>
+	// 업로드페이지에서 섹션에 값 넣고 페이지 넘어가서 표시하는 식으로 바꾸자.굿아이디어
+	
+	
+	//임시로 넣은 번호(차후 삭제)
+	var deep_seq = 4;
+	
 	$('#picture_link1').click(function() {
+		$.ajax({
+        	url : "${cpath}/LoadSwing.do",
+        	type : "post",
+        	data : {"deep_seq":deep_seq},
+        	//data : frmData,
+        	success : function(){},
+        	error : function(){},
+    	});
 		
-			// 업로드페이지에서 섹션에 값 넣고 페이지 넘어가서 표시하는 식으로 바꾸자.굿아이디어
-		
-		
-			//임시로 넣은 번호(차후 삭제)
-			var deep_seq = 4;
-			
-			$.ajax({
-	        	url : "${cpath}/LoadSwing.do",
-	        	type : "post",
-	        	data : {"deep_seq":deep_seq},
-	        	//data : frmData,
-	        	success : function(){},
-	        	error : function(){},
-	    	});
-			
-			document.getElementById('head-text').innerText = "${head_action}";
-			
-		});
+		document.getElementById('head-text').innerText = "${head_action}";
+	});
 	</script>
 
+
+	<!-- 스윙하는 특정순간의 이미지 나열 -->
+	<script>
+		$(function() {
+			var directory_address = 'http://localhost:13131/golf/resources/static/images/result/';
+			var filename_address = "${address}";
+			var file_address = "url("+directory_address + filename_address+")";
+			$("#columnimage1").css({
+	            "background-image": file_address,
+	        });
+			
+			var directory_top = 'http://localhost:13131/golf/resources/static/images/result/';
+			var filename_top = "${top}";
+			var file_top = "url("+directory_top + filename_top+")";
+			$("#columnimage2").css({
+	            "background-image": file_top,
+	        });
+			
+			var directory_downswing = 'http://localhost:13131/golf/resources/static/images/result/';
+			var filename_downswing = "${downswing}";
+			var file_downswing = "url("+directory_downswing + filename_downswing+")";
+			$("#columnimage3").css({
+	            "background-image": file_downswing,
+	        });
+			
+			var directory_impact = 'http://localhost:13131/golf/resources/static/images/result/';
+			var filename_impact = "${impact}";
+			var file_impact = "url("+directory_impact + filename_impact+")";
+			$("#columnimage4").css({
+	            "background-image": file_impact,
+	        });
+			
+			var directory_followthrough = 'http://localhost:13131/golf/resources/static/images/result/';
+			var filename_followthrough = "${followthrough}";
+			var file_followthrough = "url("+directory_followthrough + filename_followthrough+")";
+			$("#columnimage5").css({
+	            "background-image": file_followthrough,
+	        });
+		});
+	</script>
 
 </body>
 </html>

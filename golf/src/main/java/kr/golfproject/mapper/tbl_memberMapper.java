@@ -18,4 +18,5 @@ public interface tbl_memberMapper {
 	public void uploaddata (tbl_upload vo);
 	public tbl_upload IRU(int m_idx);	// tbl_upload vo와 데이터 세션에 저장
 	public tbl_swing loadswing(int deep_seq);	// 해당 딥러닝결과의 스윙교정텍스트 출력
+	public tbl_deeplearning loaddeep(int upload_seq);	// 딥러닝결과 출력
 }

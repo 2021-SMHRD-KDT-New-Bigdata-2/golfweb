@@ -131,17 +131,36 @@ public class golfController {
 	@RequestMapping("/video_compared")
 	public String video_compared(HttpSession session, Model model) {
 		if (session.getAttribute("login_state")=="Y") {
+			// 최근 분석결과 띄우기
 			int m_idx = (int)session.getAttribute("login_idx");
-			tbl_upload vo = mapper.IRU(m_idx);	
+			tbl_upload vo_upload = mapper.IRU(m_idx);	
 			String upload_subject = "제목없음";
-			if(vo.getUpload_subject()!="") {
-				upload_subject = vo.getUpload_subject();
+			if(vo_upload.getUpload_subject()!="") {
+				upload_subject = vo_upload.getUpload_subject();
 			};
 			session.setAttribute("recent_upload_subject", upload_subject);
-			if(vo!=null) {
-				session.setAttribute("recent_upload_info", vo);
-				String file = vo.getUpload_file();
+			if(vo_upload!=null) {
+				session.setAttribute("recent_upload_info", vo_upload);
+				String file = vo_upload.getUpload_file();
 				session.setAttribute("recent_upload_file", file);
+			};
+			
+			int upload_seq = vo_upload.getUpload_seq();
+			
+			// 스윙순간의 이미지 데이터 출력
+			tbl_deeplearning vo_deep = mapper.loaddeep(upload_seq);
+			if (vo_deep != null) {
+				session.setAttribute("vo_deep", vo_deep);
+				String address = vo_deep.getAddress();
+				String top = vo_deep.getTop();
+				String downswing = vo_deep.getDownswing();
+				String impact = vo_deep.getImpact();
+				String followthrough = vo_deep.getFollowthrough();
+				session.setAttribute("address", address);
+				session.setAttribute("top", top);
+				session.setAttribute("downswing", downswing);
+				session.setAttribute("impact", impact);
+				session.setAttribute("followthrough", followthrough);
 			};
 		};
 		return "video_compared";
@@ -183,23 +202,41 @@ public class golfController {
 		return upload_path;
 	};
 	
+//	// 스윙순간의 이미지 데이터 출력
+//	@RequestMapping("/LoadDeep")
+//	public String LoadDeep(int upload_seq, HttpSession session, Model model) {
+//		tbl_upload vo = mapper.IRU(upload_seq);	
+//		String upload_subject = "제목없음";
+//		if(vo.getUpload_subject()!="") {
+//			upload_subject = vo.getUpload_subject();
+//		};
+//		session.setAttribute("recent_upload_subject", upload_subject);
+//		if(vo!=null) {
+//			session.setAttribute("recent_upload_info", vo);
+//			String file = vo.getUpload_file();
+//			session.setAttribute("recent_upload_file", file);
+//		}
+//		return "video_compared";
+//	};
 	
-	@RequestMapping("/ImportRecentUpload")
-	public String ImportRecentUpload(int m_idx, HttpSession session, Model model) {
-		tbl_upload vo = mapper.IRU(m_idx);	
-		String upload_subject = "제목없음";
-		if(vo.getUpload_subject()!="") {
-			upload_subject = vo.getUpload_subject();
+	// 최근 분석결과 띄우기
+		@RequestMapping("/ImportRecentUpload")
+		public String ImportRecentUpload(int m_idx, HttpSession session, Model model) {
+			tbl_upload vo = mapper.IRU(m_idx);	
+			String upload_subject = "제목없음";
+			if(vo.getUpload_subject()!="") {
+				upload_subject = vo.getUpload_subject();
+			};
+			session.setAttribute("recent_upload_subject", upload_subject);
+			if(vo!=null) {
+				session.setAttribute("recent_upload_info", vo);
+				String file = vo.getUpload_file();
+				session.setAttribute("recent_upload_file", file);
+			}
+			return "video_compared";
 		};
-		session.setAttribute("recent_upload_subject", upload_subject);
-		if(vo!=null) {
-			session.setAttribute("recent_upload_info", vo);
-			String file = vo.getUpload_file();
-			session.setAttribute("recent_upload_file", file);
-		}
-		return "video_compared";
-	};
 	
+	// 자세교정코멘트 출력
 	@Async
 	@RequestMapping("/LoadSwing")
 	public void LoadSwing(int deep_seq, HttpSession session, Model model) {
@@ -235,6 +272,9 @@ public class golfController {
 		}
 	};
 	
+	
+	
+	
 	@RequestMapping("/jsontest")
 	public @ResponseBody String jsontest(tbl_upload vo) throws IOException {
 		RestTest resttest = new RestTest();
@@ -249,8 +289,6 @@ public class golfController {
 		String result=resttest.sendJSON(job);
 		System.out.println(result);
 		return result;
-
-		
 	}
 }
 
