@@ -292,7 +292,7 @@
 														<div class="detail_script_box">
 															<div class="swing_recommend head">
 																<div class="recommend-title" id = "recommend-title-head">머리동작</div>
-																<div class="recommend-text head-text" id="head-text">${head_action}</div>
+																<div class="recommend-text head-text" id="head-text"></div>
 															</div>
 															<div class="swing_recommend shoulder">
 																<div class="recommend-title" id = "recommend-title-shoulder">어깨동작</div>
@@ -527,7 +527,11 @@
 	
 	<!-- 자세교정 텍스트 출력 -->
 	<script>
-		$(function() {
+	$('#picture_link1').click(function() {
+		
+			// 업로드페이지에서 섹션에 값 넣고 페이지 넘어가서 표시하는 식으로 바꾸자.굿아이디어
+		
+		
 			//임시로 넣은 번호(차후 삭제)
 			var deep_seq = 4;
 			
@@ -540,7 +544,7 @@
 	        	error : function(){},
 	    	});
 			
-			//document.getElementById('head-text').innerText = "${head_action}";
+			document.getElementById('head-text').innerText = "${head_action}";
 			
 		});
 	</script>

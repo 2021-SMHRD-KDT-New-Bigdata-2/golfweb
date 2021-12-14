@@ -161,7 +161,7 @@
         		        setTimeout(function(){document.getElementById("password").focus();},400);
         				},
         				
-			error : function(){ alert("error");
+			error : function(){ 
 								$('#hidden-text').css({
 									 "color" : "#FF4444",
 								});

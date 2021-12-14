@@ -3835,7 +3835,7 @@ input.form-control.mainpage {
 section.main-contents {
   position: relative;
   top: 90px;
-  left: -175px;
+  left: 0px;
 }
 
 .text_box {

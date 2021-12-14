@@ -31,7 +31,6 @@ import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 import kr.golfproject.mapper.tbl_memberMapper;
 
-@EnableAsync
 @Controller
 public class golfController {
 	
@@ -130,7 +129,21 @@ public class golfController {
 	
 	// 영상비교/분석결과보는 페이지 접속 :  http://localhost:13131/golf/video_compared.html
 	@RequestMapping("/video_compared")
-	public String video_compared() {
+	public String video_compared(HttpSession session, Model model) {
+		if (session.getAttribute("login_state")=="Y") {
+			int m_idx = (int)session.getAttribute("login_idx");
+			tbl_upload vo = mapper.IRU(m_idx);	
+			String upload_subject = "제목없음";
+			if(vo.getUpload_subject()!="") {
+				upload_subject = vo.getUpload_subject();
+			};
+			session.setAttribute("recent_upload_subject", upload_subject);
+			if(vo!=null) {
+				session.setAttribute("recent_upload_info", vo);
+				String file = vo.getUpload_file();
+				session.setAttribute("recent_upload_file", file);
+			};
+		};
 		return "video_compared";
 	}
 	@PostMapping("/uploadAjaxAction")
@@ -183,15 +196,13 @@ public class golfController {
 			session.setAttribute("recent_upload_info", vo);
 			String file = vo.getUpload_file();
 			session.setAttribute("recent_upload_file", file);
-//			model.addAttribute("vo_recent_upload", vo); // 객체바인딩
-//			model.addAttribute("model_recent_upload_file",file);
 		}
 		return "video_compared";
 	};
 	
 	@Async
 	@RequestMapping("/LoadSwing")
-	public void LoadSwing(int deep_seq, HttpSession session) {
+	public void LoadSwing(int deep_seq, HttpSession session, Model model) {
 		tbl_swing vo = mapper.loadswing(deep_seq);	
 		if(vo!=null) {
 			session.setAttribute("recent_upload_info", vo);
@@ -212,6 +223,15 @@ public class golfController {
 			session.setAttribute("knee_action", knee_action);
 			session.setAttribute("foot_action", foot_action);
 			session.setAttribute("weight_center", weight_center);
+			
+//			model.addAttribute("head_action", head_action);
+//			model.addAttribute("shoulder_action", shoulder_action);
+//			model.addAttribute("arm_action", arm_action);
+//			model.addAttribute("waist_action", waist_action);
+//			model.addAttribute("core_action", core_action);
+//			model.addAttribute("knee_action", knee_action);
+//			model.addAttribute("foot_action", foot_action);
+//			model.addAttribute("weight_center", weight_center);
 		}
 	};
 	
