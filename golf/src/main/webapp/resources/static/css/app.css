@@ -3909,7 +3909,7 @@ button.btn.btn-primary.create_new {
 
 .result_box {
   position: absolute;
-  top: 850px;
+  top: 800px;
   left: 40px;
   width: 1610px;
   display: block;
@@ -3918,6 +3918,14 @@ button.btn.btn-primary.create_new {
 .hidden-text-result {
   color: #007bff;
   visibility: hidden;
+  left: 705px;
+  top: -25px;
+  width: 110px;
+  position: absolute;
+}
+
+.text-result {
+  color: #007bff;
   left: 705px;
   top: -25px;
   width: 110px;
@@ -4184,4 +4192,29 @@ a.point_link.uptomiddle {
 a.point_link.downtomiddle {
     left: -200px;
     top : 700px;
+}
+
+p.swing_wrist {
+	width: 700px;
+    height: 200px;
+    background-size: 100% 100%;
+    background-position: 55% 50%;
+    display: inline-block;
+}
+
+p.swing_wrist.y {
+	background-image: url(http://localhost:13131/golf/resources/static/images/graph/swing_wrist_y.png);
+}
+
+p.swing_wrist.xy {
+	background-image: url(http://localhost:13131/golf/resources/static/images/graph/swing_wrist_xy.png);
+}
+
+p.swing_wrist.accl {
+	background-image: url(http://localhost:13131/golf/resources/static/images/graph/swing_wrist_accl.png);;
+}
+
+input.club_type {
+    opacity: 0;
+    position: absolute;
 }

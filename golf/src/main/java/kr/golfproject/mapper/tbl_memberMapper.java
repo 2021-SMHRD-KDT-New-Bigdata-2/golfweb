@@ -14,4 +14,5 @@ public interface tbl_memberMapper {
 	// 회원정보 수정 : update SQL
 	@Insert("insert into tbl_upload(upload_subject,upload_file,m_idx,club_type,upload_path) values(#{upload_subject},#{upload_file},#{m_idx},#{club_type},#{upload_path})")
 	public void uploaddata (tbl_upload vo);
+	public tbl_upload IRU(int m_idx);	// tbl_upload vo와 데이터 세션에 저장
 }

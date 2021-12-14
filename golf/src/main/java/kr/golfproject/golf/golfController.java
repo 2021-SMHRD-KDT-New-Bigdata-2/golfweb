@@ -76,6 +76,13 @@ public class golfController {
 		if(vo!=null) {
 			session.setAttribute("member_info", vo);
 			session.setAttribute("login_state", "Y");
+			int M_idx = vo.getM_idx();
+			String M_id = vo.getM_id();
+			String M_name = vo.getM_name();
+			session.setAttribute("login_idx", M_idx);
+			session.setAttribute("login_id", M_id);
+			session.setAttribute("login_name", M_name);
+
 			return "login";
 		} else {
 			return "error";
@@ -155,7 +162,20 @@ public class golfController {
 		String upload_path = uploadfolder+upload_file;
 		vo.setUpload_path(upload_path);
 		mapper.uploaddata(vo);
-	}
+	};
+	
+	
+	@RequestMapping("/ImportRecentUpload")
+	public void ImportRecentUpload(int m_idx, HttpSession session) {
+		tbl_upload vo = mapper.IRU(m_idx);	
+		if(vo!=null) {
+			session.setAttribute("recent_upload_info", vo);
+			String upload_subject = vo.getUpload_subject();
+			String file = vo.getUpload_path();
+			session.setAttribute("recent_upload_subject", upload_subject);
+			session.setAttribute("recent_upload_file", file);
+		}
+	};
 }
 
 

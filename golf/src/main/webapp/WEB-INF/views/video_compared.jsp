@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="kr.golfproject.domain.tbl_member"%> 
+<%@ page import="kr.golfproject.domain.tbl_upload"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>    
 <!doctype html>
@@ -91,7 +92,7 @@
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								<div class="img profile" style="margin-right: 5px;"> </div>
-								<span class="name" id="profile-name"> Name </span>
+								<span class="name" id="profile-name"> ${login_name} </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
@@ -230,22 +231,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="progress" id="progress" style="height:50px;left: 40px;">
-							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id ="progress-bar"
-								role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-								style="width: 60%;height: 50px;padding-top: 15px;">
-								<span id="progress-text">로딩중...</span>
-							</div>
-						</div>
+						
 
-						<!-- <div class="compare-text" id="compare-text">
-							분석중...
-						</div> -->
 
 						<!-- 분석완료시 띄울 토글과 분석결과 박스 -->
 						<div class="result_box">
 							<a class = "toggle" id = "toggle">
-								<div class="hidden-text-result" id="hidden-text-result">
+								<div class="text-result" id="text-result">
 									상세정보 열기
 								</div>
 							</a>
@@ -415,82 +407,42 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="card fortable">
-												<div class="card-block">
+												<div class="card-block" style="padding-bottom: 0;">
 													<div class="card-title-block">
-														<h3 class="title"> Basic example </h3>
+														<h3 class="title"> swing_wrist_y </h3>
 													</div>
-													<section class="example">
-														<table class="table">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-																<tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																</tr>
-																<tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
+													<section class="example" style="margin-bottom: 0">
+														<div class="graph_box">
+															<p class="swing_wrist y"></p>
+														</div>
 													</section>
 												</div>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="card fortable">
-												<div class="card-block">
+												<div class="card-block" style="padding-bottom: 0;">
 													<div class="card-title-block">
-														<h3 class="title"> Striped rows </h3>
+														<h3 class="title"> swing_wrist_xy </h3>
 													</div>
-													<section class="example">
-														<table class="table table-striped">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>First Name</th>
-																	<th>Last Name</th>
-																	<th>Username</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-																<tr>
-																	<th scope="row">2</th>
-																	<td>Jacob</td>
-																	<td>Thornton</td>
-																	<td>@fat</td>
-																</tr>
-																<tr>
-																	<th scope="row">3</th>
-																	<td>Larry</td>
-																	<td>the Bird</td>
-																	<td>@twitter</td>
-																</tr>
-															</tbody>
-														</table>
+													<section class="example" style="margin-bottom: 0">
+														<div class="graph_box">
+															<p class="swing_wrist xy"></p>
+														</div>
+													</section>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="card fortable">
+												<div class="card-block" style="padding-bottom: 0;">
+													<div class="card-title-block">
+														<h3 class="title"> swing_wrist_accl </h3>
+													</div>
+													<section class="example" style="margin-bottom: 0">
+														<div class="graph_box">
+															<p class="swing_wrist accl"></p>
+														</div>
 													</section>
 												</div>
 											</div>
@@ -500,13 +452,6 @@
 							</div>
 						</div>
 
-
-						<div class="instance btn" style="position: relative;top: 600px;">
-							<button type="button" class="btn btn-primary" onclick="progress_change()">임시버튼</button>
-						</div>
-						<div class="instance btn" style="position: relative;top: 600px;">
-							<button type="button" class="btn btn-primary" onclick="progress_change2()">되돌리기</button>
-						</div>
 					</div>
 				</section>
 			</article>
@@ -549,6 +494,36 @@
         	},
     	});
 	}
+	</script>
+	
+	<script>
+		$(function() {
+			$.ajax({
+	        	url : "${cpath}/ImportRecentUpload.do",
+	        	type : "post",
+	        	data : {"m_idx":${login_idx}},
+	        	//data : frmData,
+	        	success : function(){},
+	        	error : function(){},
+	    	});
+		});
+	</script>
+	
+	<script>
+		$(function() {
+			var vo = "${recent_upload_subject}";
+			alert(vo);
+			if(vo!=""){
+				//선택한 버튼의 동영상 경로를 불러옴
+			    $("#movie_src").attr("src", "${recent_upload_file}");
+			    
+			    //동영상을 다시 load 함
+			    $("#a_video").load();
+			    //load한 동영상을 재생
+			    document.getElementById("a_video").play();
+			    document.getElementById("a_video").controls = "True";
+			}
+		});
 	</script>
 </body>
 </html>

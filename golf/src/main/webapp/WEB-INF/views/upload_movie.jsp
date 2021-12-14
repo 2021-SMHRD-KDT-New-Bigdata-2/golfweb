@@ -85,7 +85,7 @@
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								<div class="img profile" style="margin-right: 5px;"> </div>
-								<span class="name" id="profile-name"> Name </span>
+								<span class="name" id="profile-name"> ${login_name} </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
@@ -222,14 +222,25 @@
 										<label class="btn btn-primary btn-sm" for="input_file" style="font-size: 18px;margin-left: 10px;border-color: #44bd32;background-color: #44bd32;height: 40px;padding: 0.5rem 0.5rem 0px 0.5rem;">업로드</label>
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
-									
-										<input type="button" class="btn btn-warning" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="전송" id="uploadClick" onclick="upload(${member_info.m_idx})">
-										<a href="video_compared.html">
-										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" >
-										</a>
+										<!--<a href="video_compared.html"></a>-->
+										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick" onclick="upload(${member_info.m_idx})">
+										
 								</div>
 							</div>
+							
 						</div>
+						
+						<div class="progress" id="progress" style="height:50px;left: 40px;">
+							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id ="progress-bar"
+								role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+								style="width: 0%;height: 50px;padding-top: 15px;">
+								<span id="progress-text" style="visibility: hidden;">로딩중...</span>
+							</div>
+						</div>
+						<a href = "video_compared.html" class = "toggle" id = "toggle" style="visibility: hidden;position: absolute;bottom: 120px;left: 460px;">
+							<button type="button" class="btn btn-primary" id="result_btn">결과페이지로 가기</button>
+						</a>
+						
 					</div>
 				</section>
 			</article>
@@ -297,15 +308,16 @@
 					url:"${cpath}/uploadata",
 					data: {"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
 					success: function(){
-						alert("드디어 성공!")
-					},
-					
+						alert("드디어 성공!");
 
-				})
+					},
+				});
 			},
 			error: function(){alert("실패 시발!");}
 		});
-
+		
+		// 분석완료 후 페이지에 일어날 변화
+		progress_change();
 	}
 	
 
@@ -352,18 +364,6 @@
 	        $("#login_state").removeClass("active");
       	};
 	};
-	</script>
-	
-	<script>
-		// 로그인 후 페이지에 생길 변화
-		$(function() {
-			var name = "Name";
-			if ($("#login_state").hasClass("active")){
-				<%tbl_member vo=(tbl_member)session.getAttribute("member_info");%>
-				name = "<%=vo.getM_name()%>";
-			}
-			document.getElementById('profile-name').innerHTML = name;
-		});
 	</script>
 	
 	<script>

@@ -82,7 +82,7 @@
 						<li class="profile dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								<div class="img profile" style="margin-right: 5px;"> </div>
-								<span class="name" id="profile-name"> Name </span>
+								<span class="name" id="profile-name"> ${login_name} </span>
 							</a>
 							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
 								<a class="dropdown-item" href="#">
@@ -422,19 +422,6 @@
       	};
 	};
 	</script>
-	
-	<script>
-		// 로그인 후 페이지에 생길 변화
-		$(function() {
-			var name = "Name";
-			if ($("#login_state").hasClass("active")){
-				<%tbl_member vo=(tbl_member)session.getAttribute("member_info");%>
-				name = "<%=vo.getM_name()%>";
-			}
-			document.getElementById('profile-name').innerHTML = name;
-		});
-	</script>
-	
 	
     <script>
 	function logout(){
