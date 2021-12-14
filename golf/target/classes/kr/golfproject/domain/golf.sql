@@ -126,3 +126,8 @@ values(124, "???", "어드레스", "백스윙", "탑", "다운스윙", "가속",
 
 select * from tbl_deeplearning;
 delete from tbl_deeplearning;
+
+INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center) 
+values(1, "가가가가가가가가가", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "ㄴㄹㅇㅇㄴㅁㄴㅁㅇㄴㄹㄴㅇㄻ", "ㅊㅁㄴㅊㅁㄴㅊㄴㅁㅊㅁㄴㅊㅁㅊ", "ㄴㅇㄹㄴㅇㅍㄴㅇㅍㄴㅇㅍㄴㅇ","ㅍㄴㅇㅇㅍㅇㄴㅍㄴㅇㅍ","피니쉬")
+
+select * from tbl_swing;

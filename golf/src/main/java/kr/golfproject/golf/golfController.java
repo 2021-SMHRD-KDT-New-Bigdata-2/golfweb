@@ -185,8 +185,8 @@ public class golfController {
 		return "video_compared";
 	};
 	
-	@RequestMapping("/LoadDeeplearning")
-	public void LoadDeeplearning(int deep_seq, HttpSession session) {
+	@RequestMapping("/LoadSwing")
+	public void LoadSwing(int deep_seq, HttpSession session) {
 		tbl_swing vo = mapper.loadswing(deep_seq);	
 		if(vo!=null) {
 			session.setAttribute("recent_upload_info", vo);
