@@ -307,9 +307,18 @@
 				$.ajax({
 					url:"${cpath}/uploadata",
 					data: {"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
-					success: function(){
+					success: function(data){
 						alert("드디어 성공!");
-
+						var upload_path = data
+						$.ajax({
+							url:"${cpath}/jsontest",
+							data:{"upload_path":upload_path,"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
+							success: function(){
+								alert("성공!!!!!!!")
+							},
+							error:function(){
+								alert("좃까 실패")
+							}
 					},
 				});
 			},

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -155,7 +156,7 @@ public class golfController {
 		return filename;
 	}
 	@RequestMapping("/uploadata")
-	public void uploadate(tbl_upload vo){
+	public @ResponseBody String uploadate(tbl_upload vo){
 		String uploadfolder = "C:\\Users\\smhrd\\git\\golfweb\\golf\\src\\main\\webapp\\resources\\static\\movie\\";
 		String upload_file= vo.getUpload_file();
 		System.out.println(upload_file);
@@ -164,6 +165,7 @@ public class golfController {
 		String upload_path = uploadfolder+upload_file;
 		vo.setUpload_path(upload_path);
 		mapper.uploaddata(vo);
+		return upload_path;
 	};
 	
 	
@@ -209,6 +211,24 @@ public class golfController {
 			session.setAttribute("weight_center", weight_center);
 		}
 	};
+	
+	@RequestMapping("/jsontest")
+	public @ResponseBody String jsontest(tbl_upload vo) throws IOException {
+		RestTest resttest = new RestTest();
+		JSONObject job=new JSONObject();
+//		{"upload_path":upload_path,"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
+		job.put("upload_path", vo.getUpload_path());
+		job.put("upload_file", vo.getUpload_file());
+		job.put("upload_subject", vo.getUpload_subject());
+		job.put("club_type", vo.getClub_type());
+		job.put("m_idx",vo.getM_idx());
+		System.out.println(job);
+		String result=resttest.sendJSON(job);
+		System.out.println(result);
+		return result;
+
+		
+	}
 }
 
 
