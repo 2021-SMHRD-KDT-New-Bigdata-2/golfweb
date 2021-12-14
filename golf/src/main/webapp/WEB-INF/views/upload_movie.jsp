@@ -313,7 +313,7 @@
 					},
 				});
 			},
-			error: function(){alert("실패 시발!");}
+			error: function(){alert("error!");}
 		});
 		
 		// 분석완료 후 페이지에 일어날 변화

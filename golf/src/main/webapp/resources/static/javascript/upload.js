@@ -18,6 +18,7 @@ function progress_change() {
     $("#progress").addClass("complete");
 };
 
+
 //function progress_change2() {
 //    document.getElementById("progress-text").innerHTML = "로딩중...";
 //    document.getElementById("hidden-text-result").innerHTML = "상세정보 열기";

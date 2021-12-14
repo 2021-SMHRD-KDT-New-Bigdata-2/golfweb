@@ -194,7 +194,7 @@
 							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg" style="height: 488px;width: 750px;display: inline-block;position: absolute;top: 0;left: 15px;">
 								<div class="card-header">
 									<div class="header-block" style="width: 60%;">						
-										<div class="title" style="font-size:20px;margin-top: 1%;"> 유저가 적은 분석 타이틀 </div>
+										<div class="title" id="raw_movie_title" style="font-size:20px;margin-top: 1%;"> 제목없음 </div>
 									</div>
 								</div>
 								<div class="card-block">
@@ -498,32 +498,36 @@
 	
 	<script>
 		$(function() {
+			if("${login_state}"=="Y"){
 			$.ajax({
 	        	url : "${cpath}/ImportRecentUpload.do",
 	        	type : "post",
 	        	data : {"m_idx":${login_idx}},
 	        	//data : frmData,
-	        	success : function(){},
+	        	success : function(){
+	        		var dir="http://localhost:13131/golf/resources/static/movie/";
+	        		var filename = "${recent_upload_file}";
+	        		var file = dir + filename;
+	        		
+	        		//선택한 버튼의 동영상 경로를 불러옴
+	                $("#movie_src").attr("src", file);
+	        		
+	                //동영상을 다시 load 함
+	                $("#a_video").load();
+	                //load한 동영상을 재생
+	                document.getElementById("a_video").controls = "True";
+	                
+	                document.getElementById('raw_movie_title').innerText = "${recent_upload_subject}";
+	        		},
 	        	error : function(){},
 	    	});
+			};
 		});
 	</script>
 	
-	<script>
-		$(function() {
-			var vo = "${recent_upload_subject}";
-			alert(vo);
-			if(vo!=""){
-				//선택한 버튼의 동영상 경로를 불러옴
-			    $("#movie_src").attr("src", "${recent_upload_file}");
-			    
-			    //동영상을 다시 load 함
-			    $("#a_video").load();
-			    //load한 동영상을 재생
-			    document.getElementById("a_video").play();
-			    document.getElementById("a_video").controls = "True";
-			}
-		});
-	</script>
+	<!-- 자세교정 텍스트 출력 -->
+	
+
+
 </body>
 </html>

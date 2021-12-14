@@ -20,4 +20,10 @@
     <select id="IRU" resultType="kr.golfproject.domain.tbl_upload" parameterType="kr.golfproject.domain.tbl_upload">
         select * from tbl_upload where m_idx = #{m_idx} order by upload_seq desc LIMIT 1;
     </select>
+    
+    <!-- 해당 딥러닝결과의 스윙교정텍스트 출력 -->
+    <select id="loadswing" resultType="kr.golfproject.domain.tbl_swing" parameterType="kr.golfproject.domain.tbl_swing">
+        select * from tbl_swing where deep_seq = #{deep_seq};
+    </select>
+    
 </mapper>

@@ -3,7 +3,9 @@ package kr.golfproject.mapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.golfproject.domain.tbl_deeplearning;
 import kr.golfproject.domain.tbl_member;
+import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 
 @Mapper
@@ -15,4 +17,5 @@ public interface tbl_memberMapper {
 	@Insert("insert into tbl_upload(upload_subject,upload_file,m_idx,club_type,upload_path) values(#{upload_subject},#{upload_file},#{m_idx},#{club_type},#{upload_path})")
 	public void uploaddata (tbl_upload vo);
 	public tbl_upload IRU(int m_idx);	// tbl_upload vo와 데이터 세션에 저장
+	public tbl_swing loadswing(int deep_seq);	// 해당 딥러닝결과의 스윙교정텍스트 출력
 }

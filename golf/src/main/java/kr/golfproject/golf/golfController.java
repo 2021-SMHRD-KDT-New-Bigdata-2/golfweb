@@ -22,7 +22,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mysql.jdbc.log.Log;
 
+import kr.golfproject.domain.tbl_deeplearning;
 import kr.golfproject.domain.tbl_member;
+import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 import kr.golfproject.mapper.tbl_memberMapper;
 
@@ -166,14 +168,45 @@ public class golfController {
 	
 	
 	@RequestMapping("/ImportRecentUpload")
-	public void ImportRecentUpload(int m_idx, HttpSession session) {
+	public String ImportRecentUpload(int m_idx, HttpSession session, Model model) {
 		tbl_upload vo = mapper.IRU(m_idx);	
+		String upload_subject = "제목없음";
+		if(vo.getUpload_subject()!="") {
+			upload_subject = vo.getUpload_subject();
+		};
+		session.setAttribute("recent_upload_subject", upload_subject);
 		if(vo!=null) {
 			session.setAttribute("recent_upload_info", vo);
-			String upload_subject = vo.getUpload_subject();
-			String file = vo.getUpload_path();
-			session.setAttribute("recent_upload_subject", upload_subject);
+			String file = vo.getUpload_file();
 			session.setAttribute("recent_upload_file", file);
+//			model.addAttribute("vo_recent_upload", vo); // 객체바인딩
+//			model.addAttribute("model_recent_upload_file",file);
+		}
+		return "video_compared";
+	};
+	
+	@RequestMapping("/LoadDeeplearning")
+	public void LoadDeeplearning(int deep_seq, HttpSession session) {
+		tbl_swing vo = mapper.loadswing(deep_seq);	
+		if(vo!=null) {
+			session.setAttribute("recent_upload_info", vo);
+			String head_action = vo.getHead_action();
+			String shoulder_action = vo.getShoulder__action();
+			String arm_action = vo.getArm__action();
+			String waist_action = vo.getWaist_action();
+			String core_action = vo.getCore__action();
+			String knee_action = vo.getKnee_action();
+			String foot_action = vo.getFoot_action();
+			String weight_center = vo.getWeight_center();
+			
+			session.setAttribute("head_action", head_action);
+			session.setAttribute("shoulder_action", shoulder_action);
+			session.setAttribute("arm_action", arm_action);
+			session.setAttribute("waist_action", waist_action);
+			session.setAttribute("core_action", core_action);
+			session.setAttribute("knee_action", knee_action);
+			session.setAttribute("foot_action", foot_action);
+			session.setAttribute("weight_center", weight_center);
 		}
 	};
 }
