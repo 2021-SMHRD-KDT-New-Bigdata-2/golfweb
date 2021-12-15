@@ -126,7 +126,10 @@ public class golfController {
 		if(login_state=="Y") {
 			int m_idx = (int)session.getAttribute("login_idx");
 			list = mapper.loaduploadlist(m_idx);
-			model.addAttribute("list", list);
+			//System.out.println(list);
+			session.setAttribute("list", list);
+			//model.addAttribute("list", list);
+			
 		};
 		return "test_list";
 	}
@@ -186,8 +189,6 @@ public class golfController {
 				session.setAttribute("skeleton_file", file_skeleton);
 			};
 			
-			
-<<<<<<< HEAD
 //			int deep_seq = vo_deep.getDeep_seq();
 //			// 어드레스 스윙데이터 출력
 //			String swing_type = "address";
@@ -241,7 +242,6 @@ public class golfController {
 //				session.setAttribute("knee_code_y", knee_code_y);
 //				session.setAttribute("foot_code_y", foot_code_y);
 //			};
-=======
 			int deep_seq = vo_deep.getDeep_seq();
 			System.out.println(deep_seq);
 			// 어드레스 스윙데이터 출력
@@ -298,7 +298,6 @@ public class golfController {
 				session.setAttribute("knee_code_y", knee_code_y);
 				session.setAttribute("foot_code_y", foot_code_y);
 			};
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-2/golfweb.git
 		};
 		return "video_compared";
 	}

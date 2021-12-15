@@ -150,3 +150,6 @@ values(1, "C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skel
 
 select * from tbl_skeleton_video;
 select * from tbl_skeleton_video where m_idx = 34 and upload_seq = 124;
+
+
+select * from tbl_upload where m_idx = 34;

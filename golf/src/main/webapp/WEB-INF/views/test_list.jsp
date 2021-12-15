@@ -446,7 +446,7 @@
 	    var video5 = document.getElementById('block_5').className;
 	    var video6 = document.getElementById('block_6').className;
 	    
-	    // 초기 페이지 번호
+	 	// 초기 페이지 번호
 	    var pgnum=1;
 	
 	   	// 영상번호 출력
@@ -465,21 +465,21 @@
 	    var index5 = text5-1;
 	    var index6 = text6-1;
 	    
-	    var file1 = ${list.get(index1)};
-	    var file2 = ${list.get(index2)};
-	    var file3 = ${list.get(index3)};
-	    var file4 = ${list.get(index4)};
-	    var file5 = ${list.get(index5)};
-	    var file6 = ${list.get(index6)};
+	    var file1 = "${list.get(index1).upload_file}";
+	    var file2 = "${list.get(index2).upload_file}";
+	    var file3 = "${list.get(index3).upload_file}";
+	    var file4 = "${list.get(index4).upload_file}";
+	    var file5 = "${list.get(index5).upload_file}";
+	    var file6 = "${list.get(index6).upload_file}";
 	    
-	    var filetype = ".mp4";
-	    var dir1 = directory + file1 + filetype;
-	    var dir2 = directory + file2 + filetype;
-	    var dir3 = directory + file3 + filetype;
-	    var dir4 = directory + file4 + filetype;
-	    var dir5 = directory + file5 + filetype;
-	    var dir6 = directory + file6 + filetype;
-
+	    //var filetype = ".mp4";
+	    var dir1 = directory + file1;
+	    var dir2 = directory + file2;
+	    var dir3 = directory + file3;
+	    var dir4 = directory + file4;
+	    var dir5 = directory + file5;
+	    var dir6 = directory + file6;
+	    
 	    $("#movie_src1").attr("src", dir1);
 	    $("#movie_src2").attr("src", dir2);
 	    $("#movie_src3").attr("src", dir3);
@@ -494,7 +494,6 @@
 	    $("#video4").load();
 	    $("#video5").load();
 	    $("#video6").load();
-
 	});
 	</script>
 </body>
