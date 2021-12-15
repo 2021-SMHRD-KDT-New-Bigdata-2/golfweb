@@ -17,8 +17,11 @@ CREATE TABLE tbl_upload
 );
 
 ALTER TABLE tbl_upload COMMENT '업로드 영상';
-
-
+delete from tbl_upload where upload_seq = 288;
+delete from tbl_upload where upload_seq = 289;
+delete from tbl_upload where upload_seq = 290;
+select * from tbl_upload where m_idx = 34;
+select * from tbl_deeplearning;
 -- tbl_deeplearning Table Create SQL
 CREATE TABLE tbl_deeplearning
 (

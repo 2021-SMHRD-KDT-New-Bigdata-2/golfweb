@@ -143,7 +143,9 @@ public class golfController {
 		if (session.getAttribute("login_state")=="Y") {
 			// 최근 분석결과 띄우기
 			int m_idx = (int)session.getAttribute("login_idx");
-			tbl_upload vo_upload = mapper.IRU(m_idx);	
+			System.out.println(m_idx);
+			tbl_upload vo_upload = mapper.IRU(m_idx);
+			System.out.println(vo_upload);
 			String upload_subject = "제목없음";
 			if(vo_upload.getUpload_subject()!="") {
 				upload_subject = vo_upload.getUpload_subject();
@@ -157,9 +159,10 @@ public class golfController {
 			
 			int upload_seq = vo_upload.getUpload_seq();
 			session.setAttribute("upload_seq", upload_seq);
-			
+			System.out.println(upload_seq);
 			// 스윙순간의 이미지 데이터 출력
 			tbl_deeplearning vo_deep = mapper.loaddeep(upload_seq);
+			System.out.println(vo_deep);
 			if (vo_deep != null) {
 				session.setAttribute("vo_deep", vo_deep);
 				String address = vo_deep.getAddress();
@@ -184,6 +187,7 @@ public class golfController {
 			};
 			
 			
+<<<<<<< HEAD
 //			int deep_seq = vo_deep.getDeep_seq();
 //			// 어드레스 스윙데이터 출력
 //			String swing_type = "address";
@@ -237,6 +241,64 @@ public class golfController {
 //				session.setAttribute("knee_code_y", knee_code_y);
 //				session.setAttribute("foot_code_y", foot_code_y);
 //			};
+=======
+			int deep_seq = vo_deep.getDeep_seq();
+			System.out.println(deep_seq);
+			// 어드레스 스윙데이터 출력
+			String swing_type = "address";
+			tbl_swing vo_swing =new tbl_swing();
+			vo_swing.setSwing_type(swing_type);
+			vo_swing.setDeep_seq(deep_seq);
+			vo_swing = mapper.loadswing(vo_swing);	
+			if(vo_swing!=null) {
+				session.setAttribute("recent_upload_info", vo_swing);
+				String head_action = vo_swing.getHead_action();
+				String shoulder_action = vo_swing.getShoulder__action();
+				String arm_action = vo_swing.getArm__action();
+				String waist_action = vo_swing.getWaist_action();
+				String core_action = vo_swing.getCore__action();
+				String knee_action = vo_swing.getKnee_action();
+				String foot_action = vo_swing.getFoot_action();
+				String weight_center = vo_swing.getWeight_center();
+				double head_code_x = vo_swing.getHead_code_x();
+				double shoulder_code_x = vo_swing.getShoulder_code_x();
+				double arm_code_x = vo_swing.getArm_code_x();
+				double waist_code_x = vo_swing.getWaist_code_x();
+				double core_code_x = vo_swing.getCore_code_x();
+				double knee_code_x = vo_swing.getKnee_code_x();
+				double foot_code_x = vo_swing.getFoot_code_x();
+				double head_code_y = vo_swing.getHead_code_y();
+				double shoulder_code_y = vo_swing.getShoulder_code_y();
+				double arm_code_y = vo_swing.getArm_code_y();
+				double waist_code_y = vo_swing.getWaist_code_y();
+				double core_code_y = vo_swing.getCore_code_y();
+				double knee_code_y = vo_swing.getKnee_code_y();
+				double foot_code_y = vo_swing.getFoot_code_y();
+				
+				session.setAttribute("head_action", head_action);
+				session.setAttribute("shoulder_action", shoulder_action);
+				session.setAttribute("arm_action", arm_action);
+				session.setAttribute("waist_action", waist_action);
+				session.setAttribute("core_action", core_action);
+				session.setAttribute("knee_action", knee_action);
+				session.setAttribute("foot_action", foot_action);
+				session.setAttribute("weight_center", weight_center);
+				session.setAttribute("head_code_x", head_code_x);
+				session.setAttribute("shoulder_code_x", shoulder_code_x);
+				session.setAttribute("arm_code_x", arm_code_x);
+				session.setAttribute("waist_code_x", waist_code_x);
+				session.setAttribute("core_code_x", core_code_x);
+				session.setAttribute("knee_code_x", knee_code_x);
+				session.setAttribute("foot_code_x", foot_code_x);
+				session.setAttribute("head_code_y", head_code_y);
+				session.setAttribute("shoulder_code_y", shoulder_code_y);
+				session.setAttribute("arm_code_y", arm_code_y);
+				session.setAttribute("waist_code_y", waist_code_y);
+				session.setAttribute("core_code_y", core_code_y);
+				session.setAttribute("knee_code_y", knee_code_y);
+				session.setAttribute("foot_code_y", foot_code_y);
+			};
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-2/golfweb.git
 		};
 		return "video_compared";
 	}
@@ -314,72 +376,73 @@ public class golfController {
 			return "video_compared";
 		};
 		
-//	// tbl_skeleton에서 upload_seq에 맞는 스켈레톤 영상 가져오기
+	// tbl_skeleton에서 upload_seq에 맞는 스켈레톤 영상 가져오기
 //	@RequestMapping("/ImportSkeleton")
 //	public String ImportSkeleton(int m_idx, int upload_seq, HttpSession session, Model model) {
-//		
-//		tbl_skeleton_video vo = mapper.loadskeleton(m_idx, upload_seq);
-//		if(vo!=null) {
-//			session.setAttribute("skeleton_info", vo);
-//			String file = vo.getVideo_path();
-//			session.setAttribute("skeleton_file", file);
-//		}
-//		return "video_compared";
+		
+	//	tbl_skeleton_video vo = mapper.loadskeleton(m_idx, upload_seq);
+		//if(vo!=null) {
+			//session.setAttribute("skeleton_info", vo);
+			//String file = vo.getVideo_path();
+			//session.setAttribute("skeleton_file", file);
+	//	}
+	//	return "video_compared";
 //	};
 	
 	// 자세교정코멘트 출력
-	@Async
-	@RequestMapping("/LoadSwing")
-	public void LoadSwing(int deep_seq, String swing_type, HttpSession session, Model model) {
-		
-		tbl_swing vo_swing = mapper.loadswing(deep_seq, swing_type);	
-		if(vo_swing!=null) {
-			session.setAttribute("recent_upload_info", vo_swing);
-			String head_action = vo_swing.getHead_action();
-			String shoulder_action = vo_swing.getShoulder__action();
-			String arm_action = vo_swing.getArm__action();
-			String waist_action = vo_swing.getWaist_action();
-			String core_action = vo_swing.getCore__action();
-			String knee_action = vo_swing.getKnee_action();
-			String foot_action = vo_swing.getFoot_action();
-			String weight_center = vo_swing.getWeight_center();
-			double head_code_x = vo_swing.getHead_code_x();
-			double shoulder_code_x = vo_swing.getShoulder_code_x();
-			double arm_code_x = vo_swing.getArm_code_x();
-			double waist_code_x = vo_swing.getWaist_code_x();
-			double core_code_x = vo_swing.getCore_code_x();
-			double knee_code_x = vo_swing.getKnee_code_x();
-			double foot_code_x = vo_swing.getFoot_code_x();
-			double head_code_y = vo_swing.getHead_code_y();
-			double shoulder_code_y = vo_swing.getShoulder_code_y();
-			double arm_code_y = vo_swing.getArm_code_y();
-			double waist_code_y = vo_swing.getWaist_code_y();
-			double core_code_y = vo_swing.getCore_code_y();
-			double knee_code_y = vo_swing.getKnee_code_y();
-			double foot_code_y = vo_swing.getFoot_code_y();
-			
-			session.setAttribute("head_action", head_action);
-			session.setAttribute("shoulder_action", shoulder_action);
-			session.setAttribute("arm_action", arm_action);
-			session.setAttribute("waist_action", waist_action);
-			session.setAttribute("core_action", core_action);
-			session.setAttribute("knee_action", knee_action);
-			session.setAttribute("foot_action", foot_action);
-			session.setAttribute("weight_center", weight_center);
-			session.setAttribute("head_code_x", head_code_x);
-			session.setAttribute("shoulder_code_x", shoulder_code_x);
-			session.setAttribute("arm_code_x", arm_code_x);
-			session.setAttribute("waist_code_x", waist_code_x);
-			session.setAttribute("core_code_x", core_code_x);
-			session.setAttribute("knee_code_x", knee_code_x);
-			session.setAttribute("foot_code_x", foot_code_x);
-			session.setAttribute("head_code_y", head_code_y);
-			session.setAttribute("shoulder_code_y", shoulder_code_y);
-			session.setAttribute("arm_code_y", arm_code_y);
-			session.setAttribute("waist_code_y", waist_code_y);
-			session.setAttribute("core_code_y", core_code_y);
-			session.setAttribute("knee_code_y", knee_code_y);
-			session.setAttribute("foot_code_y", foot_code_y);
+//	@Async
+//	@RequestMapping("/LoadSwing")
+//	public void LoadSwing(int deep_seq, String swing_type, HttpSession session, Model model) {
+//		
+//		
+//		tbl_swing vo_swing = mapper.loadswing(deep_seq, swing_type);	
+//		if(vo_swing!=null) {
+//			session.setAttribute("recent_upload_info", vo_swing);
+//			String head_action = vo_swing.getHead_action();
+//			String shoulder_action = vo_swing.getShoulder__action();
+//			String arm_action = vo_swing.getArm__action();
+//			String waist_action = vo_swing.getWaist_action();
+//			String core_action = vo_swing.getCore__action();
+//			String knee_action = vo_swing.getKnee_action();
+//			String foot_action = vo_swing.getFoot_action();
+//			String weight_center = vo_swing.getWeight_center();
+//			double head_code_x = vo_swing.getHead_code_x();
+//			double shoulder_code_x = vo_swing.getShoulder_code_x();
+//			double arm_code_x = vo_swing.getArm_code_x();
+//			double waist_code_x = vo_swing.getWaist_code_x();
+//			double core_code_x = vo_swing.getCore_code_x();
+//			double knee_code_x = vo_swing.getKnee_code_x();
+//			double foot_code_x = vo_swing.getFoot_code_x();
+//			double head_code_y = vo_swing.getHead_code_y();
+//			double shoulder_code_y = vo_swing.getShoulder_code_y();
+//			double arm_code_y = vo_swing.getArm_code_y();
+//			double waist_code_y = vo_swing.getWaist_code_y();
+//			double core_code_y = vo_swing.getCore_code_y();
+//			double knee_code_y = vo_swing.getKnee_code_y();
+//			double foot_code_y = vo_swing.getFoot_code_y();
+//			
+//			session.setAttribute("head_action", head_action);
+//			session.setAttribute("shoulder_action", shoulder_action);
+//			session.setAttribute("arm_action", arm_action);
+//			session.setAttribute("waist_action", waist_action);
+//			session.setAttribute("core_action", core_action);
+//			session.setAttribute("knee_action", knee_action);
+//			session.setAttribute("foot_action", foot_action);
+//			session.setAttribute("weight_center", weight_center);
+//			session.setAttribute("head_code_x", head_code_x);
+//			session.setAttribute("shoulder_code_x", shoulder_code_x);
+//			session.setAttribute("arm_code_x", arm_code_x);
+//			session.setAttribute("waist_code_x", waist_code_x);
+//			session.setAttribute("core_code_x", core_code_x);
+//			session.setAttribute("knee_code_x", knee_code_x);
+//			session.setAttribute("foot_code_x", foot_code_x);
+//			session.setAttribute("head_code_y", head_code_y);
+//			session.setAttribute("shoulder_code_y", shoulder_code_y);
+//			session.setAttribute("arm_code_y", arm_code_y);
+//			session.setAttribute("waist_code_y", waist_code_y);
+//			session.setAttribute("core_code_y", core_code_y);
+//			session.setAttribute("knee_code_y", knee_code_y);
+//			session.setAttribute("foot_code_y", foot_code_y);
 			
 //			model.addAttribute("head_action", head_action);
 //			model.addAttribute("shoulder_action", shoulder_action);
@@ -389,8 +452,8 @@ public class golfController {
 //			model.addAttribute("knee_action", knee_action);
 //			model.addAttribute("foot_action", foot_action);
 //			model.addAttribute("weight_center", weight_center);
-		}
-	};
+//		}
+//	};
 	
 	
 	
