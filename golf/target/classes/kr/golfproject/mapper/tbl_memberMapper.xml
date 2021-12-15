@@ -31,4 +31,9 @@
         select * from tbl_deeplearning where upload_seq = #{upload_seq} order by deep_seq desc LIMIT 1;
     </select>
     
+    <!-- 스켈레톤 vo 출력 -->
+    <select id="loadskeleton" resultType="kr.golfproject.domain.tbl_skeleton_video" parameterType="kr.golfproject.domain.tbl_skeleton_video">
+        select * from tbl_skeleton_video where m_idx = 34 and upload_seq = 124;
+    </select>
+    
 </mapper>

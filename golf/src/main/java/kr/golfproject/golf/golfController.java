@@ -27,6 +27,7 @@ import com.mysql.jdbc.log.Log;
 
 import kr.golfproject.domain.tbl_deeplearning;
 import kr.golfproject.domain.tbl_member;
+import kr.golfproject.domain.tbl_skeleton_video;
 import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 import kr.golfproject.mapper.tbl_memberMapper;
@@ -140,12 +141,13 @@ public class golfController {
 			};
 			session.setAttribute("recent_upload_subject", upload_subject);
 			if(vo_upload!=null) {
-				session.setAttribute("recent_upload_info", vo_upload);
+				session.setAttribute("recent_upload_info", vo_upload);		
 				String file = vo_upload.getUpload_file();
 				session.setAttribute("recent_upload_file", file);
 			};
 			
 			int upload_seq = vo_upload.getUpload_seq();
+			session.setAttribute("upload_seq", upload_seq);
 			
 			// 스윙순간의 이미지 데이터 출력
 			tbl_deeplearning vo_deep = mapper.loaddeep(upload_seq);
@@ -161,6 +163,14 @@ public class golfController {
 				session.setAttribute("downswing", downswing);
 				session.setAttribute("impact", impact);
 				session.setAttribute("followthrough", followthrough);
+			};
+			
+			// 스켈레톤 영상 출력
+			tbl_skeleton_video vo_skeleton = mapper.loadskeleton(m_idx, upload_seq);
+			if(vo_skeleton!=null) {
+				session.setAttribute("skeleton_info", vo_skeleton);
+				String file_skeleton = vo_skeleton.getVideo_path();
+				session.setAttribute("skeleton_file", file_skeleton);
 			};
 		};
 		return "video_compared";
@@ -220,6 +230,7 @@ public class golfController {
 //	};
 	
 	// 최근 분석결과 띄우기
+		// tbl_upload
 		@RequestMapping("/ImportRecentUpload")
 		public String ImportRecentUpload(int m_idx, HttpSession session, Model model) {
 			tbl_upload vo = mapper.IRU(m_idx);	
@@ -235,6 +246,18 @@ public class golfController {
 			}
 			return "video_compared";
 		};
+		
+	// tbl_skeleton에서 upload_seq에 맞는 스켈레톤 영상 가져오기
+	@RequestMapping("/ImportSkeleton")
+	public String ImportSkeleton(int m_idx, int upload_seq, HttpSession session, Model model) {
+		tbl_skeleton_video vo = mapper.loadskeleton(m_idx, upload_seq);
+		if(vo!=null) {
+			session.setAttribute("skeleton_info", vo);
+			String file = vo.getVideo_path();
+			session.setAttribute("skeleton_file", file);
+		}
+		return "video_compared";
+	};
 	
 	// 자세교정코멘트 출력
 	@Async

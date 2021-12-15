@@ -4026,7 +4026,7 @@ a.upper-link:hover {
 }
 
 p.aimage {
-    width: 200px;
+    width: 280px;
     height: 200px;
     background-size: 100% 100%;
     background-position: 55% 50%;
@@ -4170,8 +4170,8 @@ p.picture_selected {
 
 .point_img {
     background-image: url(http://localhost:13131/golf/resources/static/images/lockon.png);
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     background-position: 55% 50%;
     background-size: 100% 100%;
 }
@@ -4190,8 +4190,18 @@ a.point_link.uptomiddle {
     top : 100px;
 }
 
+a.point_link.uptomiddle2 {
+    left: 1050px;
+    top : 100px;
+}
+
 a.point_link.downtomiddle {
     left: -200px;
+    top : 700px;
+}
+
+a.point_link.downtomiddle2 {
+    left: 1050px;
     top : 700px;
 }
 

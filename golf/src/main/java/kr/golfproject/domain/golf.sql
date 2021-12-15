@@ -132,3 +132,9 @@ values(6, "아이언", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "
 
 select * from tbl_swing;
 delete from tbl_swing;
+
+INSERT into tbl_skeleton_video(video_seq, video_path, reg_date, m_idx, upload_seq) 
+values(1, "C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/mic9.mp4", "2021-12-14 21:08:20.0", 34, 124)
+
+select * from tbl_skeleton_video;
+select * from tbl_skeleton_video where m_idx = 34 and upload_seq = 124;

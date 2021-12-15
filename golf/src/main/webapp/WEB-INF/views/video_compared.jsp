@@ -214,7 +214,7 @@
 							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg" style="height: 488px; width: 750px; display: inline-block; position: absolute; top: 0px; left: 780px;">
 								<div class="card-header">
 									<div class="header-block" style="width: 60%;">						
-										<div class="title" style="font-size:20px;margin-top: 1%;"> 딥러닝 분석 영상 </div>
+										<div class="title" id = "skeleton_title" style="font-size:20px;margin-top: 1%;"> 딥러닝 분석 영상 </div>
 									</div>
 								</div>
 								<div class="card-block">
@@ -224,8 +224,8 @@
 									</div>
 
 									<div class="videobox compare" id="videobox">
-										<video class = "video_compare" id="a_video" muted>
-											<source id="movie_src" type="video/mp4" src=""/>
+										<video class = "video_compare" id="a_video_skeleton" muted>
+											<source id="movie_src_skeleton" type="video/mp4" src=""/>
 										</video>
 									</div>	
 								</div>
@@ -257,10 +257,10 @@
 														<a class="point_link uptomiddle" id = "point_link_shoulder">
 															<div class="point_img"></div>
 														</a>
-														<a class="point_link uptomiddle" id = "point_link_arm">
+														<a class="point_link uptomiddle2" id = "point_link_arm">
 															<div class="point_img"></div>
 														</a>
-														<a class="point_link uptomiddle" id = "point_link_waist">
+														<a class="point_link uptomiddle2" id = "point_link_waist">
 															<div class="point_img"></div>
 														</a>
 														<a class="point_link downtomiddle" id = "point_link_pelvis">
@@ -269,10 +269,10 @@
 														<a class="point_link downtomiddle" id = "point_link_knee">
 															<div class="point_img"></div>
 														</a>
-														<a class="point_link downtomiddle" id = "point_link_foot">
+														<a class="point_link downtomiddle2" id = "point_link_foot">
 															<div class="point_img"></div>
 														</a>
-														<a class="point_link downtomiddle" id = "point_link_cg">
+														<a class="point_link downtomiddle2" id = "point_link_cg">
 															<div class="point_img"></div>
 														</a>
 														<div class="sizer">
@@ -378,7 +378,7 @@
 																			</div>
 																	</div>
 																</a>
-																<a class = "picture_link column6" id="picture_link6" href="#" role="button">
+																<!--<a class = "picture_link column6" id="picture_link6" href="#" role="button">
 																	<div class="picture_column column6">
 																			<div class="apicture">
 																				<p class = "aimage column6" id="columnimage6"></p>
@@ -391,7 +391,7 @@
 																				<p class = "aimage column7" id="columnimage7"></p>
 																			</div>
 																	</div>
-																</a>
+																</a> -->
 															</div>
 														</section>
 														<a class = "move_right" onclick = "">
@@ -496,6 +496,38 @@
 	}
 	</script>
 	
+	<!-- 스켈레톤 영상 불러오기 -->
+	<script>
+		$(function() {
+			if("${login_state}"=="Y"){
+				$.ajax({
+		        	url : "${cpath}/ImportSkeleton.do",
+		        	type : "post",
+		        	data : {"m_idx":${login_idx}, "upload_seq":${upload_seq}},
+		        	//data : frmData,
+		        	success : function(){},
+		        	error : function(){},
+		    	});
+				
+				var dir="http://localhost:13131/golf/resources/static/skeletonmovie/";
+        		var filename = "${skeleton_file}";
+        		var file = filename.replace("C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/", dir);
+
+        		//선택한 버튼의 동영상 경로를 불러옴
+                $("#movie_src_skeleton").attr("src", file);
+        		
+                //동영상을 다시 load 함
+                $("#a_video_skeleton").load();
+                //load한 동영상을 재생
+                document.getElementById("a_video_skeleton").controls = "True";
+                
+                document.getElementById('skeleton_title').innerText = "${recent_upload_subject}";
+        		
+			};
+		});
+	</script>
+	
+	<!-- 영상불러오기 -->
 	<script>
 		$(function() {
 			if("${login_state}"=="Y"){

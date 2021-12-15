@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import kr.golfproject.domain.tbl_deeplearning;
 import kr.golfproject.domain.tbl_member;
+import kr.golfproject.domain.tbl_skeleton_video;
 import kr.golfproject.domain.tbl_swing;
 import kr.golfproject.domain.tbl_upload;
 
@@ -19,4 +20,5 @@ public interface tbl_memberMapper {
 	public tbl_upload IRU(int m_idx);	// tbl_upload vo와 데이터 세션에 저장
 	public tbl_swing loadswing(int deep_seq);	// 해당 딥러닝결과의 스윙교정텍스트 출력
 	public tbl_deeplearning loaddeep(int upload_seq);	// 딥러닝결과 출력
+	public tbl_skeleton_video loadskeleton(int m_idx, int upload_seq); // 스켈레톤 vo출력
 }
