@@ -210,7 +210,9 @@
 											<em class="fa fa-upload"></em> <small>동영상을 드래그해주세요.</small>
 										</div>
 									</div>
-
+									<div id = "Progress_Loading"><!-- 로딩바 -->
+										<img src="${cpath}/resources/static/images/Progress_Loading.gif"/>
+									</div>
 									<div class="videobox" id="videobox">
 										<video id="a_video" muted>
 											<source id="movie_src" type="video/mp4" src=""/>

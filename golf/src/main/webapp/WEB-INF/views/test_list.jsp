@@ -438,6 +438,21 @@
 	<script>
 	// 페이지에 따라 자동으로 영상이 보여지는 함수
 	$(function() {
+		loadlist();
+		});
+
+	function loadlist(){
+		$.ajax({
+			url:"${cpath}/listjson.do",
+			type:"GET",
+			datatype:"json",
+			success: loadimg,
+			error: function(){alert("제이슨실패!!!")}
+
+		})
+	}
+
+	function loadimg(data){
 	    var directory = 'http://localhost:13131/golf/resources/static/movie/';
 	    var video1 = document.getElementById('block_1').className;
 	    var video2 = document.getElementById('block_2').className;
@@ -458,21 +473,29 @@
 	    var text6 = video6.replace('movie_column third_column videono','');
 
 	    // 인덱스 부여(후에 list.get(i)에 사용, ex: 1번은 1-1에 ~ 6번은 2-3에 가고 페이지 넘어가면 7~12번이 똑같이 반복)
-	    var index1 = text1-1;
-	    var index2 = text2-1;
+	    var idx1 = text1-1;
+	    var idx2 = text2-1;
 	    var index3 = text3-1;
-	    var index4 = text4-1;
-	    var index5 = text5-1;
-	    var index6 = text6-1;
+	    var idx4 = text4-1;
+	    var idx5 = text5-1;
+	    var idx6 = text6-1;
 	    
-	    var file1 = "${list.get(index1).upload_file}";
-	    var file2 = "${list.get(index2).upload_file}";
-	    var file3 = "${list.get(index3).upload_file}";
-	    var file4 = "${list.get(index4).upload_file}";
-	    var file5 = "${list.get(index5).upload_file}";
-	    var file6 = "${list.get(index6).upload_file}";
+	    
+	    
+	    var list=data
+	    console.log(list)
+	    console.log(list[idx2].upload_file)
+			    
+	    var file1 = list[idx1].upload_file;
+	    var file2 = list[idx2].upload_file;
+	    var file3 = list[index3].upload_file;
+	    var file4 = list[idx4].upload_file;
+	    var file5 = list[idx5].upload_file;
+	    var file6 = list[idx6].upload_file;
 	    
 	    //var filetype = ".mp4";
+	    console.log(index3)
+	    
 	    var dir1 = directory + file1;
 	    var dir2 = directory + file2;
 	    var dir3 = directory + file3;
@@ -494,7 +517,7 @@
 	    $("#video4").load();
 	    $("#video5").load();
 	    $("#video6").load();
-	});
+	}
 	</script>
 </body>
 </html>

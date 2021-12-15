@@ -39,7 +39,9 @@ function progress_change() {
 //    $("#progress").removeClass("complete");
 //};
 
+
 $(document).ready(function(){
+    $('#Progress_Loading').hide(); //첫 시작시 로딩바를 숨겨준다.
     var fileTarget = $('.filebox .upload-hidden');
     var directory = 'http://localhost:13131/golf/resources/static/movie/';
  

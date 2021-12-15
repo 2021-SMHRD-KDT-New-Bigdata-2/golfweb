@@ -21,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -121,18 +122,23 @@ public class golfController {
 	// 분석 목록페이지 접속 : http://localhost:13131/golf/test_list.html
 	@RequestMapping("/test_list")
 	public String test_list(HttpSession session, Model model) {
+		
+		return "test_list";
+	}
+	@RequestMapping("/listjson.do")
+	public @ResponseBody List<tbl_upload> listjson(HttpSession session){
 		String login_state = (String)session.getAttribute("login_state");
-		List<tbl_upload> list = null;
+		List<tbl_upload> list=null;
 		if(login_state=="Y") {
 			int m_idx = (int)session.getAttribute("login_idx");
 			list = mapper.loaduploadlist(m_idx);
+			System.out.println("리스트목록: "+list);
 			//System.out.println(list);
-			session.setAttribute("list", list);
-			//model.addAttribute("list", list);
-			
-		};
-		return "test_list";
+			return list;
+		}
+		return list;
 	}
+	
 	
 	// 영상 업로드 페이지 접속: http://localhost:13131/golf/upload_movie.html
 	@RequestMapping("/upload_movie")
