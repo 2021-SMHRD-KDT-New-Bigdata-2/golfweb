@@ -18,22 +18,22 @@
     
     <!-- 최신의 tbl_upload vo와 데이터 세션에 저장 -->
     <select id="IRU" resultType="kr.golfproject.domain.tbl_upload" parameterType="kr.golfproject.domain.tbl_upload">
-        select * from tbl_upload where m_idx = #{m_idx} order by upload_seq desc LIMIT 1;
+        select * from tbl_upload where m_idx = #{m_idx} order by upload_seq desc LIMIT 1
     </select>
     
     <!-- 해당 딥러닝결과의 스윙교정텍스트 출력 -->
     <select id="loadswing" resultType="kr.golfproject.domain.tbl_swing" parameterType="kr.golfproject.domain.tbl_swing">
-        select * from tbl_swing where deep_seq = #{deep_seq};
+        select * from tbl_swing where deep_seq = #{deep_seq} and swing_type = #{swing_type}
     </select>
     
     <!-- 최근에 딥러닝한 결과 출력 -->
     <select id="loaddeep" resultType="kr.golfproject.domain.tbl_deeplearning" parameterType="kr.golfproject.domain.tbl_deeplearning">
-        select * from tbl_deeplearning where upload_seq = #{upload_seq} order by deep_seq desc LIMIT 1;
+        select * from tbl_deeplearning where upload_seq = #{upload_seq} order by deep_seq desc LIMIT 1
     </select>
     
     <!-- 스켈레톤 vo 출력 -->
     <select id="loadskeleton" resultType="kr.golfproject.domain.tbl_skeleton_video" parameterType="kr.golfproject.domain.tbl_skeleton_video">
-        select * from tbl_skeleton_video where m_idx = 34 and upload_seq = 124;
+        select * from tbl_skeleton_video where m_idx = #{m_idx} and upload_seq = #{upload_seq}
     </select>
     
 </mapper>

@@ -296,32 +296,33 @@
 															</div>
 															<div class="swing_recommend shoulder">
 																<div class="recommend-title" id = "recommend-title-shoulder">어깨동작</div>
-																<div class="recommend-text shoulder-text" id="shoulder-text">${shoulder_action}</div>
+																<div class="recommend-text shoulder-text" id="shoulder-text"></div>
 															</div>
 															<div class="swing_recommend arm">
 																<div class="recommend-title" id = "recommend-title-arm">팔동작</div>
-																<div class="recommend-text arm-text" id="arm-text">${arm_action}</div>
+																<div class="recommend-text arm-text" id="arm-text"></div>
 															</div>
 															<div class="swing_recommend waist">
 																<div class="recommend-title" id = "recommend-title-waist">허리동작</div>
-																<div class="recommend-text waist-text" id="waist-text">${waist_action}</div>
+																<div class="recommend-text waist-text" id="waist-text"></div>
 															</div>
 															<div class="swing_recommend pelvis">
 																<div class="recommend-title" id = "recommend-title-pelvis">골반동작</div>
-																<div class="recommend-text pelvis-text" id="pelvis-text">${core_action}</div>
+																<div class="recommend-text pelvis-text" id="pelvis-text"></div>
 															</div>
 															<div class="swing_recommend knee">
 																<div class="recommend-title" id = "recommend-title-knee">무릎동작</div>
-																<div class="recommend-text knee-text" id="knee-text">${knee_action}</div>
+																<div class="recommend-text knee-text" id="knee-text"></div>
 															</div>
 															<div class="swing_recommend foot">
 																<div class="recommend-title" id = "recommend-title-foot">발동작</div>
-																<div class="recommend-text foot-text" id="foot-text">${foot_action}</div>
+																<div class="recommend-text foot-text" id="foot-text"></div>
 															</div>
-															<div class="swing_recommend cg">
+															<!-- <div class="swing_recommend cg">
 																<div class="recommend-title" id = "recommend-title-cg">무게중심</div>
 																<div class="recommend-text cg-text" id="cg-text">${weight_center}</div>
-															</div>
+															</div> -->
+															
 														</div>
 													</div>
 												</div>
@@ -484,6 +485,7 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
 
+
 	<script>
 	function logout(){
 		$.ajax({
@@ -503,7 +505,7 @@
 				$.ajax({
 		        	url : "${cpath}/ImportSkeleton.do",
 		        	type : "post",
-		        	data : {"m_idx":${login_idx}, "upload_seq":${upload_seq}},
+		        	data : {"m_idx":${member_info.m_idx}, "upload_seq":${recent_upload_info.upload_seq}},
 		        	//data : frmData,
 		        	success : function(){},
 		        	error : function(){},
@@ -524,14 +526,14 @@
 		});
 	</script>
 	
-	<!-- 영상불러오기 -->
+<!-- 영상불러오기 -->
 	<script>
 		$(function() {
 			if("${login_state}"=="Y"){
 			$.ajax({
 	        	url : "${cpath}/ImportRecentUpload.do",
 	        	type : "post",
-	        	data : {"m_idx":${login_idx}},
+	        	data : {"m_idx":${member_info.m_idx}},
 	        	//data : frmData,
 	        	success : function(){
 	        		var dir="http://localhost:13131/golf/resources/static/movie/";
@@ -560,22 +562,28 @@
 	
 	
 	//임시로 넣은 번호(차후 삭제)
-	var deep_seq = 4;
-	
+	var deep_seq = 6;
+	//스윙종류 : 어드레스
+	var swing_type = "address";
 	$('#picture_link1').click(function() {
 		$.ajax({
         	url : "${cpath}/LoadSwing.do",
         	type : "post",
-        	data : {"deep_seq":deep_seq},
+        	data : {"deep_seq":deep_seq, "swing_type":swing_type},
         	//data : frmData,
         	success : function(){},
         	error : function(){},
     	});
 		
 		document.getElementById('head-text').innerText = "${head_action}";
+		document.getElementById('shoulder-text').innerText = "${shoulder_action}";
+		document.getElementById('arm-text').innerText = "${arm_action}";
+		document.getElementById('waist-text').innerText = "${waist_action}";
+		document.getElementById('pelvis-text').innerText = "${core_action}";
+		document.getElementById('knee-text').innerText = "${knee_action}";
+		document.getElementById('foot-text').innerText = "${foot_action}";
 	});
 	</script>
-
 
 	<!-- 스윙하는 특정순간의 이미지 나열 -->
 	<script>

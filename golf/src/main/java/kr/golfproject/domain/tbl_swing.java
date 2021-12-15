@@ -21,4 +21,18 @@ public class tbl_swing {
 	private String foot_action;			// 발 동작
 	private String weight_center;		// 무게 중심
 	private String reg_date;			// 등록 일자
+	private double head_code_x;			// 머리 x좌표
+	private double head_code_y;			// 머리 y좌표
+	private double shoulder_code_x;		// 어깨 x좌표
+	private double shoulder_code_y;		// 어깨 y좌표
+	private double arm_code_x;			// 팔 x좌표
+	private double arm_code_y;			// 팔 y좌표
+	private double waist_code_x;		// 허리 x좌표
+	private double waist_code_y;		// 허리 y좌표
+	private double core_code_x;			// 골반 x좌표
+	private double core_code_y;			// 골반 y좌표
+	private double knee_code_x;			// 무릎 x좌표
+	private double knee_code_y;			// 무릎 y좌표
+	private double foot_code_x;			// 발 x좌표
+	private double foot_code_y;			// 발 y좌표
 }
