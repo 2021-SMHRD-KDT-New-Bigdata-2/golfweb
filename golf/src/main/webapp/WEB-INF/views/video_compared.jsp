@@ -520,9 +520,6 @@
                 $("#a_video_skeleton").load();
                 //load한 동영상을 재생
                 document.getElementById("a_video_skeleton").controls = "True";
-                
-                document.getElementById('skeleton_title').innerText = "${recent_upload_subject}";
-        		
 			};
 		});
 	</script>
