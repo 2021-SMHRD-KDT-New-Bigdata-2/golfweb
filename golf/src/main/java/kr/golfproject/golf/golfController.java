@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -185,8 +186,10 @@ public class golfController {
 			System.out.println("업로드파일이름 : "+mulitipartFile.getOriginalFilename());
 			System.out.println("파일 크기 : "+mulitipartFile.getSize());
 			String upload_file = mulitipartFile.getOriginalFilename();
-			filename=upload_file;
 			upload_file=upload_file.substring(upload_file.lastIndexOf("\\")+1);
+			UUID uuid = UUID.randomUUID();
+			upload_file= uuid.toString() + "-" + upload_file;
+			filename=upload_file;
 			File savefile = new File(uploadfolder,upload_file);
 			try {
 				mulitipartFile.transferTo(savefile);	

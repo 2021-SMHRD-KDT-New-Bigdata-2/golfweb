@@ -37,7 +37,7 @@ public class RestTest{
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setRequestProperty("Accept-Charset", "UTF-8");
         conn.setConnectTimeout(10000);
-        conn.setReadTimeout(10000);
+        conn.setReadTimeout(100000);
             
         //데이터 전송
         BufferedWriter bWriter=new BufferedWriter(new OutputStreamWriter(conn.getOutputStream(),"UTF-8"));

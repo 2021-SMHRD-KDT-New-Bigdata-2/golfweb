@@ -317,8 +317,9 @@
 								alert("성공!!!!!!!")
 							},
 							error:function(){
-								alert("좃까 실패")
+								alert("실패")
 							}
+						});	
 					},
 				});
 			},
