@@ -35,4 +35,5 @@ public class tbl_swing {
 	private double knee_code_y;			// 무릎 y좌표
 	private double foot_code_x;			// 발 x좌표
 	private double foot_code_y;			// 발 y좌표
+	private int upload_seq;
 }
