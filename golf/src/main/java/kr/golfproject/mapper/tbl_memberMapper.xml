@@ -36,4 +36,9 @@
         select * from tbl_skeleton_video where m_idx = #{m_idx} and upload_seq = #{upload_seq}
     </select>
     
+    <!-- 업로드 영상 목록 출력 -->
+    <select id="loaduploadlist" resultType="kr.golfproject.domain.tbl_upload" parameterType="kr.golfproject.domain.tbl_upload">
+        select * from tbl_upload where m_idx = #{m_idx}
+    </select>
+    
 </mapper>

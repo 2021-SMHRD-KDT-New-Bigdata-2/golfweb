@@ -432,7 +432,70 @@
         		location.href = "index.html";
         	},
     	});
-	}
+	};
+	</script>
+	
+	<script>
+	// 페이지에 따라 자동으로 영상이 보여지는 함수
+	$(function() {
+	    var directory = 'http://localhost:13131/golf/resources/static/movie/';
+	    var video1 = document.getElementById('block_1').className;
+	    var video2 = document.getElementById('block_2').className;
+	    var video3 = document.getElementById('block_3').className;
+	    var video4 = document.getElementById('block_4').className;
+	    var video5 = document.getElementById('block_5').className;
+	    var video6 = document.getElementById('block_6').className;
+	    
+	    // 초기 페이지 번호
+	    var pgnum=1;
+	
+	   	// 영상번호 출력
+	    var text1 = video1.replace('movie_column first_column videono','');
+	    var text2 = video2.replace('movie_column second_column videono','');
+	    var text3 = video3.replace('movie_column third_column videono','');
+	    var text4 = video4.replace('movie_column first_column videono','');
+	    var text5 = video5.replace('movie_column second_column videono','');
+	    var text6 = video6.replace('movie_column third_column videono','');
+
+	    // 인덱스 부여(후에 list.get(i)에 사용, ex: 1번은 1-1에 ~ 6번은 2-3에 가고 페이지 넘어가면 7~12번이 똑같이 반복)
+	    var index1 = text1-1;
+	    var index2 = text2-1;
+	    var index3 = text3-1;
+	    var index4 = text4-1;
+	    var index5 = text5-1;
+	    var index6 = text6-1;
+	    
+	    var file1 = ${list.get(index1)};
+	    var file2 = ${list.get(index2)};
+	    var file3 = ${list.get(index3)};
+	    var file4 = ${list.get(index4)};
+	    var file5 = ${list.get(index5)};
+	    var file6 = ${list.get(index6)};
+	    
+	    var filetype = ".mp4";
+	    var dir1 = directory + file1 + filetype;
+	    var dir2 = directory + file2 + filetype;
+	    var dir3 = directory + file3 + filetype;
+	    var dir4 = directory + file4 + filetype;
+	    var dir5 = directory + file5 + filetype;
+	    var dir6 = directory + file6 + filetype;
+
+	    $("#movie_src1").attr("src", dir1);
+	    $("#movie_src2").attr("src", dir2);
+	    $("#movie_src3").attr("src", dir3);
+	    $("#movie_src4").attr("src", dir4);
+	    $("#movie_src5").attr("src", dir5);
+	    $("#movie_src6").attr("src", dir6);
+
+	    //동영상을 다시 load 함
+	    $("#video1").load();
+	    $("#video2").load();
+	    $("#video3").load();
+	    $("#video4").load();
+	    $("#video5").load();
+	    $("#video6").load();
+
+	});
 	</script>
 </body>
 </html>

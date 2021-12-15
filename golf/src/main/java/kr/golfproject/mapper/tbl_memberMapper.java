@@ -1,5 +1,7 @@
 package kr.golfproject.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -21,4 +23,5 @@ public interface tbl_memberMapper {
 	public tbl_swing loadswing(int deep_seq, String swing_type);	// 해당 딥러닝결과의 스윙교정텍스트 출력
 	public tbl_deeplearning loaddeep(int upload_seq);	// 딥러닝결과 출력
 	public tbl_skeleton_video loadskeleton(tbl_upload vo); // 스켈레톤 vo출력
+	public List<tbl_upload> loaduploadlist(int m_idx); // 업로드한 목록 출력
 }

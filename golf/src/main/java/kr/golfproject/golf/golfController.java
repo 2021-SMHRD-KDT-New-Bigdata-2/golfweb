@@ -3,6 +3,7 @@ package kr.golfproject.golf;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -119,7 +120,14 @@ public class golfController {
 	
 	// 분석 목록페이지 접속 : http://localhost:13131/golf/test_list.html
 	@RequestMapping("/test_list")
-	public String test_list() {
+	public String test_list(HttpSession session, Model model) {
+		String login_state = (String)session.getAttribute("login_state");
+		List<tbl_upload> list = null;
+		if(login_state=="Y") {
+			int m_idx = (int)session.getAttribute("login_idx");
+			list = mapper.loaduploadlist(m_idx);
+			model.addAttribute("list", list);
+		};
 		return "test_list";
 	}
 	
@@ -176,59 +184,59 @@ public class golfController {
 			};
 			
 			
-			int deep_seq = vo_deep.getDeep_seq();
-			// 어드레스 스윙데이터 출력
-			String swing_type = "address";
-			
-			tbl_swing vo_swing = mapper.loadswing(deep_seq,swing_type);	
-			if(vo_swing!=null) {
-				session.setAttribute("recent_upload_info", vo_swing);
-				String head_action = vo_swing.getHead_action();
-				String shoulder_action = vo_swing.getShoulder__action();
-				String arm_action = vo_swing.getArm__action();
-				String waist_action = vo_swing.getWaist_action();
-				String core_action = vo_swing.getCore__action();
-				String knee_action = vo_swing.getKnee_action();
-				String foot_action = vo_swing.getFoot_action();
-				String weight_center = vo_swing.getWeight_center();
-				double head_code_x = vo_swing.getHead_code_x();
-				double shoulder_code_x = vo_swing.getShoulder_code_x();
-				double arm_code_x = vo_swing.getArm_code_x();
-				double waist_code_x = vo_swing.getWaist_code_x();
-				double core_code_x = vo_swing.getCore_code_x();
-				double knee_code_x = vo_swing.getKnee_code_x();
-				double foot_code_x = vo_swing.getFoot_code_x();
-				double head_code_y = vo_swing.getHead_code_y();
-				double shoulder_code_y = vo_swing.getShoulder_code_y();
-				double arm_code_y = vo_swing.getArm_code_y();
-				double waist_code_y = vo_swing.getWaist_code_y();
-				double core_code_y = vo_swing.getCore_code_y();
-				double knee_code_y = vo_swing.getKnee_code_y();
-				double foot_code_y = vo_swing.getFoot_code_y();
-				
-				session.setAttribute("head_action", head_action);
-				session.setAttribute("shoulder_action", shoulder_action);
-				session.setAttribute("arm_action", arm_action);
-				session.setAttribute("waist_action", waist_action);
-				session.setAttribute("core_action", core_action);
-				session.setAttribute("knee_action", knee_action);
-				session.setAttribute("foot_action", foot_action);
-				session.setAttribute("weight_center", weight_center);
-				session.setAttribute("head_code_x", head_code_x);
-				session.setAttribute("shoulder_code_x", shoulder_code_x);
-				session.setAttribute("arm_code_x", arm_code_x);
-				session.setAttribute("waist_code_x", waist_code_x);
-				session.setAttribute("core_code_x", core_code_x);
-				session.setAttribute("knee_code_x", knee_code_x);
-				session.setAttribute("foot_code_x", foot_code_x);
-				session.setAttribute("head_code_y", head_code_y);
-				session.setAttribute("shoulder_code_y", shoulder_code_y);
-				session.setAttribute("arm_code_y", arm_code_y);
-				session.setAttribute("waist_code_y", waist_code_y);
-				session.setAttribute("core_code_y", core_code_y);
-				session.setAttribute("knee_code_y", knee_code_y);
-				session.setAttribute("foot_code_y", foot_code_y);
-			};
+//			int deep_seq = vo_deep.getDeep_seq();
+//			// 어드레스 스윙데이터 출력
+//			String swing_type = "address";
+//			
+//			tbl_swing vo_swing = mapper.loadswing(deep_seq,swing_type);	
+//			if(vo_swing!=null) {
+//				session.setAttribute("recent_upload_info", vo_swing);
+//				String head_action = vo_swing.getHead_action();
+//				String shoulder_action = vo_swing.getShoulder__action();
+//				String arm_action = vo_swing.getArm__action();
+//				String waist_action = vo_swing.getWaist_action();
+//				String core_action = vo_swing.getCore__action();
+//				String knee_action = vo_swing.getKnee_action();
+//				String foot_action = vo_swing.getFoot_action();
+//				String weight_center = vo_swing.getWeight_center();
+//				double head_code_x = vo_swing.getHead_code_x();
+//				double shoulder_code_x = vo_swing.getShoulder_code_x();
+//				double arm_code_x = vo_swing.getArm_code_x();
+//				double waist_code_x = vo_swing.getWaist_code_x();
+//				double core_code_x = vo_swing.getCore_code_x();
+//				double knee_code_x = vo_swing.getKnee_code_x();
+//				double foot_code_x = vo_swing.getFoot_code_x();
+//				double head_code_y = vo_swing.getHead_code_y();
+//				double shoulder_code_y = vo_swing.getShoulder_code_y();
+//				double arm_code_y = vo_swing.getArm_code_y();
+//				double waist_code_y = vo_swing.getWaist_code_y();
+//				double core_code_y = vo_swing.getCore_code_y();
+//				double knee_code_y = vo_swing.getKnee_code_y();
+//				double foot_code_y = vo_swing.getFoot_code_y();
+//				
+//				session.setAttribute("head_action", head_action);
+//				session.setAttribute("shoulder_action", shoulder_action);
+//				session.setAttribute("arm_action", arm_action);
+//				session.setAttribute("waist_action", waist_action);
+//				session.setAttribute("core_action", core_action);
+//				session.setAttribute("knee_action", knee_action);
+//				session.setAttribute("foot_action", foot_action);
+//				session.setAttribute("weight_center", weight_center);
+//				session.setAttribute("head_code_x", head_code_x);
+//				session.setAttribute("shoulder_code_x", shoulder_code_x);
+//				session.setAttribute("arm_code_x", arm_code_x);
+//				session.setAttribute("waist_code_x", waist_code_x);
+//				session.setAttribute("core_code_x", core_code_x);
+//				session.setAttribute("knee_code_x", knee_code_x);
+//				session.setAttribute("foot_code_x", foot_code_x);
+//				session.setAttribute("head_code_y", head_code_y);
+//				session.setAttribute("shoulder_code_y", shoulder_code_y);
+//				session.setAttribute("arm_code_y", arm_code_y);
+//				session.setAttribute("waist_code_y", waist_code_y);
+//				session.setAttribute("core_code_y", core_code_y);
+//				session.setAttribute("knee_code_y", knee_code_y);
+//				session.setAttribute("foot_code_y", foot_code_y);
+//			};
 		};
 		return "video_compared";
 	}

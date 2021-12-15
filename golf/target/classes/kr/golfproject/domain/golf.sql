@@ -119,7 +119,7 @@ delete from tbl_member;
 
 select * from tbl_upload;
 delete from tbl_upload;
-select * from tbl_upload where m_idx = 37 order by upload_seq desc LIMIT 1;
+select * from tbl_upload where m_idx = 34 order by upload_seq desc LIMIT 1;
 
 INSERT into tbl_deeplearning(upload_seq, deep_target, address, backswing, top, downswing, acceleration, impact, followthrough, finish, m_id) 
 values(124, "???", "_10.jpg", "백스윙", "_30.jpg", "_50.jpg", "가속", "_70.jpg","_90.jpg","피니쉬","salja")
