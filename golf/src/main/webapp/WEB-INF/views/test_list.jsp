@@ -46,7 +46,7 @@
 					</div>
 					<div class= "upper-tool third-tool">
 						<a class = "upper-link" href = "video_compared.html">
-							<div class = "upper-link-text">골프 정보</div>
+							<div class = "upper-link-text">마지막 분석으로</div>
 						</a>
 					</div>
 				</div>
@@ -315,22 +315,22 @@
                                 <a class="page_link" onclick=""> Prev </a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link active" id="page-link-num1" style="color: #fff;" onclick="move_page_num(document.getElementById('page-link-num1').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">1</a>
+                                <a class="page_link active" id="page-link-num1" style="color: #fff;" onclick="move_page_num(document.getElementById('page-link-num1').innerHTML,document.getElementById('present_pgnum').innerHTML)">1</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num2" onclick="move_page_num(document.getElementById('page-link-num2').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">2</a>
+                                <a class="page_link" id="page-link-num2" onclick="move_page_num(document.getElementById('page-link-num2').innerHTML,document.getElementById('present_pgnum').innerHTML)">2</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num3" onclick="move_page_num(document.getElementById('page-link-num3').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">3</a>
+                                <a class="page_link" id="page-link-num3" onclick="move_page_num(document.getElementById('page-link-num3').innerHTML,document.getElementById('present_pgnum').innerHTML)">3</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num4" onclick="move_page_num(document.getElementById('page-link-num4').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">4</a>
+                                <a class="page_link" id="page-link-num4" onclick="move_page_num(document.getElementById('page-link-num4').innerHTML,document.getElementById('present_pgnum').innerHTML)">4</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num5" onclick="move_page_num(document.getElementById('page-link-num5').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">5</a>
+                                <a class="page_link" id="page-link-num5" onclick="move_page_num(document.getElementById('page-link-num5').innerHTML,document.getElementById('present_pgnum').innerHTML)">5</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num6" onclick="move_page_num(document.getElementById('page-link-num6').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">6</a>
+                                <a class="page_link" id="page-link-num6" onclick="move_page_num(document.getElementById('page-link-num6').innerHTML,document.getElementById('present_pgnum').innerHTML)">6</a>
                             </li>
                             <li class="page_item">
                                 <a class="page_link" id="page-link-num7" onclick="move_page_num(document.getElementById('page-link-num7').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">7</a>
@@ -477,98 +477,271 @@
 	    var idx5 = text5-1;
 	    var idx6 = text6-1;
 	    
+	    
 	    var list=data;
+	    
 	    console.log(list);
 	    
-	    if(list[idx1].upload_subject==""){
-	    	title1 = "제목없음";
-	    }else{
-	    	title1 = list[idx1].upload_subject;
-	    };
-	    if(list[idx2].upload_subject==""){
-	    	title2 = "제목없음";
-	    }else{
-	    	title2 = list[idx2].upload_subject;
-	    };
-	    if(list[idx3].upload_subject==""){
-	    	title3 = "제목없음";
-	    }else{
-	    	title3 = list[idx3].upload_subject;
-	    };
-	    if(list[idx4].upload_subject==""){
-	    	title4 = "제목없음";
-	    }else{
-	    	title4 = list[idx4].upload_subject;
-	    };
-	    if(list[idx5].upload_subject==""){
-	    	title5 = "제목없음";
-	    }else{
-	    	title5 = list[idx5].upload_subject;
-	    };
-	    if(list[idx6].upload_subject==""){
-	    	title6 = "제목없음";
-	    }else{
-	    	title6 = list[idx6].upload_subject;
+	    if(list != null){
+		    // page번호
+		   	var pgnum = document.getElementById("present_pgnum").innerHTML;
+		    var lastpgnum = parseInt(list.length/6)+1;
+		    
+		    // 7, 13, 19
+		    var num_view = list.length%6;
+		    
+		    if(list.length!=0){
+		    	
+		    	$('.movie_column').css({
+		            "visibility" : "visible",
+		        });
+		    	
+		        if(lastpgnum<pgnum){
+		        	$('.movie_column').css({
+			            "visibility" : "hidden",
+			        });
+		        };
+		        
+		    	if(lastpgnum==pgnum){
+		    		if(num_view!=0){
+		    			$('#block_6').css({
+					        "visibility" : "hidden",
+					    });
+		    			if(num_view<=4){
+		    				$('#block_5').css({
+		    		            "visibility" : "hidden",
+		    		        });
+		    			};
+		    			if(num_view<=3){
+		    				$('#block_4').css({
+		    		            "visibility" : "hidden",
+		    		        });
+		    			};
+		    			if(num_view<=2){
+		    				$('#block_3').css({
+		    		            "visibility" : "hidden",
+		    		        });
+		    			};
+		    			if(num_view<=1){
+		    				$('#block_2').css({
+		    		            "visibility" : "hidden",
+		    		        });
+		    			};
+		    		};
+		    		
+		    		// 예외처리: 올린 분석 6개미만일 때
+				    if((num_view>=1 || num_view==0)){
+				    	if(list[idx1].upload_subject==""){
+					    	title1 = "제목없음";
+					    }else{
+					    	title1 = list[idx1].upload_subject;
+					    };
+				    	
+				    	var file1 = list[idx1].upload_file;
+				    	var dir1 = directory + file1;
+				    	if(file1==""){
+				    		dir1 = "";
+				    	};
+				    	$("#movie_src1").attr("src", dir1);
+				    	$("#video1").load();
+				    	document.getElementById('list-title1').innerText = title1;
+				    };
+				    
+				    if(num_view>=2 || num_view==0){
+				    	if(list[idx2].upload_subject==""){
+					    	title2 = "제목없음";
+					    }else{
+					    	title2 = list[idx2].upload_subject;
+					    };
+				    	
+				    	var file2 = list[idx2].upload_file;
+				    	var dir2 = directory + file2;
+				    	$("#movie_src2").attr("src", dir2);
+				    	$("#video2").load();
+				    	document.getElementById('list-title2').innerText = title2;
+				    };
+				    
+					if(num_view>=3 || num_view==0){
+						if(list[idx3].upload_subject==""){
+					    	title3 = "제목없음";
+					    }else{
+					    	title3 = list[idx3].upload_subject;
+					    };
+						
+				    	var file3 = list[idx3].upload_file;
+				    	var dir3 = directory + file3;
+				    	$("#movie_src3").attr("src", dir3);
+				    	$("#video3").load();
+				    	document.getElementById('list-title3').innerText = title3;
+				    };
+					
+					if(num_view>=4 || num_view==0){
+						if(list[idx4].upload_subject==""){
+					    	title4 = "제목없음";
+					    }else{
+					    	title4 = list[idx4].upload_subject;
+					    };
+					    
+				    	var file4 = list[idx4].upload_file;
+				    	var dir4 = directory + file4;
+				    	$("#movie_src4").attr("src", dir4);
+				    	$("#video4").load();
+				    	document.getElementById('list-title4').innerText = title4;
+				    };
+					
+					if(num_view>=5 || num_view==0){
+						if(list[idx5].upload_subject==""){
+					    	title5 = "제목없음";
+					    }else{
+					    	title5 = list[idx5].upload_subject;
+					    };
+					    
+				    	var file5 = list[idx5].upload_file;
+				    	var dir5 = directory + file5;
+				    	$("#movie_src5").attr("src", dir5);
+				    	$("#video5").load();
+				    	document.getElementById('list-title5').innerText = title5;
+				    };
+				    
+				    if(num_view==0){
+				    	if(list[idx6].upload_subject==""){
+					    	title6 = "제목없음";
+					    }else{
+					    	title6 = list[idx6].upload_subject;
+					    };
+					    
+				    	var file6 = list[idx6].upload_file;
+				    	var dir6 = directory + file6;
+				    	$("#movie_src6").attr("src", dir6);
+				    	$("#video6").load();
+				    	document.getElementById('list-title6').innerText = title6;
+				    };
+		    	}else{
+		    		if(list[idx1].upload_subject==""){
+				    	title1 = "제목없음";
+				    }else{
+				    	title1 = list[idx1].upload_subject;
+				    };
+				    if(list[idx2].upload_subject==""){
+				    	title2 = "제목없음";
+				    }else{
+				    	title2 = list[idx2].upload_subject;
+				    };
+				    if(list[idx3].upload_subject==""){
+				    	title3 = "제목없음";
+				    }else{
+				    	title3 = list[idx3].upload_subject;
+				    };
+				    if(list[idx4].upload_subject==""){
+				    	title4 = "제목없음";
+				    }else{
+				    	title4 = list[idx4].upload_subject;
+				    };
+				    if(list[idx5].upload_subject==""){
+				    	title5 = "제목없음";
+				    }else{
+				    	title5 = list[idx5].upload_subject;
+				    };
+				    if(list[idx6].upload_subject==""){
+				    	title6 = "제목없음";
+				    }else{
+				    	title6 = list[idx6].upload_subject;
+				    };
+		    		
+		    		var file1 = list[idx1].upload_file;
+			    	var dir1 = directory + file1;
+			    	if(file1==""){
+			    		dir1 = "";
+			    	};
+			    	$("#movie_src1").attr("src", dir1);
+			    	$("#video1").load();
+			    	document.getElementById('list-title1').innerText = title1;
+			    	
+			    	var file2 = list[idx2].upload_file;
+			    	var dir2 = directory + file2;
+			    	if(file2==""){
+			    		dir2 = "";
+			    	};
+			    	$("#movie_src2").attr("src", dir2);
+			    	$("#video2").load();
+			    	document.getElementById('list-title2').innerText = title2;
+			    	
+			    	var file3 = list[idx3].upload_file;
+			    	var dir3 = directory + file3;
+			    	if(file3==""){
+			    		dir3 = "";
+			    	};
+			    	$("#movie_src3").attr("src", dir3);
+			    	$("#video3").load();
+			    	document.getElementById('list-title3').innerText = title3;
+			    	
+			    	var file4 = list[idx4].upload_file;
+			    	var dir4 = directory + file4;
+			    	if(file4==""){
+			    		dir4 = "";
+			    	};
+			    	$("#movie_src4").attr("src", dir4);
+			    	$("#video4").load();
+			    	document.getElementById('list-title4').innerText = title4;
+			    	
+			    	var file5 = list[idx5].upload_file;
+			    	var dir5 = directory + file5;
+			    	if(file5==""){
+			    		dir5 = "";
+			    	};
+			    	$("#movie_src5").attr("src", dir5);
+			    	$("#video5").load();
+			    	document.getElementById('list-title5').innerText = title5;
+			    	
+			    	var file6 = list[idx6].upload_file;
+			    	var dir6 = directory + file6;
+			    	if(file6==""){
+			    		dir6 = "";
+			    	};
+			    	$("#movie_src6").attr("src", dir6);
+			    	$("#video6").load();
+			    	document.getElementById('list-title6').innerText = title6;
+		    	};
+		    	
+		    };
 	    };
 	    
 	    
-	    var num_view = list.length%6;
-	    // 예외처리: 올린 분석 6개미만일 때
-	    if((num_view>=1 || num_view==0) && list.length!=0){
-	    	var file1 = list[idx1].upload_file;
-	    	var dir1 = directory + file1;
-	    	if(file1==""){
-	    		dir1 = "";
-	    	};
-	    	
-	    	$("#movie_src1").attr("src", dir1);
-	    	$("#video1").load();
-	    	document.getElementById('list-title1').innerText = title1;
-	    };
-	    
-	    if((num_view>=2 || num_view==0) && list.length!=0){
-	    	var file2 = list[idx2].upload_file;
-	    	var dir2 = directory + file2;
-	    	$("#movie_src2").attr("src", dir2);
-	    	$("#video2").load();
-	    	document.getElementById('list-title2').innerText = title2;
-	    };
-	    
-		if((num_view>=3 || num_view==0) && list.length!=0){
-	    	var file3 = list[idx3].upload_file;
-	    	var dir3 = directory + file3;
-	    	$("#movie_src3").attr("src", dir3);
-	    	$("#video3").load();
-	    	document.getElementById('list-title3').innerText = title3;
-	    };
-		
-		if((num_view>=4 || num_view==0) && list.length!=0){
-	    	var file4 = list[idx4].upload_file;
-	    	var dir4 = directory + file4;
-	    	$("#movie_src4").attr("src", dir4);
-	    	$("#video4").load();
-	    	document.getElementById('list-title4').innerText = title4;
-	    };
-		
-		if((num_view>=5 || num_view==0) && list.length!=0){
-	    	var file5 = list[idx5].upload_file;
-	    	var dir5 = directory + file5;
-	    	$("#movie_src5").attr("src", dir5);
-	    	$("#video5").load();
-	    	document.getElementById('list-title5').innerText = title5;
-	    };
-	    
-	    if(num_view==0 && list.length!=0){
-	    	var file6 = list[idx6].upload_file;
-	    	var dir6 = directory + file6;
-	    	$("#movie_src6").attr("src", dir6);
-	    	$("#video6").load();
-	    	document.getElementById('list-title6').innerText = title6;
-	    };
 
-	}
+	};
 	</script>
 	
-	
+	<script>
+	$("#page-link-num1").click(function(){
+		loadlist();
+	});
+	$("#page-link-num2").click(function(){
+		loadlist();
+	});
+	$("#page-link-num3").click(function(){
+		loadlist();
+	});
+	$("#page-link-num4").click(function(){
+		loadlist();
+	});
+	$("#page-link-num5").click(function(){
+		loadlist();
+	});
+	$("#page-link-num6").click(function(){
+		loadlist();
+	});
+	$("#page-link-num7").click(function(){
+		loadlist();
+	});
+	$("#page-link-num8").click(function(){
+		loadlist();
+	});
+	$("#page-link-num9").click(function(){
+		loadlist();
+	});
+	$("#page-link-num10").click(function(){
+		loadlist();
+	});
+	</script>
 </body>
 </html>

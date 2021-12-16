@@ -56,7 +56,7 @@
 					</div>
 					<div class= "upper-tool third-tool">
 						<a class = "upper-link" href = "video_compared.html">
-							<div class = "upper-link-text">골프 정보</div>
+							<div class = "upper-link-text">마지막 분석으로</div>
 						</a>
 					</div>
 				</div>
@@ -529,7 +529,6 @@
 <!-- 영상불러오기 -->
 	<script>
 		$(function() {
-			if("${login_state}"=="Y"){
 			$.ajax({
 	        	url : "${cpath}/ImportRecentUpload.do",
 	        	type : "post",
@@ -562,7 +561,7 @@
 	
 	
 	//임시로 넣은 번호(차후 삭제)
-	var deep_seq = 6;
+	var deep_seq = 12;
 	//스윙종류 : 어드레스
 	var swing_type = "address";
 	$('#picture_link1').click(function() {

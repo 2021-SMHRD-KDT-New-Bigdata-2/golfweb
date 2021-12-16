@@ -3621,6 +3621,7 @@ video.list_video {
   width: 30%;
   position: relative;
   display: inline-block;
+  visibility: hidden;
 }
 
 .hidden_pgnum {
