@@ -4241,3 +4241,18 @@ input.club_type {
     opacity: 0;
     position: absolute;
 }
+
+.hidden-text-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    color: #7e8e9f;
+}
+
+.hidden-text-before-login {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 12.5%;
+}

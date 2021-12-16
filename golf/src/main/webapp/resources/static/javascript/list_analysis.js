@@ -289,6 +289,5 @@ $(window).resize(function(){
     	});
     };
 });
-	
-    
+
     

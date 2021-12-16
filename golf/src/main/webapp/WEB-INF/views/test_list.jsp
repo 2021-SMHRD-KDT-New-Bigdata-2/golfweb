@@ -198,6 +198,10 @@
 
                     <!-- 목록리스트 박스 -->
                     <div class="list-container">
+                    	<div class="hidden-text-box" id="hidden-text-box">
+                    		<div class="hidden-text-before-login">로그인을 하신 후에 사용가능한 서비스입니다.</div>
+                    	</div>
+                    	
                         <div class="first_row">
                             <div class="movie_column first_column videono01" id="block_1">
 								<a href="" class="movie_link movie_link1">
@@ -393,10 +397,16 @@
 	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
 	        $("#login_state").addClass("active");
 	        $("#logout_state").removeClass("active");
+	        $("#hidden-text-box").css({
+	        	"visibility":"hidden",
+	        });
 	    }else{
 	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
 	        $("#logout_state").addClass("active");
 	        $("#login_state").removeClass("active");
+	        $("#hidden-text-box").css({
+	        	"visibility":"visible",
+	        });
       	};
 	});
 	</script>
