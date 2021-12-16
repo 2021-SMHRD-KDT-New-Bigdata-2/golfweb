@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="kr.golfproject.domain.tbl_member"%> 
-<%@ page import="kr.golfproject.domain.tbl_upload"%> 
+<%@ page import="kr.golfproject.domain.tbl_member"%>
+<%@ page import="kr.golfproject.domain.tbl_upload"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="cpath" value="${pageContext.request.contextPath}"/>    
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,13 +127,15 @@
 	min-width: 1920px !important;
 }
 
-#portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
-    max-width: 1479px;
+#portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md,
+	#portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl
+	{
+	max-width: 1479px;
 }
 
 .container.main-container {
-    padding-left: 0;
-    padding-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 </style>
 </head>
@@ -142,135 +144,143 @@
 
 	<div class="main-wrapper">
 
-			<!-- 헤더 -->
-			<header class = "header">
-				<!-- 상단툴바 -->
-				<div class = "upper-toolbar">
-					<div class= "upper-tool first-tool">
-						<a class = "upper-link" href = "upload_movie.html">
-							<div class = "upper-link-text">자세교정받기</div>
-						</a>
-					</div>
-					<div class= "upper-tool second-tool">
-						<a class = "upper-link" href = "test_list.html">
-							<div class = "upper-link-text">나의 교정 목록</div>
-						</a>
-					</div>
-					<div class= "upper-tool third-tool">
-						<a class = "upper-link" href = "video_compared.html">
-							<div class = "upper-link-text">골프 정보</div>
-						</a>
-					</div>
+		<!-- 헤더 -->
+		<header class="header">
+			<!-- 상단툴바 -->
+			<div class="upper-toolbar">
+				<div class="upper-tool first-tool">
+					<a class="upper-link" href="upload_movie.html">
+						<div class="upper-link-text">자세교정받기</div>
+					</a>
 				</div>
-				<!--로그인/회원가입/회원정보가 들어갈 박스-->
-				<div class="header-block header-block-nav">
-					<!-- 검색창(장식용) -->
-					<form class="navbar-form navbar-right" role="search" style="top: 25%;">
-						<div class="search-bar">
-							<input type="text" class="form-control mainpage" placeholder="Search">
-						</div>
-						<div class="search-button">
-							<button type="submit" class="btn btn-primary nav_bar search-btn">검색</button>
-						</div>
-					</form>
+				<div class="upper-tool second-tool">
+					<a class="upper-link" href="test_list.html">
+						<div class="upper-link-text">나의 교정 목록</div>
+					</a>
+				</div>
+				<div class="upper-tool third-tool">
+					<a class="upper-link" href="video_compared.html">
+						<div class="upper-link-text">골프 정보</div>
+					</a>
+				</div>
+			</div>
+			<!--로그인/회원가입/회원정보가 들어갈 박스-->
+			<div class="header-block header-block-nav">
+				<!-- 검색창(장식용) -->
+				<form class="navbar-form navbar-right" role="search"
+					style="top: 25%;">
+					<div class="search-bar">
+						<input type="text" class="form-control mainpage"
+							placeholder="Search">
+					</div>
+					<div class="search-button">
+						<button type="submit" class="btn btn-primary nav_bar search-btn">검색</button>
+					</div>
+				</form>
 
-					<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
-					<ul class="nav-profile logout_state active" id ="logout_state">
-						<!-- <a href = "login.html">
+				<!-- 로그인을 안 했을시 로그인/회원가입 박스 -->
+				<ul class="nav-profile logout_state active" id="logout_state">
+					<!-- <a href = "login.html">
 							<button class = "btn btn-primary nav_bar login">로그인</button>
 						</a>
 						<a href = "join.html">
 							<button class = "btn btn-primary nav_bar join">회원가입</button>
 						</a> -->
 
-						<div class="form-group upright" style="width: 130px;">
-							<a href="login.html" class="navbar-link login">로그인</a>
-							<a href="join.html" class="navbar-link join">회원가입</a>
-						</div>
-					</ul>
-
-					<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
-					<ul class="nav-profile login_state" id ="login_state">
-						<li class="profile dropdown">
-							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<div class="img profile" style="margin-right: 5px;"> </div>
-								<span class="name" id="profile-name" style="font-size: 16px;"> ${login_name} </span>
-							</a>
-							<div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
-								<a class="dropdown-item" href="#">
-									<i class="fa fa-user icon"></i> 프로필 </a>
-								<a class="dropdown-item" href="#">
-									<i class="fa fa-gear icon"></i> 설정 </a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" onclick="logout()">
-									<i class="fa fa-power-off icon"></i> 로그아웃 </a>
-							</div>
-						</li>
-					</ul>
-			</header>
-
-			<!--로고와 사이트 이름 배치할 박스-->
-			<a href="index.html" class="sidebar-link">
-				<div class="sidebar-header" style="z-index:999">
-					<div class="brand">
-						<div class="logo" >
-							<p class="logo_image" ></p>
-						</div>
-						<span class="site_name">GolfBorn</span>
+					<div class="form-group upright" style="width: 130px;">
+						<a href="login.html" class="navbar-link login">로그인</a> <a
+							href="join.html" class="navbar-link join">회원가입</a>
 					</div>
-				</div>
-			</a>
+				</ul>
 
-			<!-- 사이드 툴바-->
-			<aside class="sidebar">
-				<div class="hamburger">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
-				</div>
-				<div class="sidebar-container">
-
-					<!--툴바에 메뉴 배치-->
-					<nav class="menu">
-						<ul class="sidebar-menu menu metismenu" id="sidebar-menu"
-							style="height: 0px;">
-							<li class="active open"><a href="index.html"> <i
-									class="fa fa-home"></i> 메인페이지
-							</a></li>
-
-							<li><a href> <i class="fa fa-th-large"></i> 스윙자세교정 <i
-									class="fa arrow"></i>
+				<!-- 로그인을 했을시 회원 정보 볼수 있는 박스-->
+				<ul class="nav-profile login_state" id="login_state">
+					<li class="profile dropdown"><a
+						class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+						role="button" aria-haspopup="true" aria-expanded="false">
+							<div class="img profile" style="margin-right: 5px;"></div> <span
+							class="name" id="profile-name" style="font-size: 16px;">
+								${login_name} </span>
+					</a>
+						<div class="dropdown-menu profile-dropdown-menu"
+							aria-labelledby="dropdownMenu1" x-placement="bottom-start"
+							style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform;">
+							<a class="dropdown-item" href="#"> <i class="fa fa-user icon"></i>
+								프로필
+							</a> <a class="dropdown-item" href="#"> <i
+								class="fa fa-gear icon"></i> 설정
 							</a>
-								<ul class="sidebar-nav collapse" style="height: 0px;">
-									<li><a href="upload_movie.html"> 자세교정받기 </a></li>
-									<li><a href="test_list.html"> 나의 교정 목록 </a></li>
-								</ul></li>
-
-							<li class=""><a href=""> <i class="fa fa-bar-chart"></i>
-									골프 정보 <i class="fa arrow"></i>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#" onclick="logout()"> <i
+								class="fa fa-power-off icon"></i> 로그아웃
 							</a>
-								<ul class="sidebar-nav collapse" style="height: 0px;">
-									<li><a href="plot_chart.html"> 정보1 </a></li>
-									<li><a href="charts-morris.html"> 정보2 </a></li>
-								</ul></li>
-						</ul>
-					</nav>
+						</div></li>
+				</ul>
+		</header>
+
+		<!--로고와 사이트 이름 배치할 박스-->
+		<a href="index.html" class="sidebar-link">
+			<div class="sidebar-header" style="z-index: 999">
+				<div class="brand">
+					<div class="logo">
+						<p class="logo_image"></p>
+					</div>
+					<span class="site_name">GolfBorn</span>
 				</div>
-				<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink">
+			</div>
+		</a>
+
+		<!-- 사이드 툴바-->
+		<aside class="sidebar">
+			<div class="hamburger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+			<div class="sidebar-container">
+
+				<!--툴바에 메뉴 배치-->
+				<nav class="menu">
+					<ul class="sidebar-menu menu metismenu" id="sidebar-menu"
+						style="height: 0px;">
+						<li class="active open"><a href="index.html"> <i
+								class="fa fa-home"></i> 메인페이지
+						</a></li>
+
+						<li><a href> <i class="fa fa-th-large"></i> 스윙자세교정 <i
+								class="fa arrow"></i>
+						</a>
+							<ul class="sidebar-nav collapse" style="height: 0px;">
+								<li><a href="upload_movie.html"> 자세교정받기 </a></li>
+								<li><a href="test_list.html"> 나의 교정 목록 </a></li>
+							</ul></li>
+
+						<li class=""><a href=""> <i class="fa fa-bar-chart"></i>
+								골프 정보 <i class="fa arrow"></i>
+						</a>
+							<ul class="sidebar-nav collapse" style="height: 0px;">
+								<li><a href="plot_chart.html"> 정보1 </a></li>
+								<li><a href="charts-morris.html"> 정보2 </a></li>
+							</ul></li>
+					</ul>
+				</nav>
+			</div>
+			<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink">
 					<path id="blob-path"
-						d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z" />
+					d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z" />
 				</svg>
-			</aside>
+		</aside>
 
-		<section class="main-contents">
+		<section class="main-contents" style="margin-bottom: 110px;">
 			<article>
 				<section>
 					<!-- main-container -->
 					<div class="container main-container">
 						<div class="center-block">
 							<div id="carousel-golf-generic" class="carousel slide"
-								data-ride="carousel" style="width: 1920px; height: 700px; opacity:0.8">
+								data-ride="carousel"
+								style="width: 1920px; height: 700px;">
 								<!-- Indicators -->
 								<ol class="carousel-indicators">
 									<li data-target="#carousel-golf-generic" data-slide-to="0"
@@ -283,18 +293,21 @@
 									style="width: 1920px; height: 700px;">
 									<div class="item active">
 										<center>
-											<img
-												src="${pageContext.request.contextPath}/resources/static/images/golf1920.png"
-												alt="..." data-pause="">
+											<video style="width:1920px" class="img-fluid" autoplay loop muted>
+												<source alt="..." data-pause=""
+													src="${pageContext.request.contextPath}/resources/static/images/메인2.mp4"
+													type="video/mp4" />
+											</video>
 										</center>
 										<div class="carousel-caption" style="color: black"></div>
-
 									</div>
 									<div class="item">
 										<center>
-											<img
-												src="${pageContext.request.contextPath}/resources/static/images/golf1920_2.png"
-												alt="..." data-pause="">
+											<video style="width:1920px" class="img-fluid" autoplay loop muted ">
+												<source alt="..." data-pause=""
+													src="${pageContext.request.contextPath}/resources/static/images/메인1.mp4"
+													type="video/mp4" />
+											</video>
 										</center>
 										<div class="carousel-caption"></div>
 									</div>
@@ -317,95 +330,104 @@
 			</article>
 		</section>
 
-	<br><br><br><br>
+		<section>
+			<div class="text_box">
+				<span class="text"></span><span class="blink">|</span>
+			</div>
+		</section>
 
-	<section>
-		<div class="text_box">
-			<span class="text"></span><span class="blink">|</span>
-		</div>
-	</section>
+		<!-- Content section 1-->
+		<section id="scroll" style="margin-left: 350px">
+			<div class="container px-5">
+				<div class="row gx-5 align-items-center">
+					<div class="col-lg-4 order-lg-2">
+						<div class="p-5">
+							<img
+								src="${pageContext.request.contextPath}/resources/static/images/golf1920_4.PNG"
+								style="width: 700px; height: 500px; border-radius: 30px;">
+						</div>
+					</div>
+					<div class="col-lg-4 order-lg-1">
+						<div class="p-5">
+							<h3 class="display-3" style="font-size: 3rem;">
+								<strong>나의 스윙 자세를 보고 싶다면?</strong>
+							</h3>
+							<p style="font-size: 22px">골프본은 영상만 올리면 알아서 쉽고 간편하게!</p>
+							&nbsp;&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Content section 2-->
+		<section style="margin-right: -530px">
+			<div class="container px-5">
+				<div class="row gx-5 align-items-center">
+					<div class="col-lg-4">
+						<div class="p-5">
+							<img
+								src="${pageContext.request.contextPath}/resources/static/images/딥러닝.png"
+								style="width: 700px; height: 500px; border-radius: 30px;">
+						</div>
+					</div>
+					<div class="col-lg-4" style="right: -105px;">
+						<div class="p-5">
+							<h3 class="display-3" style="font-size: 3rem;">
+								<strong>나도 프로처럼!</strong>
+							</h3>
+							<p style="font-size: 22px">골프본은 영상만 올리면 알아서 쉽고 간편하게!</p>
+							&nbsp;&nbsp;
+							<p style="font-size: 22px">프로의 스윙 데이터를 바탕으로!</p>
+							&nbsp;
+							<p style="font-size: 22px">스윙 자세를 선으로 연결해서 한눈에 볼 수 있어요</p>
+							&nbsp;&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Content section 3-->
+		<section id="scroll" style="margin-left: 350px">
+			<div class="container px-5">
+				<div class="row gx-5 align-items-center">
+					<div class="col-lg-4 order-lg-2">
+						<div class="p-5">
+							<img
+								src="${pageContext.request.contextPath}/resources/static/images/_116.jpg"
+								style="width: 700px; height: 500px; border-radius: 30px;">
+						</div>
+					</div>
+					<div class="col-lg-4 order-lg-1">
+						<div class="p-5">
+							<h3 class="display-3" style="font-size: 3rem;">
+								<strong>프로와 다른 자세를 알려주는 코멘트</strong>
+							</h3>
+							<p style="font-size: 22px">내가 틀린 자세를 상세하게 알 수 있어요!</p>
+							&nbsp; &nbsp;
+							<p style="font-size: 22px">마이페이지에 저장해서 언제든지 다시보기</p>
+							&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-	<!-- Content section 1-->
-	<section id="scroll" style="margin-left:350px">
-		<div class="container px-5">
-			<div class="row gx-5 align-items-center">
-				<div class="col-lg-4 order-lg-2">
-					<div class="p-5">
-						<img
-							src="${pageContext.request.contextPath}/resources/static/images/golf1920_4.PNG"
-							style="width:700px; height:500px; border-radius:30px;">
-					</div>
-				</div>
-				<div class="col-lg-4 order-lg-1">
-					<div class="p-5">           
-						<h3 class="display-3"><strong>스윙 자세가 걱정된다구요?</strong></h3>
-						<p style="font-size:22px">골프본은 아이언과 드라이버 스윙 모두 해결해줍니다! </p>&nbsp;
-						&nbsp;<p style="font-size:22px">나의 스윙 자세를 선으로 연결해서 한눈에 볼 수 있어요</p>&nbsp;
+		<!-- About-->
+		<section class="page-section"
+			style="background-color: #44bd32; padding: 30px 0 20px 0px; position: absolute; bottom: -1780px;"
+			id="about">
+			<div class="container px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-lg-8 text-center">
+						<h3 class="text-white mt-0">골프본의 회원이 되어보세요!</h3>
+						<hr class="divider divider-light" />
+						<p class="text-white-75 mb-4"></p>
+						<a class="btn btn-light btn-xl" href="join.html">회원가입 하러가기</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- Content section 2-->
-	<section style="margin-right:-530px">
-		<div class="container px-5">
-			<div class="row gx-5 align-items-center">
-				<div class="col-lg-4">
-					<div class="p-5">
-						<img
-							src="${pageContext.request.contextPath}/resources/static/images/golf1920_3.png"
-							style="width:700px; height:500px; border-radius:30px; ">
-					</div>
-				</div>
-				<div class="col-lg-4" style="right: -105px;">
-					<div class="p-5">
-						<h3 class="display-3"><strong>스윙 자세가 걱정된다구요?</strong></h3>
-						<p style="font-size:22px">@@@@@@@@@@@@@@@@@@@@@@</p>&nbsp;
-						&nbsp;<p style="font-size:22px">######################3</p>&nbsp;
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Content section 3-->
-	<section id="scroll" style="margin-left:350px">
-		<div class="container px-5">
-			<div class="row gx-5 align-items-center">
-				<div class="col-lg-4 order-lg-2">
-					<div class="p-5">
-						<img
-							src="${pageContext.request.contextPath}/resources/static/images/_116.jpg"
-							style="width:700px; height:500px; border-radius:30px;">
-					</div>
-				</div>
-				<div class="col-lg-4 order-lg-1">
-					<div class="p-5">           
-						<h3 class="display-3"><strong>스윙 자세가 걱정된다구요?</strong></h3>
-						<p style="font-size:22px">골프본은 아이언과 드라이버 스윙 모두 해결해줍니다! </p>&nbsp;
-						&nbsp;<p style="font-size:22px">나의 스윙 자세를 선으로 연결해서 한눈에 볼 수 있어요</p>&nbsp;
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<br><br><br><br><br><br><br>
-	<!-- About-->
-	<section class="page-section" style="background-color: #44bd32;padding: 30px 0 20px 0px;position: absolute;bottom: -1780px;"
-		id="about">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-lg-8 text-center">
-					<h3 class="text-white mt-0">골프본의 회원이 되어보세요!</h3>
-					<hr class="divider divider-light" />
-					<p class="text-white-75 mb-4"></p>
-					<a class="btn btn-light btn-xl" href="join.html">회원가입 하러가기</a>
-				</div>
-			</div>
-		</div>
-	</section>
+		</section>
 	</div>
-
 
 	<!-- 사이드 툴바-->
 	<aside class="sidebar"></aside>
@@ -418,12 +440,18 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/vendor.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/app.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/upload.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/member.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/sidebar.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/static/javascript/mainpage.js"></script>
 
@@ -435,15 +463,15 @@
 
 
 	<script>
-	function logout(){
-		$.ajax({
-        	url : "${cpath}/tbl_member_Logout.do",
-        	success : function(){
-        		window.sessionStorage.setItem("login_state","N");
-        		location.href = "index.html";
-        	},
-    	});
-	}
+		function logout() {
+			$.ajax({
+				url : "${cpath}/tbl_member_Logout.do",
+				success : function() {
+					window.sessionStorage.setItem("login_state", "N");
+					location.href = "index.html";
+				},
+			});
+		}
 	</script>
 
 	<!-- Bootstrap core JS-->

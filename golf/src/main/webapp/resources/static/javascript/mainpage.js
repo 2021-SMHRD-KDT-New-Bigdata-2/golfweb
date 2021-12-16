@@ -1,4 +1,3 @@
-/* ---------------------------------------------------------*/
     const content = "내 이름은  앙징,         천재입니다";
     const text = document.querySelector(".text");
     let i = 0;
