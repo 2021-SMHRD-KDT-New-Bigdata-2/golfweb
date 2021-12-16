@@ -315,34 +315,34 @@
                                 <a class="page_link" onclick=""> Prev </a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link active" id="page-link-num1" style="color: #fff;" onclick="move_page_num(document.getElementById('page-link-num1').innerHTML,document.getElementById('present_pgnum').innerHTML)">1</a>
+                                <a class="page_link active" id="page-link-num1" style="color: #fff;" onclick="move_page_num(document.getElementById('page-link-num1').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">1</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num2" onclick="move_page_num(document.getElementById('page-link-num2').innerHTML,document.getElementById('present_pgnum').innerHTML)">2</a>
+                                <a class="page_link" id="page-link-num2" onclick="move_page_num(document.getElementById('page-link-num2').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">2</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num3" onclick="move_page_num(document.getElementById('page-link-num3').innerHTML,document.getElementById('present_pgnum').innerHTML)">3</a>
+                                <a class="page_link" id="page-link-num3" onclick="move_page_num(document.getElementById('page-link-num3').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">3</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num4" onclick="move_page_num(document.getElementById('page-link-num4').innerHTML,document.getElementById('present_pgnum').innerHTML)">4</a>
+                                <a class="page_link" id="page-link-num4" onclick="move_page_num(document.getElementById('page-link-num4').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">4</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num5" onclick="move_page_num(document.getElementById('page-link-num5').innerHTML,document.getElementById('present_pgnum').innerHTML)">5</a>
+                                <a class="page_link" id="page-link-num5" onclick="move_page_num(document.getElementById('page-link-num5').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">5</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num6" onclick="move_page_num(document.getElementById('page-link-num6').innerHTML,document.getElementById('present_pgnum').innerHTML)">6</a>
+                                <a class="page_link" id="page-link-num6" onclick="move_page_num(document.getElementById('page-link-num6').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">6</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num7" onclick="move_page_num(document.getElementById('page-link-num7').innerHTML,document.getElementById('present_pgnum').innerHTML)">7</a>
+                                <a class="page_link" id="page-link-num7" onclick="move_page_num(document.getElementById('page-link-num7').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">7</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num8" onclick="move_page_num(document.getElementById('page-link-num8').innerHTML,document.getElementById('present_pgnum').innerHTML)">8</a>
+                                <a class="page_link" id="page-link-num8" onclick="move_page_num(document.getElementById('page-link-num8').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">8</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num9" onclick="move_page_num(document.getElementById('page-link-num9').innerHTML,document.getElementById('present_pgnum').innerHTML)">9</a>
+                                <a class="page_link" id="page-link-num9" onclick="move_page_num(document.getElementById('page-link-num9').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">9</a>
                             </li>
                             <li class="page_item">
-                                <a class="page_link" id="page-link-num10" onclick="move_page_num(document.getElementById('page-link-num10').innerHTML,document.getElementById('present_pgnum').innerHTML)">10</a>
+                                <a class="page_link" id="page-link-num10" onclick="move_page_num(document.getElementById('page-link-num10').innerHTML,document.getElementById('present_pgnum').innerHTML);loadlist();">10</a>
                             </li>
                             <li class="page_item">
                                 <a class="page_link" onclick=""> Next </a>
@@ -460,9 +460,6 @@
 	    var video4 = document.getElementById('block_4').className;
 	    var video5 = document.getElementById('block_5').className;
 	    var video6 = document.getElementById('block_6').className;
-	    
-	 	// 초기 페이지 번호
-	    var pgnum=1;
 	
 	   	// 영상번호 출력
 	    var text1 = video1.replace('movie_column first_column videono','');
@@ -480,8 +477,6 @@
 	    var idx5 = text5-1;
 	    var idx6 = text6-1;
 	    
-	    alert(text1);
-	    alert(idx1);
 	    var list=data;
 	    console.log(list);
 	    
@@ -522,6 +517,10 @@
 	    if((num_view>=1 || num_view==0) && list.length!=0){
 	    	var file1 = list[idx1].upload_file;
 	    	var dir1 = directory + file1;
+	    	if(file1==""){
+	    		dir1 = "";
+	    	};
+	    	
 	    	$("#movie_src1").attr("src", dir1);
 	    	$("#video1").load();
 	    	document.getElementById('list-title1').innerText = title1;
@@ -566,12 +565,10 @@
 	    	$("#video6").load();
 	    	document.getElementById('list-title6').innerText = title6;
 	    };
-		
-	    
-	    
-	    //var filetype = ".mp4";
-	    
+
 	}
 	</script>
+	
+	
 </body>
 </html>
