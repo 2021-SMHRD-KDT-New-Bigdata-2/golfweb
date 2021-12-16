@@ -845,14 +845,14 @@ function handleOnInput(el, maxlength) {
 }
 
 // 로그인 상태 판별 후 액션
-$(window).load(function () {
-	if(window.sessionStorage.getItem("login_state")=="Y"){
-    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
-        $("#login_state").addClass("active");
-        $("#logout_state").removeClass("active");
-    }else{
-    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
-        $("#logout_state").addClass("active");
-        $("#login_state").removeClass("active");
-  	};
-});
+//$(window).load(function () {
+//	if(window.sessionStorage.getItem("login_state")=="Y"){
+//    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+//        $("#login_state").addClass("active");
+//        $("#logout_state").removeClass("active");
+//    }else{
+//    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+//        $("#logout_state").addClass("active");
+//        $("#login_state").removeClass("active");
+//  	};
+//});

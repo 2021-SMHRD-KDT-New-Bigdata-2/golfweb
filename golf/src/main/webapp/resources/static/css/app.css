@@ -4257,6 +4257,6 @@ input.club_type {
     left: 12.5%;
 }
 
-.sameheight-container {
+.sameheight-container.upload {
     visibility: hidden;
 }
