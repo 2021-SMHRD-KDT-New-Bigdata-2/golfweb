@@ -183,7 +183,10 @@
 					</div>
 				</div>
 				<section class="section">
-					<div class="row sameheight-container">
+					<div class="hidden-text-box" id="hidden-text-box">
+                    		<div class="hidden-text-before-login">로그인을 하신 후에 사용가능한 서비스입니다.</div>
+                    </div>
+					<div class="row sameheight-container" id = "sameheight-container">
 						<div class="col-xl-4">
 							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg">
 								<div class="card-header">
@@ -370,10 +373,22 @@
 	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
 	        $("#login_state").addClass("active");
 	        $("#logout_state").removeClass("active");
+	        $("#sameheight-container").css({
+	        	"visibility":"visible",
+	        });
+	        $("#hidden-text-box").css({
+	        	"visibility":"hidden",
+	        });
 	    }else{
 	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
 	        $("#logout_state").addClass("active");
 	        $("#login_state").removeClass("active");
+	        $("#sameheight-container").css({
+	        	"visibility":"hidden",
+	        });
+	        $("#hidden-text-box").css({
+	        	"visibility":"visible",
+	        });
       	};
 	};
 	</script>

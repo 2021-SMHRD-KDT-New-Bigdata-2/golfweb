@@ -1,4 +1,5 @@
-    const content = "내 이름은  앙징,         천재입니다";
+
+    const content = "클릭 한번으로 분석까지 스~무스하게";
     const text = document.querySelector(".text");
     let i = 0;
 
