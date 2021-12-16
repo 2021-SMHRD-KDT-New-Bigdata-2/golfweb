@@ -251,7 +251,7 @@
 														<h3 class="title"> 자세교정위치표시 </h3>
 													</div>
 													<div class = "image_box">
-														<a class="point_link uptomiddle" id = "point_link_head">
+														<!--<a class="point_link uptomiddle" id = "point_link_head">
 															<div class="point_img"></div>
 														</a>
 														<a class="point_link uptomiddle" id = "point_link_shoulder">
@@ -274,7 +274,7 @@
 														</a>
 														<a class="point_link downtomiddle2" id = "point_link_cg">
 															<div class="point_img"></div>
-														</a>
+														</a>-->
 														<div class="sizer">
 															<p class = "picture_selected"></p>
 														</div>
@@ -333,7 +333,7 @@
 								<section class="section">
 									<div class="row">
 										<div class="col-md-6" style="max-width: 100%;">
-											<div class="card fortable">
+											<div class="card fortable" style="height: 100%;">
 												<div class="card-block picture_select">
 													<div class="card-title-block">
 														<h3 class="title"> 자세교정 시점 </h3>
@@ -349,6 +349,7 @@
 																		<div class="apicture">
 																			<p class = "aimage column1" id="columnimage1"></p>
 																		</div>
+																		<div class = "pov_text">어드레스</div>
 																	</div>
 																</a>
 																<a class = "picture_link column2" id="picture_link2" href="#" role="button">
@@ -356,6 +357,7 @@
 																			<div class="apicture">
 																				<p class = "aimage column2" id="columnimage2"></p>
 																			</div>
+																			<div class = "pov_text">탑</div>
 																	</div>
 																</a>	
 																<a class = "picture_link column3" id="picture_link3" href="#" role="button">
@@ -363,6 +365,7 @@
 																			<div class="apicture">
 																				<p class = "aimage column3" id="columnimage3"></p>
 																			</div>
+																			<div class = "pov_text">다운스윙</div>
 																	</div>
 																</a>
 																<a class = "picture_link column4" id="picture_link4" href="#" role="button">	
@@ -370,6 +373,7 @@
 																			<div class="apicture">
 																				<p class = "aimage column4" id="columnimage4"></p>
 																			</div>
+																			<div class = "pov_text">임팩트</div>
 																	</div>
 																</a>
 																<a class = "picture_link column5" id="picture_link5" href="#" role="button">
@@ -377,6 +381,7 @@
 																			<div class="apicture">
 																				<p class = "aimage column5" id="columnimage5"></p>
 																			</div>
+																			<div class = "pov_text">팔로우스루</div>
 																	</div>
 																</a>
 																<!--<a class = "picture_link column6" id="picture_link6" href="#" role="button">
@@ -561,7 +566,7 @@
 	
 	
 	//임시로 넣은 번호(차후 삭제)
-	var deep_seq = 12;
+	var deep_seq = 13;
 	//스윙종류 : 어드레스
 	var swing_type = "address";
 	$('#picture_link1').click(function() {
@@ -624,5 +629,64 @@
 		});
 	</script>
 
+	<!-- <script>
+		// 자세교정시점 선택시 액션
+		$('#picture_link1').click(function() {
+			if($(this).hasClass("column1")){
+				var test = document.getElementById("columnimage1"); 
+				var style = window.getComputedStyle(test).getPropertyValue('background-image');
+				$("#picture_link1").addClass("selected");
+				$(".picture_selected").css({
+					"background-image": style,
+				});
+				
+				// 자세교정 지점들 표시하기
+				//$("#point_link").addClass("activated");
+				
+				pixel ="px";
+				head_x = "${head_code_x}"+pixel;
+				head_y = "${head_code_y}"+pixel;
+				shoulder_x = ${head_code_x}"+pixel;
+				shoulder_y = ${head_code_y}"+pixel;
+				
+				
+				
+				setTimeout(function(){
+					$('#point_link_head').animate({
+						left: head_x,
+						top : head_y,
+			        });
+					$('#point_link_shoulder').animate({
+						left: '200px',
+						top : '100px',
+			        });
+					$('#point_link_arm').animate({
+						left: '400px',
+						top : '500px',
+			        });
+					$('#point_link_waist').animate({
+						left: '300px',
+						top : '600px',
+			        });
+					$('#point_link_pelvis').animate({
+						left: '600px',
+						top : '700px',
+			        });
+					$('#point_link_knee').animate({
+						left: '150px',
+						top : '750px',
+			        });
+					$('#point_link_foot').animate({
+						left: '600px',
+						top : '100px',
+			        });
+					$('#point_link_cg').animate({
+						left: '750px',
+						top : '350px',
+			        });
+					},200);
+			};
+		});
+	</script> -->
 </body>
 </html>

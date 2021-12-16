@@ -14,7 +14,7 @@ $('#toggle').click(function() {
     }
 });
 
-// 자세교정시점 선택시 액션
+//// 자세교정시점 선택시 액션
 $('#picture_link1').click(function() {
 	if($(this).hasClass("column1")){
 		var test = document.getElementById("columnimage1"); 
@@ -23,45 +23,44 @@ $('#picture_link1').click(function() {
 		$(".picture_selected").css({
 			"background-image": style,
 		});
-		
-		// 자세교정 지점들 표시하기
-		//$("#point_link").addClass("activated");
-		
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '100px',
-				top : '200px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '200px',
-				top : '100px',
-	        });
-			$('#point_link_arm').animate({
-				left: '400px',
-				top : '500px',
-	        });
-			$('#point_link_waist').animate({
-				left: '300px',
-				top : '600px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '600px',
-				top : '700px',
-	        });
-			$('#point_link_knee').animate({
-				left: '150px',
-				top : '750px',
-	        });
-			$('#point_link_foot').animate({
-				left: '600px',
-				top : '100px',
-	        });
-			$('#point_link_cg').animate({
-				left: '750px',
-				top : '350px',
-	        });
-			},200);
-		
+//		
+//		// 자세교정 지점들 표시하기
+//		//$("#point_link").addClass("activated");
+//		
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '100px',
+//				top : '200px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '200px',
+//				top : '100px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '400px',
+//				top : '500px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '300px',
+//				top : '600px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '600px',
+//				top : '700px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '150px',
+//				top : '750px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '600px',
+//				top : '100px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '750px',
+//				top : '350px',
+//	        });
+//			},200);
 	};
 });
 $('#picture_link2').click(function() {
@@ -73,42 +72,43 @@ $('#picture_link2').click(function() {
 			"background-image": style,
 		});
 		
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '750px',
-				top : '350px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '100px',
-				top : '200px',
-	        });
-			$('#point_link_arm').animate({
-				left: '400px',
-				top : '500px',
-	        });
-			$('#point_link_waist').animate({
-				left: '110px',
-				top : '870px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '440px',
-				top : '550px',
-	        });
-			$('#point_link_knee').animate({
-				left: '330px',
-				top : '220px',
-	        });
-			$('#point_link_foot').animate({
-				left: '400px',
-				top : '200px',
-	        });
-			$('#point_link_cg').animate({
-				left: '200px',
-				top : '100px',
-	        });
-			},200);
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '750px',
+//				top : '350px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '100px',
+//				top : '200px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '400px',
+//				top : '500px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '110px',
+//				top : '870px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '440px',
+//				top : '550px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '330px',
+//				top : '220px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '400px',
+//				top : '200px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '200px',
+//				top : '100px',
+//	        });
+//			},200);
 	};
 });
+
 $('#picture_link3').click(function() {
 	if($(this).hasClass("column3")){
 		var test = document.getElementById("columnimage3"); 
@@ -118,40 +118,40 @@ $('#picture_link3').click(function() {
 			"background-image": style,
 		});
 		
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '110px',
-				top : '120px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '220px',
-				top : '330px',
-	        });
-			$('#point_link_arm').animate({
-				left: '440px',
-				top : '550px',
-	        });
-			$('#point_link_waist').animate({
-				left: '110px',
-				top : '110px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '220px',
-				top : '220px',
-	        });
-			$('#point_link_knee').animate({
-				left: '220px',
-				top : '550px',
-	        });
-			$('#point_link_foot').animate({
-				left: '400px',
-				top : '200px',
-	        });
-			$('#point_link_cg').animate({
-				left: '600px',
-				top : '100px',
-	        });
-			},200);
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '110px',
+//				top : '120px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '220px',
+//				top : '330px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '440px',
+//				top : '550px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '110px',
+//				top : '110px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '220px',
+//				top : '220px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '220px',
+//				top : '550px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '400px',
+//				top : '200px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '600px',
+//				top : '100px',
+//	        });
+//			},200);
 	};
 });
 $('#picture_link4').click(function() {
@@ -162,42 +162,43 @@ $('#picture_link4').click(function() {
 		$(".picture_selected").css({
 			"background-image": style,
 		});
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '110px',
-				top : '220px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '330px',
-				top : '300px',
-	        });
-			$('#point_link_arm').animate({
-				left: '600px',
-				top : '500px',
-	        });
-			$('#point_link_waist').animate({
-				left: '410px',
-				top : '570px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '440px',
-				top : '250px',
-	        });
-			$('#point_link_knee').animate({
-				left: '130px',
-				top : '620px',
-	        });
-			$('#point_link_foot').animate({
-				left: '300px',
-				top : '400px',
-	        });
-			$('#point_link_cg').animate({
-				left: '700px',
-				top : '500px',
-	        });
-			},200);
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '110px',
+//				top : '220px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '330px',
+//				top : '300px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '600px',
+//				top : '500px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '410px',
+//				top : '570px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '440px',
+//				top : '250px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '130px',
+//				top : '620px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '300px',
+//				top : '400px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '700px',
+//				top : '500px',
+//	        });
+//			},200);
 	};
 });
+
 $('#picture_link5').click(function() {
 	if($(this).hasClass("column5")){
 		var test = document.getElementById("columnimage5"); 
@@ -207,130 +208,131 @@ $('#picture_link5').click(function() {
 			"background-image": style,
 		});
 		
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '110px',
-				top : '330px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '140px',
-				top : '470px',
-	        });
-			$('#point_link_arm').animate({
-				left: '300px',
-				top : '700px',
-	        });
-			$('#point_link_waist').animate({
-				left: '210px',
-				top : '370px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '140px',
-				top : '750px',
-	        });
-			$('#point_link_knee').animate({
-				left: '230px',
-				top : '420px',
-	        });
-			$('#point_link_foot').animate({
-				left: '700px',
-				top : '700px',
-	        });
-			$('#point_link_cg').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			},200);
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '110px',
+//				top : '330px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '140px',
+//				top : '470px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '300px',
+//				top : '700px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '210px',
+//				top : '370px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '140px',
+//				top : '750px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '230px',
+//				top : '420px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '700px',
+//				top : '700px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			},200);
 	};
 });
-$('#picture_link6').click(function() {
-	if($(this).hasClass("column6")){
-		var test = document.getElementById("columnimage6"); 
-		var style = window.getComputedStyle(test).getPropertyValue('background-image');
-		$("#picture_link6").addClass("selected");
-		$(".picture_selected").css({
-			"background-image": style,
-		});
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_arm').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_waist').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_knee').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_foot').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			$('#point_link_cg').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			},200);
-	};
-});
-$('#picture_link7').click(function() {
-	if($(this).hasClass("column7")){
-		var test = document.getElementById("columnimage7"); 
-		var style = window.getComputedStyle(test).getPropertyValue('background-image');
-		$("#picture_link7").addClass("selected");
-		$(".picture_selected").css({
-			"background-image": style,
-		});
-		setTimeout(function(){
-			$('#point_link_head').animate({
-				left: '750px',
-				top : '750px',
-	        });
-			$('#point_link_shoulder').animate({
-				left: '600px',
-				top : '600px',
-	        });
-			$('#point_link_arm').animate({
-				left: '500px',
-				top : '500px',
-	        });
-			$('#point_link_waist').animate({
-				left: '410px',
-				top : '570px',
-	        });
-			$('#point_link_pelvis').animate({
-				left: '440px',
-				top : '450px',
-	        });
-			$('#point_link_knee').animate({
-				left: '330px',
-				top : '320px',
-	        });
-			$('#point_link_foot').animate({
-				left: '200px',
-				top : '200px',
-	        });
-			$('#point_link_cg').animate({
-				left: '300px',
-				top : '300px',
-	        });
-			},200);
-	};
-});
+
+//$('#picture_link6').click(function() {
+//	if($(this).hasClass("column6")){
+//		var test = document.getElementById("columnimage6"); 
+//		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+//		$("#picture_link6").addClass("selected");
+//		$(".picture_selected").css({
+//			"background-image": style,
+//		});
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			},200);
+//	};
+//});
+//$('#picture_link7').click(function() {
+//	if($(this).hasClass("column7")){
+//		var test = document.getElementById("columnimage7"); 
+//		var style = window.getComputedStyle(test).getPropertyValue('background-image');
+//		$("#picture_link7").addClass("selected");
+//		$(".picture_selected").css({
+//			"background-image": style,
+//		});
+//		setTimeout(function(){
+//			$('#point_link_head').animate({
+//				left: '750px',
+//				top : '750px',
+//	        });
+//			$('#point_link_shoulder').animate({
+//				left: '600px',
+//				top : '600px',
+//	        });
+//			$('#point_link_arm').animate({
+//				left: '500px',
+//				top : '500px',
+//	        });
+//			$('#point_link_waist').animate({
+//				left: '410px',
+//				top : '570px',
+//	        });
+//			$('#point_link_pelvis').animate({
+//				left: '440px',
+//				top : '450px',
+//	        });
+//			$('#point_link_knee').animate({
+//				left: '330px',
+//				top : '320px',
+//	        });
+//			$('#point_link_foot').animate({
+//				left: '200px',
+//				top : '200px',
+//	        });
+//			$('#point_link_cg').animate({
+//				left: '300px',
+//				top : '300px',
+//	        });
+//			},200);
+//	};
+//});
 
 // 분석텍스트창 클릭시 내용을 모두 보여주는 함수
 $('.recommend-text').click(function() { 

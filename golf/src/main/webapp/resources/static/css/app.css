@@ -4076,8 +4076,12 @@ p.aimage.column7 {
 }
 
 .pictures_to_select {
-    height: 200px;
+    height: 210px;
     line-height: 0;
+}
+
+.pov_text {
+    margin-top: 17px;
 }
 
 em.fa.fa-angle-left.select_picture {
@@ -4112,6 +4116,11 @@ a.move_right {
 
 a.picture_link {
     height: 200px;
+    text-decoration: none;
+    color: #212529;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 p.picture_selected {

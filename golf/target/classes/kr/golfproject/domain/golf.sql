@@ -122,32 +122,33 @@ delete from tbl_upload;
 select * from tbl_upload where m_idx = 34 order by upload_seq desc LIMIT 1;
 
 INSERT into tbl_deeplearning(upload_seq, deep_target, address, backswing, top, downswing, acceleration, impact, followthrough, finish, m_id) 
-values(304, "???", "_10.jpg", "백스윙", "_30.jpg", "_50.jpg", "가속", "_70.jpg","_90.jpg","피니쉬","salja")
+values(307, "???", "_10.jpg", "백스윙", "_30.jpg", "_50.jpg", "가속", "_70.jpg","_90.jpg","피니쉬","salja")
 
 select * from tbl_deeplearning;
 delete from tbl_deeplearning;
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center, head_code_x, shoulder_code_x, arm_code_x, waist_code_x, core_code_x, knee_code_x, foot_code_x, head_code_y, shoulder_code_y, arm_code_y, waist_code_y, core_code_y, knee_code_y, foot_code_y) 
-values(12, "address", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "ㄴㄹㅇㅇㄴㅁㄴㅁㅇㄴㄹㄴㅇㄻ", "ㅊㅁㄴㅊㅁㄴㅊㄴㅁㅊㅁㄴㅊㅁㅊ", "ㄴㅇㄹㄴㅇㅍㄴㅇㅍㄴㅇㅍㄴㅇ","ㅍㄴㅇㅇㅍㅇㄴㅍㄴㅇㅍ","피니쉬","피니쉬",500,200,100,300,400,600,100,100,500,200,300,400,500,600)
+values(13, "address", "ㄴㅁㅇㅁㅇㅁㅇㅁㅇ", "ㅅㅎㅎ흉율ㄹㅇ", "ㄴㄹㅇㅇㄴㅁㄴㅁㅇㄴㄹㄴㅇㄻ", "ㅊㅁㄴㅊㅁㄴㅊㄴㅁㅊㅁㄴㅊㅁㅊ", "ㄴㅇㄹㄴㅇㅍㄴㅇㅍㄴㅇㅍㄴㅇ","ㅍㄴㅇㅇㅍㅇㄴㅍㄴㅇㅍ","피니쉬","피니쉬",500,200,100,300,400,600,100,100,500,200,300,400,500,600)
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center, head_code_x, shoulder_code_x, arm_code_x, waist_code_x, core_code_x, knee_code_x, foot_code_x, head_code_y, shoulder_code_y, arm_code_y, waist_code_y, core_code_y, knee_code_y, foot_code_y) 
-values(12, "top", "111111", "111111", "111111", "111111", "111111","111111","111111","111111",100,200,300,400,500,600,700,700,600,500,400,300,200,100)
+values(13, "top", "111111", "111111", "111111", "111111", "111111","111111","111111","111111",100,200,300,400,500,600,700,700,600,500,400,300,200,100)
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center, head_code_x, shoulder_code_x, arm_code_x, waist_code_x, core_code_x, knee_code_x, foot_code_x, head_code_y, shoulder_code_y, arm_code_y, waist_code_y, core_code_y, knee_code_y, foot_code_y) 
-values(12, "downswing", "222222", "222222", "222222", "222222", "222222","222222","222222","222222",300,300,500,600,300,400,500,100,200,400,600,400,300,200)
+values(13, "downswing", "222222", "222222", "222222", "222222", "222222","222222","222222","222222",300,300,500,600,300,400,500,100,200,400,600,400,300,200)
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center, head_code_x, shoulder_code_x, arm_code_x, waist_code_x, core_code_x, knee_code_x, foot_code_x, head_code_y, shoulder_code_y, arm_code_y, waist_code_y, core_code_y, knee_code_y, foot_code_y) 
-values(12, "impact", "333333", "333333", "333333", "333333", "333333","333333","333333","333333",100,200,300,400,500,600,700,700,600,500,400,300,200,100)
+values(13, "impact", "333333", "333333", "333333", "333333", "333333","333333","333333","333333",100,200,300,400,500,600,700,700,600,500,400,300,200,100)
 
 INSERT into tbl_swing(deep_seq, swing_type, head_action, shoulder__action, arm__action, waist_action, core__action, knee_action, foot_action, weight_center, head_code_x, shoulder_code_x, arm_code_x, waist_code_x, core_code_x, knee_code_x, foot_code_x, head_code_y, shoulder_code_y, arm_code_y, waist_code_y, core_code_y, knee_code_y, foot_code_y) 
-values(12, "followthrough", "444444", "444444", "444444", "444444", "444444","444444","444444","444444",200,300,500,100,200,300,600,600,600,600,300,300,300,100)
+values(13, "followthrough", "444444", "444444", "444444", "444444", "444444","444444","444444","444444",200,300,500,100,200,300,600,600,600,600,300,300,300,100)
 
 select * from tbl_swing;
 delete from tbl_swing;
 
 INSERT into tbl_skeleton_video(video_seq, video_path, reg_date, m_idx, upload_seq) 
-values(28, "C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/mic9.mp4", "2021-12-14 21:08:20.0", 34, 304)
+values(28, "C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/mic9.mp4", "2021-12-14 21:08:20.0", 34, 307)
 
+delete from tbl_skeleton_video;
 select * from tbl_skeleton_video;
 select * from tbl_skeleton_video where m_idx = 34 and upload_seq = 124;
 
