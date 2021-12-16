@@ -3685,6 +3685,7 @@ a.movie_link:hover {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  min-height: 24px;
 }
 
 .analysis_list-writer {
@@ -3725,6 +3726,7 @@ a.movie_link:hover {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   width: 45%;
+  min-height:18px;
 }
 
 .analysis_list-accuracy {

@@ -206,11 +206,11 @@
 											<source id="movie_src1" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox" id="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 1 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자1 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title1"></div>
+											<div class="analysis_list-writer">작성자1</div>
 											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -223,11 +223,11 @@
 											<source id="movie_src2" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 2 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자2 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title2"></div>
+											<div class="analysis_list-writer">작성자2</div>
 											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -240,11 +240,11 @@
 											<source id="movie_src3" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 3 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자3 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title3"></div>
+											<div class="analysis_list-writer">작성자3</div>
 											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -259,11 +259,11 @@
 											<source id="movie_src4" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 4 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자4 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title4"></div>
+											<div class="analysis_list-writer">작성자4</div>
 											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -276,11 +276,11 @@
 											<source id="movie_src5" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 5 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자5 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title5"></div>
+											<div class="analysis_list-writer">작성자5</div>
 											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -293,11 +293,11 @@
 											<source id="movie_src6" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox">
-											<div class="analysis_list-title">시험용 타이틀 6 길이조정길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
-											<div class="analysis_list-writer">작성자6 길이조정길이조정길이조정길이조정길이조정길이조정길이조정</div>
+											<div class="analysis_list-title" id = "list-title6"></div>
+											<div class="analysis_list-writer">작성자6</div>
 											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost">소요시간: 1h 30m 20s</div>
-											<div class="analysis_list-accuracy">Acc:100%</div>
+											<div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div>
 											<div class="analysis_list-date">2021.05.10 14:00</div>
 										</div>
 									</div>
@@ -475,48 +475,102 @@
 	    // 인덱스 부여(후에 list.get(i)에 사용, ex: 1번은 1-1에 ~ 6번은 2-3에 가고 페이지 넘어가면 7~12번이 똑같이 반복)
 	    var idx1 = text1-1;
 	    var idx2 = text2-1;
-	    var index3 = text3-1;
+	    var idx3 = text3-1;
 	    var idx4 = text4-1;
 	    var idx5 = text5-1;
 	    var idx6 = text6-1;
 	    
+	    alert(text1);
+	    alert(idx1);
+	    var list=data;
+	    console.log(list);
+	    
+	    if(list[idx1].upload_subject==""){
+	    	title1 = "제목없음";
+	    }else{
+	    	title1 = list[idx1].upload_subject;
+	    };
+	    if(list[idx2].upload_subject==""){
+	    	title2 = "제목없음";
+	    }else{
+	    	title2 = list[idx2].upload_subject;
+	    };
+	    if(list[idx3].upload_subject==""){
+	    	title3 = "제목없음";
+	    }else{
+	    	title3 = list[idx3].upload_subject;
+	    };
+	    if(list[idx4].upload_subject==""){
+	    	title4 = "제목없음";
+	    }else{
+	    	title4 = list[idx4].upload_subject;
+	    };
+	    if(list[idx5].upload_subject==""){
+	    	title5 = "제목없음";
+	    }else{
+	    	title5 = list[idx5].upload_subject;
+	    };
+	    if(list[idx6].upload_subject==""){
+	    	title6 = "제목없음";
+	    }else{
+	    	title6 = list[idx6].upload_subject;
+	    };
 	    
 	    
-	    var list=data
-	    console.log(list)
-	    console.log(list[idx2].upload_file)
-			    
-	    var file1 = list[idx1].upload_file;
-	    var file2 = list[idx2].upload_file;
-	    var file3 = list[index3].upload_file;
-	    var file4 = list[idx4].upload_file;
-	    var file5 = list[idx5].upload_file;
-	    var file6 = list[idx6].upload_file;
+	    var num_view = list.length%6;
+	    // 예외처리: 올린 분석 6개미만일 때
+	    if((num_view>=1 || num_view==0) && list.length!=0){
+	    	var file1 = list[idx1].upload_file;
+	    	var dir1 = directory + file1;
+	    	$("#movie_src1").attr("src", dir1);
+	    	$("#video1").load();
+	    	document.getElementById('list-title1').innerText = title1;
+	    };
+	    
+	    if((num_view>=2 || num_view==0) && list.length!=0){
+	    	var file2 = list[idx2].upload_file;
+	    	var dir2 = directory + file2;
+	    	$("#movie_src2").attr("src", dir2);
+	    	$("#video2").load();
+	    	document.getElementById('list-title2').innerText = title2;
+	    };
+	    
+		if((num_view>=3 || num_view==0) && list.length!=0){
+	    	var file3 = list[idx3].upload_file;
+	    	var dir3 = directory + file3;
+	    	$("#movie_src3").attr("src", dir3);
+	    	$("#video3").load();
+	    	document.getElementById('list-title3').innerText = title3;
+	    };
+		
+		if((num_view>=4 || num_view==0) && list.length!=0){
+	    	var file4 = list[idx4].upload_file;
+	    	var dir4 = directory + file4;
+	    	$("#movie_src4").attr("src", dir4);
+	    	$("#video4").load();
+	    	document.getElementById('list-title4').innerText = title4;
+	    };
+		
+		if((num_view>=5 || num_view==0) && list.length!=0){
+	    	var file5 = list[idx5].upload_file;
+	    	var dir5 = directory + file5;
+	    	$("#movie_src5").attr("src", dir5);
+	    	$("#video5").load();
+	    	document.getElementById('list-title5').innerText = title5;
+	    };
+	    
+	    if(num_view==0 && list.length!=0){
+	    	var file6 = list[idx6].upload_file;
+	    	var dir6 = directory + file6;
+	    	$("#movie_src6").attr("src", dir6);
+	    	$("#video6").load();
+	    	document.getElementById('list-title6').innerText = title6;
+	    };
+		
+	    
 	    
 	    //var filetype = ".mp4";
-	    console.log(index3)
 	    
-	    var dir1 = directory + file1;
-	    var dir2 = directory + file2;
-	    var dir3 = directory + file3;
-	    var dir4 = directory + file4;
-	    var dir5 = directory + file5;
-	    var dir6 = directory + file6;
-	    
-	    $("#movie_src1").attr("src", dir1);
-	    $("#movie_src2").attr("src", dir2);
-	    $("#movie_src3").attr("src", dir3);
-	    $("#movie_src4").attr("src", dir4);
-	    $("#movie_src5").attr("src", dir5);
-	    $("#movie_src6").attr("src", dir6);
-
-	    //동영상을 다시 load 함
-	    $("#video1").load();
-	    $("#video2").load();
-	    $("#video3").load();
-	    $("#video4").load();
-	    $("#video5").load();
-	    $("#video6").load();
 	}
 	</script>
 </body>
