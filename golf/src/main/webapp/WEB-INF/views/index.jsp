@@ -160,7 +160,7 @@
 				</div>
 				<div class="upper-tool third-tool">
 					<a class="upper-link" href="video_compared.html">
-						<div class="upper-link-text">골프 정보</div>
+						<div class="upper-link-text">마지막 분석으로</div>
 					</a>
 				</div>
 			</div>
