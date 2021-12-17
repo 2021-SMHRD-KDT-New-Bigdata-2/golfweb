@@ -210,12 +210,12 @@
 											<source id="movie_src1" type="video/mp4" src=""/>
 										</video>
 										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div class="analysis_list-swingtype" id = "club-type1"></div>
 											<div class="analysis_list-title" id = "list-title1"></div>
-											<div class="analysis_list-writer">작성자1</div>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer1">작성자 : ${login_id}</div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date1"></div>
 										</div>
 									</div>
 								</a>
@@ -228,11 +228,11 @@
 										</video>
 										<div class="analysis_list-textbox">
 											<div class="analysis_list-title" id = "list-title2"></div>
-											<div class="analysis_list-writer">작성자2</div>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer2">작성자 : ${login_id}</div>
+											<div class="analysis_list-swingtype" id = "club-type2"></div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date2"></div>
 										</div>
 									</div>
 								</a>
@@ -245,11 +245,11 @@
 										</video>
 										<div class="analysis_list-textbox">
 											<div class="analysis_list-title" id = "list-title3"></div>
-											<div class="analysis_list-writer">작성자3</div>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer3">작성자 : ${login_id}</div>
+											<div class="analysis_list-swingtype" id = "club-type3"></div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date3"></div>
 										</div>
 									</div>
 								</a>
@@ -264,11 +264,11 @@
 										</video>
 										<div class="analysis_list-textbox">
 											<div class="analysis_list-title" id = "list-title4"></div>
-											<div class="analysis_list-writer">작성자4</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer4">작성자 : ${login_id}</div>
+											<div class="analysis_list-swingtype" id = "club-type4"></div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date4"></div>
 										</div>
 									</div>
 								</a>
@@ -281,11 +281,11 @@
 										</video>
 										<div class="analysis_list-textbox">
 											<div class="analysis_list-title" id = "list-title5"></div>
-											<div class="analysis_list-writer">작성자5</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer5">작성자 : ${login_id}</div>
+											<div class="analysis_list-swingtype" id = "club-type5"></div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date5"></div>
 										</div>
 									</div>
 								</a>
@@ -298,11 +298,11 @@
 										</video>
 										<div class="analysis_list-textbox">
 											<div class="analysis_list-title" id = "list-title6"></div>
-											<div class="analysis_list-writer">작성자6</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer" id = "list-writer6">작성자 : ${login_id}</div>
+											<div class="analysis_list-swingtype" id = "club-type6"></div>
+											<!-- <div class="analysis_list-timecost"></div>
+											<div class="analysis_list-accuracy"></div> -->
+											<div class="analysis_list-date" id = "list-date6"></div>
 										</div>
 									</div>
 								</a>
@@ -555,6 +555,17 @@
 				    	$("#movie_src1").attr("src", dir1);
 				    	$("#video1").load();
 				    	document.getElementById('list-title1').innerText = title1;
+				    	
+				    	if(list[idx1].club_type=="I"){
+				    		club_type1 = "[ 아이언 ]";
+				    	}else{
+				    		club_type1 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type1').innerText = club_type1;
+				    	
+				    	date1 = list[idx1].upload_date;
+				    	list_date1 = date1.split(".")[0];
+				    	document.getElementById('list-date1').innerText = list_date1;
 				    };
 				    
 				    if(num_view>=2 || num_view==0){
@@ -569,6 +580,17 @@
 				    	$("#movie_src2").attr("src", dir2);
 				    	$("#video2").load();
 				    	document.getElementById('list-title2').innerText = title2;
+				    	
+				    	if(list[idx2].club_type=="I"){
+				    		club_type2 = "[ 아이언 ]";
+				    	}else{
+				    		club_type2 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type2').innerText = club_type2;
+				    	
+				    	date2 = list[idx2].upload_date;
+				    	list_date2 = date2.split(".")[0];
+				    	document.getElementById('list-date2').innerText = list_date2;
 				    };
 				    
 					if(num_view>=3 || num_view==0){
@@ -583,6 +605,17 @@
 				    	$("#movie_src3").attr("src", dir3);
 				    	$("#video3").load();
 				    	document.getElementById('list-title3').innerText = title3;
+				    	
+				    	if(list[idx3].club_type=="I"){
+				    		club_type3 = "[ 아이언 ]";
+				    	}else{
+				    		club_type3 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type3').innerText = club_type3;
+				    	
+				    	date3 = list[idx3].upload_date;
+				    	list_date3 = date3.split(".")[0];
+				    	document.getElementById('list-date3').innerText = list_date3;
 				    };
 					
 					if(num_view>=4 || num_view==0){
@@ -597,6 +630,17 @@
 				    	$("#movie_src4").attr("src", dir4);
 				    	$("#video4").load();
 				    	document.getElementById('list-title4').innerText = title4;
+				    	
+				    	if(list[idx4].club_type=="I"){
+				    		club_type4 = "[ 아이언 ]";
+				    	}else{
+				    		club_type4 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type4').innerText = club_type4;
+				    	
+				    	date4 = list[idx4].upload_date;
+				    	list_date4 = date4.split(".")[0];
+				    	document.getElementById('list-date4').innerText = list_date4;
 				    };
 					
 					if(num_view>=5 || num_view==0){
@@ -611,6 +655,17 @@
 				    	$("#movie_src5").attr("src", dir5);
 				    	$("#video5").load();
 				    	document.getElementById('list-title5').innerText = title5;
+				    	
+				    	if(list[idx5].club_type=="I"){
+				    		club_type5 = "[ 아이언 ]";
+				    	}else{
+				    		club_type5 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type5').innerText = club_type5;
+				    	
+				    	date5 = list[idx5].upload_date;
+				    	list_date5 = date5.split(".")[0];
+				    	document.getElementById('list-date5').innerText = list_date5;
 				    };
 				    
 				    if(num_view==0){
@@ -625,6 +680,17 @@
 				    	$("#movie_src6").attr("src", dir6);
 				    	$("#video6").load();
 				    	document.getElementById('list-title6').innerText = title6;
+				    	
+				    	if(list[idx6].club_type=="I"){
+				    		club_type6 = "[ 아이언 ]";
+				    	}else{
+				    		club_type6 = "[드라이버]";
+				    	};
+				    	document.getElementById('club-type6').innerText = club_type6;
+				    	
+				    	date6 = list[idx6].upload_date;
+				    	list_date6 = date6.split(".")[0];
+				    	document.getElementById('list-date6').innerText = list_date6;
 				    };
 		    	}else{
 		    		if(list[idx1].upload_subject==""){
@@ -657,6 +723,13 @@
 				    }else{
 				    	title6 = list[idx6].upload_subject;
 				    };
+				    
+				    var club_type1 = "";
+				    var club_type2 = "";
+				    var club_type3 = "";
+				    var club_type4 = "";
+				    var club_type5 = "";
+				    var club_type6 = "";
 		    		
 		    		var file1 = list[idx1].upload_file;
 			    	var dir1 = directory + file1;
@@ -666,6 +739,12 @@
 			    	$("#movie_src1").attr("src", dir1);
 			    	$("#video1").load();
 			    	document.getElementById('list-title1').innerText = title1;
+			    	if(list[idx1].club_type=="I"){
+			    		club_type1 = "[ 아이언 ]";
+			    	}else{
+			    		club_type1 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type1').innerText = club_type1;
 			    	
 			    	var file2 = list[idx2].upload_file;
 			    	var dir2 = directory + file2;
@@ -675,6 +754,12 @@
 			    	$("#movie_src2").attr("src", dir2);
 			    	$("#video2").load();
 			    	document.getElementById('list-title2').innerText = title2;
+			    	if(list[idx2].club_type=="I"){
+			    		club_type2 = "[ 아이언 ]";
+			    	}else{
+			    		club_type2 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type2').innerText = club_type2;
 			    	
 			    	var file3 = list[idx3].upload_file;
 			    	var dir3 = directory + file3;
@@ -684,6 +769,12 @@
 			    	$("#movie_src3").attr("src", dir3);
 			    	$("#video3").load();
 			    	document.getElementById('list-title3').innerText = title3;
+			    	if(list[idx3].club_type=="I"){
+			    		club_type3 = "[ 아이언 ]";
+			    	}else{
+			    		club_type3 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type3').innerText = club_type3;
 			    	
 			    	var file4 = list[idx4].upload_file;
 			    	var dir4 = directory + file4;
@@ -693,6 +784,12 @@
 			    	$("#movie_src4").attr("src", dir4);
 			    	$("#video4").load();
 			    	document.getElementById('list-title4').innerText = title4;
+			    	if(list[idx4].club_type=="I"){
+			    		club_type4 = "[ 아이언 ]";
+			    	}else{
+			    		club_type4 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type4').innerText = club_type4;
 			    	
 			    	var file5 = list[idx5].upload_file;
 			    	var dir5 = directory + file5;
@@ -702,6 +799,12 @@
 			    	$("#movie_src5").attr("src", dir5);
 			    	$("#video5").load();
 			    	document.getElementById('list-title5').innerText = title5;
+			    	if(list[idx5].club_type=="I"){
+			    		club_type5 = "[ 아이언 ]";
+			    	}else{
+			    		club_type5 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type5').innerText = club_type5;
 			    	
 			    	var file6 = list[idx6].upload_file;
 			    	var dir6 = directory + file6;
@@ -711,7 +814,32 @@
 			    	$("#movie_src6").attr("src", dir6);
 			    	$("#video6").load();
 			    	document.getElementById('list-title6').innerText = title6;
-		    	};
+			    	if(list[idx6].club_type=="I"){
+			    		club_type6 = "[ 아이언 ]";
+			    	}else{
+			    		club_type6 = "[드라이버]";
+			    	};
+			    	document.getElementById('club-type6').innerText = club_type6;
+			    	
+			    	date1 = list[idx1].upload_date;
+			    	list_date1 = date1.split(".")[0];
+			    	document.getElementById('list-date1').innerText = list_date1;
+					date2 = list[idx2].upload_date;
+					list_date2 = date2.split(".")[0];
+			    	document.getElementById('list-date2').innerText = list_date2;
+					date3 = list[idx3].upload_date;
+					list_date3 = date3.split(".")[0];
+			    	document.getElementById('list-date3').innerText = list_date3;
+					date4 = list[idx4].upload_date;
+					list_date4 = date4.split(".")[0];
+			    	document.getElementById('list-date4').innerText = list_date4;
+					date5 = list[idx5].upload_date;
+					list_date5 = date5.split(".")[0];
+			    	document.getElementById('list-date5').innerText = list_date5;
+					date6 = list[idx6].upload_date;
+					list_date6 = date6.split(".")[0];
+			    	document.getElementById('list-date6').innerText = list_date6;
+		    	}; 
 		    	
 		    };
 	    };

@@ -180,6 +180,8 @@ $(function() {
             "color": "#78bd2e",
             "background-color": "#fff"
         });
+        $("#swing_type-iron").addClass("selected");
+        $("#swing_type-driver").removeClass("selected");
         return false;
     });
 
@@ -192,6 +194,8 @@ $(function() {
             "color": "#fff",
             "background-color": "#44bd32"
         });
+        $("#swing_type-driver").addClass("selected");
+        $("#swing_type-iron").removeClass("selected");
         return false;
     });
 });

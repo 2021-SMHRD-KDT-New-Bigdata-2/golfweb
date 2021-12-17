@@ -197,11 +197,11 @@
 									<table class="swing_type">
 										<div class="title" style="font-size:20px;margin-top: 0.5%;margin-left: 12%;"> 스윙타입: </div>
 										<tr>
-											<td class = "swing iron-swing" id="swing_type-iron" style="font-size: 15px;">
-												<input type="radio" class="club_type" value="I" name="club_type">아이언
+											<td class = "swing iron-swing selected" id="swing_type-iron" style="font-size: 15px;">
+												<input type="radio" id="club-type-iron" class="club_type" value="I" name="club_type">아이언
 											</td>
 											<td class = "swing driver-swing" id="swing_type-driver" style="font-size: 15px;">
-												<input type="radio" class="club_type" value="D" name="club_type"> 드라이버 
+												<input type="radio" id="club-type-driver" class="club_type" value="D" name="club_type"> 드라이버 
 											</td>
 										</tr>
 									</table>
@@ -305,8 +305,16 @@
 				var upload_title = $("#upload_title").val();
 				console.log(upload_title);
 				
-				console.log(index)
-				var club_type = $(".club_type").val();
+				console.log(index);
+				
+				if($("#swing_type-driver").hasClass("selected")){
+					var club_type = $("#club-type-driver").val();
+				};
+				
+				if($("#swing_type-iron").hasClass("selected")){
+					var club_type = $("#club-type-iron").val();
+				};
+				
 				console.log(club_type);
 				$.ajax({
 					url:"${cpath}/uploadata",
