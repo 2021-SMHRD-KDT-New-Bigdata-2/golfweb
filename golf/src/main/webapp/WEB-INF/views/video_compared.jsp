@@ -23,18 +23,64 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/app.scss">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/sidebar.css?ver=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 	<!-- Theme initialization -->
 	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 	<style>
-		input[type="checkbox"]{
+input[type="checkbox"] {
+	width: 30px; /*Desired width*/
+	height: 30px; /*Desired height*/
+	cursor: pointer;
+}
 
-		width: 30px; /*Desired width*/
+.btn-3 {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
 
-		height: 30px; /*Desired height*/
 
-		cursor: pointer;
-		}
-	</style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.btn2 {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  width:440px;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  border-radius: 10px;
+ }
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.cropping {
+ max-height:800px;
+ overflow:hidden;
+}
+
+.cropping img {
+	max-height:initial;
+	margin-top:-40%;
+}
+
+</style>
 </head>
 
 <body class = "loaded">
@@ -253,7 +299,8 @@
 													<div class="card-title-block">
 														<h3 class="title"> 자세교정위치표시 </h3>
 													</div>
-													<div class = "image_box">
+													<div class = "image_box cropping">
+														<img id="resultimg" style="width:900px; height:900px; display:none">
 														<!--<a class="point_link uptomiddle" id = "point_link_head">
 															<div class="point_img"></div>
 														</a>
@@ -289,43 +336,40 @@
 											<div class="card fortable" style="height: 100%">
 												<div class="card-block">
 													<div class="card-title-block">
-														<h3 class="title"> Comment </h3>
+														<h3 class="title"> 신체별 정보 </h3>
 													</div>
 													<div class="detail_scripts">
 														<div class="detail_script_box">
 															<div class="swing_recommend head">
-																<div class="recommend-title" id = "recommend-title-head">머리동작</div>
+																<button class="recommend-title btn-lg btn2 btn-3"
+																	id="recommend-title-head" >머리동작</button>
 																<div class="recommend-text head-text" id="head-text"></div>
 															</div>
 															<div class="swing_recommend shoulder">
-																<div class="recommend-title" id = "recommend-title-shoulder">어깨동작</div>
-																<div class="recommend-text shoulder-text" id="shoulder-text"></div>
+																<button
+																	class="recommend-title btn-lg btn2 btn-3"
+																	id="recommend-title-shoulder" >어깨동작</button>
+																<div class="recommend-text shoulder-text"
+																	id="shoulder-text"></div>
 															</div>
 															<div class="swing_recommend arm">
-																<div class="recommend-title" id = "recommend-title-arm">팔동작</div>
+																<button class="recommend-title btn-lg btn2 btn-3"
+																	id="recommend-title-arm" >팔동작</button>
 																<div class="recommend-text arm-text" id="arm-text"></div>
 															</div>
-															<div class="swing_recommend waist">
-																<div class="recommend-title" id = "recommend-title-waist">허리동작</div>
-																<div class="recommend-text waist-text" id="waist-text"></div>
-															</div>
 															<div class="swing_recommend pelvis">
-																<div class="recommend-title" id = "recommend-title-pelvis">골반동작</div>
+																<button class="recommend-title btn-lg btn2 btn-3"
+																	id="recommend-title-pelvis" >골반동작</button>
 																<div class="recommend-text pelvis-text" id="pelvis-text"></div>
 															</div>
 															<div class="swing_recommend knee">
-																<div class="recommend-title" id = "recommend-title-knee">무릎동작</div>
+																<button class="recommend-title btn-lg btn2 btn-3"
+																	id="recommend-title-knee" >무릎동작</button>
 																<div class="recommend-text knee-text" id="knee-text"></div>
 															</div>
-															<div class="swing_recommend foot">
-																<div class="recommend-title" id = "recommend-title-foot">발동작</div>
-																<div class="recommend-text foot-text" id="foot-text"></div>
-															</div>
-															<!-- <div class="swing_recommend cg">
-																<div class="recommend-title" id = "recommend-title-cg">무게중심</div>
-																<div class="recommend-text cg-text" id="cg-text">${weight_center}</div>
-															</div> -->
-															
+															<div class="recommend-title" id="recommend-title-cg">코멘트</div>
+																<span>hi</span>
+															<div class="recommend-text cg-text" id="cg-text">${weight_center}</div>
 														</div>
 													</div>
 												</div>
@@ -333,7 +377,7 @@
 										</div>
 									</div>
 								</section>
-								<section class="section">
+								<%-- <section class="section">
 									<div class="row">
 										<div class="col-md-6" style="max-width: 100%;">
 											<div class="card fortable" style="height: 100%;">
@@ -410,54 +454,7 @@
 												</div>
 											</div>
 										</div>
-								</section>
-								
-								<section class="section">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block" style="padding-bottom: 0;">
-													<div class="card-title-block">
-														<h3 class="title"> swing_wrist_y </h3>
-													</div>
-													<section class="example" style="margin-bottom: 0">
-														<div class="graph_box">
-															<p class="swing_wrist y"></p>
-														</div>
-													</section>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block" style="padding-bottom: 0;">
-													<div class="card-title-block">
-														<h3 class="title"> swing_wrist_xy </h3>
-													</div>
-													<section class="example" style="margin-bottom: 0">
-														<div class="graph_box">
-															<p class="swing_wrist xy"></p>
-														</div>
-													</section>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="card fortable">
-												<div class="card-block" style="padding-bottom: 0;">
-													<div class="card-title-block">
-														<h3 class="title"> swing_wrist_accl </h3>
-													</div>
-													<section class="example" style="margin-bottom: 0">
-														<div class="graph_box">
-															<p class="swing_wrist accl"></p>
-														</div>
-													</section>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
+								</section> --%>
 							</div>
 						</div>
 
@@ -494,7 +491,27 @@
 	<script src="${pageContext.request.contextPath}/resources/static/javascript/deep_learning.js"></script>
 
 
+
 	<script>
+	$(function() {
+		var check_login_state = null;
+		var ls = "<%=session.getAttribute("login_state")%>";
+	 	if(ls != null){
+			check_login_state = ls;
+		} else {
+			check_login_state = "N";
+		}; 
+		
+		if(check_login_state=="Y"){
+	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+	        $("#login_state").addClass("active");
+	        $("#logout_state").removeClass("active");
+	    }else{
+	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+	        $("#logout_state").addClass("active");
+	        $("#login_state").removeClass("active");
+      	};
+	});
 	function logout(){
 		$.ajax({
         	url : "${cpath}/tbl_member_Logout.do",
@@ -549,22 +566,22 @@
 		        	type : "post",
 		        	data : {"m_idx":${member_info.m_idx}, "upload_seq":${recent_upload_info.upload_seq}},
 		        	//data : frmData,
-		        	success : function(){},
+		        	success : function(){
+						var dir="http://localhost:13131/golf/resources/static/skeletonmovie/";
+   						var filename = "${skeleton_file}";
+   						var file = filename.replace("C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/", dir);
+						console.log(file)
+		        		//선택한 버튼의 동영상 경로를 불러옴
+		                $("#movie_src_skeleton").attr("src", file);
+		        		
+		                //동영상을 다시 load 함
+		                $("#a_video_skeleton").load();
+		                //load한 동영상을 재생
+		                document.getElementById("a_video_skeleton").controls = "True";
+							},
 		        	error : function(){},
 		    	});
-				
-				var dir="http://localhost:13131/golf/resources/static/skeletonmovie/";
-        		var filename = "${skeleton_file}";
-        		var file = filename.replace("C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/skeletonmovie/", dir);
-
-        		//선택한 버튼의 동영상 경로를 불러옴
-                $("#movie_src_skeleton").attr("src", file);
-        		
-                //동영상을 다시 load 함
-                $("#a_video_skeleton").load();
-                //load한 동영상을 재생
-                document.getElementById("a_video_skeleton").controls = "True";
-			};
+			}
 		});
 	</script>
 	
@@ -593,7 +610,7 @@
 	        		},
 	        	error : function(){},
 	    	});
-			};
+			
 		});
 	</script>
 	
@@ -606,24 +623,53 @@
 	var deep_seq = 13;
 	//스윙종류 : 어드레스
 	var swing_type = "address";
-	$('#picture_link1').click(function() {
+	$('#toggle').click(function() {
 		$.ajax({
-        	url : "${cpath}/LoadSwing.do",
+        	url : "${cpath}/graphlist.do",
         	type : "post",
-        	data : {"deep_seq":deep_seq, "swing_type":swing_type},
+        	data : {"m_idx":${member_info.m_idx}, "upload_seq":${recent_upload_info.upload_seq}},
+					datatype: "json",
         	//data : frmData,
-        	success : function(){},
+        	success : function(data){
+        		var armgraphpath = data[0].armgraphpath
+						var headgraphpath= data[0].headgraphpath
+						var sdgraphpath = data[0].sdgraphpath
+						var cgraphpath = data[0].cgraphpath
+						var kgraphpath = data[0].kgraphpath
+						$('#recommend-title-head').click(function(){angjingfn(headgraphpath)})
+							
+							
+						$('#recommend-title-shoulder').click(function(){angjingfn(sdgraphpath)})
+							
+						$('#recommend-title-arm').click(function(){angjingfn(armgraphpath)})
+							
+						$('#recommend-title-pelvis').click(function(){angjingfn(cgraphpath)})
+							
+						$('#recommend-title-knee').click(function(){angjingfn(kgraphpath)})
+							
+						
+						//console.log(armgraphpath)
+        	},
         	error : function(){},
     	});
 		
-		document.getElementById('head-text').innerText = "${head_action}";
-		document.getElementById('shoulder-text').innerText = "${shoulder_action}";
-		document.getElementById('arm-text').innerText = "${arm_action}";
-		document.getElementById('waist-text').innerText = "${waist_action}";
-		document.getElementById('pelvis-text').innerText = "${core_action}";
-		document.getElementById('knee-text').innerText = "${knee_action}";
-		document.getElementById('foot-text').innerText = "${foot_action}";
+		
 	});
+	</script>
+	<script>
+		function angjingfn(data) {
+			var dir='http://localhost:13131/golf/resources/static/graph/'
+				var filename = data;
+				console.log(data)
+	   			var file = filename.replace("C:/Users/smhrd/git/golfweb/golf/src/main/webapp/resources/static/graph/", dir);
+				$("#resultimg").attr("src", file);
+				var con = $("#resultimg");
+				console.log(con)
+				if($("#resultimg").css('display')=='none'){
+					$("#resultimg").css("display","block")
+				}
+		}
+
 	</script>
 
 	<!-- 스윙하는 특정순간의 이미지 나열 -->
@@ -665,6 +711,7 @@
 	        });
 		});
 	</script>
+	
 
 	<!-- <script>
 		// 자세교정시점 선택시 액션
