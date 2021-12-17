@@ -558,9 +558,13 @@
 				    	document.getElementById('list-title1').innerText = title1;
 				    	
 				    	if(list[idx1].club_type=="I"){
-				    		club_type1 = "[ 아이언 ]";
+				    		club_type1 = "[아이언]";
+				    		$("#list-title1").addClass("foriron");
+				            $("#list-title1").removeClass("fordriver");
 				    	}else{
 				    		club_type1 = "[드라이버]";
+				    		$("#list-title1").addClass("fordriver");
+				            $("#list-title1").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type1').innerText = club_type1;
 				    	
@@ -583,9 +587,13 @@
 				    	document.getElementById('list-title2').innerText = title2;
 				    	
 				    	if(list[idx2].club_type=="I"){
-				    		club_type2 = "[ 아이언 ]";
+				    		club_type2 = "[아이언]";
+				    		$("#list-title2").addClass("foriron");
+				            $("#list-title2").removeClass("fordriver");
 				    	}else{
 				    		club_type2 = "[드라이버]";
+				    		$("#list-title2").addClass("fordriver");
+				            $("#list-title2").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type2').innerText = club_type2;
 				    	
@@ -608,9 +616,13 @@
 				    	document.getElementById('list-title3').innerText = title3;
 				    	
 				    	if(list[idx3].club_type=="I"){
-				    		club_type3 = "[ 아이언 ]";
+				    		club_type3 = "[아이언]";
+				    		$("#list-title3").addClass("foriron");
+				            $("#list-title3").removeClass("fordriver");
 				    	}else{
 				    		club_type3 = "[드라이버]";
+				    		$("#list-title3").addClass("fordriver");
+				            $("#list-title3").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type3').innerText = club_type3;
 				    	
@@ -633,9 +645,13 @@
 				    	document.getElementById('list-title4').innerText = title4;
 				    	
 				    	if(list[idx4].club_type=="I"){
-				    		club_type4 = "[ 아이언 ]";
+				    		club_type4 = "[아이언]";
+				    		$("#list-title4").addClass("foriron");
+				            $("#list-title4").removeClass("fordriver");
 				    	}else{
 				    		club_type4 = "[드라이버]";
+				    		$("#list-title4").addClass("fordriver");
+				            $("#list-title4").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type4').innerText = club_type4;
 				    	
@@ -658,9 +674,13 @@
 				    	document.getElementById('list-title5').innerText = title5;
 				    	
 				    	if(list[idx5].club_type=="I"){
-				    		club_type5 = "[ 아이언 ]";
+				    		club_type5 = "[아이언]";
+				    		$("#list-title5").addClass("foriron");
+				            $("#list-title5").removeClass("fordriver");
 				    	}else{
 				    		club_type5 = "[드라이버]";
+				    		$("#list-title5").addClass("fordriver");
+				            $("#list-title5").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type5').innerText = club_type5;
 				    	
@@ -683,9 +703,13 @@
 				    	document.getElementById('list-title6').innerText = title6;
 				    	
 				    	if(list[idx6].club_type=="I"){
-				    		club_type6 = "[ 아이언 ]";
+				    		club_type6 = "[아이언]";
+				    		$("#list-title6").addClass("foriron");
+				            $("#list-title6").removeClass("fordriver");
 				    	}else{
 				    		club_type6 = "[드라이버]";
+				    		$("#list-title6").addClass("fordriver");
+				            $("#list-title6").removeClass("foriron");
 				    	};
 				    	document.getElementById('club-type6').innerText = club_type6;
 				    	
@@ -741,9 +765,13 @@
 			    	$("#video1").load();
 			    	document.getElementById('list-title1').innerText = title1;
 			    	if(list[idx1].club_type=="I"){
-			    		club_type1 = "[ 아이언 ]";
+			    		club_type1 = "[아이언]";
+			    		$("#list-title1").addClass("foriron");
+			            $("#list-title1").removeClass("fordriver");
 			    	}else{
 			    		club_type1 = "[드라이버]";
+			    		$("#list-title1").addClass("fordriver");
+			            $("#list-title1").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type1').innerText = club_type1;
 			    	
@@ -756,9 +784,13 @@
 			    	$("#video2").load();
 			    	document.getElementById('list-title2').innerText = title2;
 			    	if(list[idx2].club_type=="I"){
-			    		club_type2 = "[ 아이언 ]";
+			    		club_type2 = "[아이언]";
+			    		$("#list-title2").addClass("foriron");
+			            $("#list-title2").removeClass("fordriver");
 			    	}else{
 			    		club_type2 = "[드라이버]";
+			    		$("#list-title2").addClass("fordriver");
+			            $("#list-title2").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type2').innerText = club_type2;
 			    	
@@ -771,9 +803,13 @@
 			    	$("#video3").load();
 			    	document.getElementById('list-title3').innerText = title3;
 			    	if(list[idx3].club_type=="I"){
-			    		club_type3 = "[ 아이언 ]";
+			    		club_type3 = "[아이언]";
+			    		$("#list-title3").addClass("foriron");
+			            $("#list-title3").removeClass("fordriver");
 			    	}else{
 			    		club_type3 = "[드라이버]";
+			    		$("#list-title3").addClass("fordriver");
+			            $("#list-title3").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type3').innerText = club_type3;
 			    	
@@ -786,9 +822,13 @@
 			    	$("#video4").load();
 			    	document.getElementById('list-title4').innerText = title4;
 			    	if(list[idx4].club_type=="I"){
-			    		club_type4 = "[ 아이언 ]";
+			    		club_type4 = "[아이언]";
+			    		$("#list-title4").addClass("foriron");
+			            $("#list-title4").removeClass("fordriver");
 			    	}else{
 			    		club_type4 = "[드라이버]";
+			    		$("#list-title4").addClass("fordriver");
+			            $("#list-title4").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type4').innerText = club_type4;
 			    	
@@ -801,9 +841,13 @@
 			    	$("#video5").load();
 			    	document.getElementById('list-title5').innerText = title5;
 			    	if(list[idx5].club_type=="I"){
-			    		club_type5 = "[ 아이언 ]";
+			    		club_type5 = "[아이언]";
+			    		$("#list-title5").addClass("foriron");
+			            $("#list-title5").removeClass("fordriver");
 			    	}else{
 			    		club_type5 = "[드라이버]";
+			    		$("#list-title5").addClass("fordriver");
+			            $("#list-title5").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type5').innerText = club_type5;
 			    	
@@ -816,9 +860,13 @@
 			    	$("#video6").load();
 			    	document.getElementById('list-title6').innerText = title6;
 			    	if(list[idx6].club_type=="I"){
-			    		club_type6 = "[ 아이언 ]";
+			    		club_type6 = "[아이언]";
+			    		$("#list-title6").addClass("foriron");
+			            $("#list-title6").removeClass("fordriver");
 			    	}else{
 			    		club_type6 = "[드라이버]";
+			    		$("#list-title6").addClass("fordriver");
+			            $("#list-title6").removeClass("foriron");
 			    	};
 			    	document.getElementById('club-type6').innerText = club_type6;
 			    	
