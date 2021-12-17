@@ -7,6 +7,9 @@ function progress_change() {
         "color": "#00d2d3",
         "font-weight": "600",
     });
+    $("#progress").css({
+        "visibility": "visible",
+    });
     $("#progress-text").css({
         "visibility": "visible",
     });

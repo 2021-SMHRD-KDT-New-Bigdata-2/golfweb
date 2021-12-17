@@ -215,7 +215,7 @@
 											<div class="analysis_list-swingtype">드라이버</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>
@@ -232,7 +232,7 @@
 											<div class="analysis_list-swingtype">드라이버</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>
@@ -249,7 +249,7 @@
 											<div class="analysis_list-swingtype">드라이버</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>
@@ -268,7 +268,7 @@
 											<div class="analysis_list-swingtype">아이언</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>
@@ -285,7 +285,7 @@
 											<div class="analysis_list-swingtype">아이언</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>
@@ -302,7 +302,7 @@
 											<div class="analysis_list-swingtype">아이언</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date">2021.05.10 14:00</div>
+											<div class="analysis_list-date"></div>
 										</div>
 									</div>
 								</a>

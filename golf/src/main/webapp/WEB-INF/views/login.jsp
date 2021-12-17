@@ -51,7 +51,7 @@
                             <!-- 인스턴스계정으로 로그인 -->
                             <div class="guest_mode" style="float: left;">
                                	아이디가 없으세요? 아이디를 만들거나
-                                <a href = "index.html" class="login_by_guestid" tabindex="-1">
+                                <a href = "#" class="login_by_guestid" tabindex="-1" onclick = "login_guest()">
                                   	  게스트 계정으로 로그인하세요.
                                 </a>
                             </div>
@@ -170,6 +170,37 @@
 			});	
 		};
 		
+	</script>
+	
+	<script type="text/javascript">
+	// 로그인 버튼을 누르면 발생하는 함수
+	function login_guest(){
+		var id = "guest01";
+	    var pwd = "123456";
+	    
+	    $.ajax({
+        	url : "${cpath}/tbl_member_Login.do",
+        	type : "post",
+        	data : {"m_id":id, "m_pwd":pwd},
+        	//data : frmData,
+        	success : function(){
+        			window.sessionStorage.setItem("login_state","Y");
+       				location.href = "index.html";
+        	},
+        	error : function(){
+        		if (!(id && pwd)){
+        			//alert("비밀번호를 입력해주세요.")
+        	        $('#hidden-text-pwd').css({
+        	            "color" : "#FF4444",
+        	        });
+        	        $('#password').css({
+        	            "border" : "1px solid #FF4444",
+        	        });
+        	    }else{
+        	    };
+        	}  
+    	});
+	};
 	</script>
 	
 	<script type="text/javascript">

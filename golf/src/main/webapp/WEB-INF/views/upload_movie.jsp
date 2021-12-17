@@ -228,7 +228,7 @@
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
 										<!--<a href="video_compared.html"></a>-->
-										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick" onclick="upload(${member_info.m_idx})">
+										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick" onclick="upload(${member_info.m_idx});this.onclick=null;">
 										
 								</div>
 							</div>
@@ -298,9 +298,8 @@
 			data: formData,
 			type: 'POST',
 			success: function(result){
-				
-				
-				var upload_file = result
+
+				var upload_file = result;
 				
 				console.log(upload_file);
 				var upload_title = $("#upload_title").val();
@@ -319,20 +318,21 @@
 							url:"${cpath}/jsontest",
 							data:{"upload_path":upload_path,"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
 							success: function(){
-								alert("성공!!!!!!!")
+								//alert("성공!!!!!!!")
 							},
 							error:function(){
-								alert("실패")
+								//alert("실패")
 							}
 						});	
+						// 분석완료 후 페이지에 일어날 변화
+						progress_change();
 					},
 				});
 			},
-			error: function(){alert("error!");}
+			error: function(){alert("영상업로드에 실패했습니다!");}
 		});
 		
-		// 분석완료 후 페이지에 일어날 변화
-		progress_change();
+		
 	}
 	
 
