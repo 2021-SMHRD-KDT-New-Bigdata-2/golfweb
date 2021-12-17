@@ -205,7 +205,7 @@
                     	
                         <div class="first_row">
                             <div class="movie_column first_column videono01" id="block_1">
-								<a href="" class="movie_link movie_link1">
+								<a href="#" class="movie_link movie_link1" onclick = "move_result(document.getElementById('upload_seq1').innerHTML)">
 									<div class="videobox_list">
 										<video id="video1" class="list_video" muted>
 											<source id="movie_src1" type="video/mp4" src=""/>
@@ -218,11 +218,12 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date1"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq1"></div>
 									</div>
 								</a>
                             </div>
                             <div class="movie_column second_column videono02" id="block_2">
-								<a href="" class="movie_link movie_link2">
+								<a href="#" class="movie_link movie_link2" onclick = "move_result(document.getElementById('upload_seq2').innerHTML)">
 									<div class="videobox_list">
 										<video id="video2" class="list_video" muted>
 											<source id="movie_src2" type="video/mp4" src=""/>
@@ -235,11 +236,12 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date2"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq2"></div>
 									</div>
 								</a>
                             </div>
                             <div class="movie_column third_column videono03" id="block_3">
-								<a href="" class="movie_link movie_link3">
+								<a href="#" class="movie_link movie_link3" onclick = "move_result(document.getElementById('upload_seq3').innerHTML)">
 									<div class="videobox_list">
 										<video id="video3" class="list_video" muted>
 											<source id="movie_src3" type="video/mp4" src=""/>
@@ -252,13 +254,14 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date3"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq3"></div>
 									</div>
 								</a>
                             </div>
                         </div>
                         <div class="second_row">
                             <div class="movie_column first_column videono04" id="block_4">
-								<a href="" class="movie_link movie_link4">
+								<a href="" class="movie_link movie_link4" onclick = "move_result(document.getElementById('upload_seq4').innerHTML)">
 									<div class="videobox_list">
 										<video id="video4" class="list_video" muted>
 											<source id="movie_src4" type="video/mp4" src=""/>
@@ -271,11 +274,12 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date4"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq4"></div>
 									</div>
 								</a>
                             </div>
                             <div class="movie_column second_column videono05" id="block_5">
-								<a href="" class="movie_link movie_link5">
+								<a href="#" class="movie_link movie_link5" onclick = "move_result(document.getElementById('upload_seq5').innerHTML)">
 									<div class="videobox_list">
 										<video id="video5" class="list_video" muted>
 											<source id="movie_src5" type="video/mp4" src=""/>
@@ -288,11 +292,12 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date5"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq5"></div>
 									</div>
 								</a>
                             </div>
                             <div class="movie_column third_column videono06" id="block_6">
-								<a href="" class="movie_link movie_link6">
+								<a href="#" class="movie_link movie_link6" onclick = "move_result(document.getElementById('upload_seq6').innerHTML)">
 									<div class="videobox_list">
 										<video id="video6" class="list_video" muted>
 											<source id="movie_src6" type="video/mp4" src=""/>
@@ -305,6 +310,7 @@
 											<div class="analysis_list-accuracy"></div> -->
 											<div class="analysis_list-date" id = "list-date6"></div>
 										</div>
+										<div class="hidden-upload_seq" id = "upload_seq6"></div>
 									</div>
 								</a>
                             </div>
@@ -542,6 +548,8 @@
 		    		
 		    		// 예외처리: 올린 분석 6개미만일 때
 				    if((num_view>=1 || num_view==0)){
+				    	var upload_seq1 = list[idx1].upload_seq;
+				    	document.getElementById('upload_seq1').innerText = upload_seq1;
 				    	if(list[idx1].upload_subject==""){
 					    	title1 = "제목없음";
 					    }else{
@@ -574,6 +582,8 @@
 				    };
 				    
 				    if(num_view>=2 || num_view==0){
+				    	var upload_seq2 = list[idx2].upload_seq;
+				    	document.getElementById('upload_seq2').innerText = upload_seq2;
 				    	if(list[idx2].upload_subject==""){
 					    	title2 = "제목없음";
 					    }else{
@@ -603,6 +613,8 @@
 				    };
 				    
 					if(num_view>=3 || num_view==0){
+						var upload_seq3 = list[idx3].upload_seq;
+						document.getElementById('upload_seq3').innerText = upload_seq3;
 						if(list[idx3].upload_subject==""){
 					    	title3 = "제목없음";
 					    }else{
@@ -632,6 +644,8 @@
 				    };
 					
 					if(num_view>=4 || num_view==0){
+						var upload_seq4 = list[idx4].upload_seq;
+						document.getElementById('upload_seq4').innerText = upload_seq4;
 						if(list[idx4].upload_subject==""){
 					    	title4 = "제목없음";
 					    }else{
@@ -661,6 +675,8 @@
 				    };
 					
 					if(num_view>=5 || num_view==0){
+						var upload_seq5 = list[idx5].upload_seq;
+						document.getElementById('upload_seq5').innerText = upload_seq5;
 						if(list[idx5].upload_subject==""){
 					    	title5 = "제목없음";
 					    }else{
@@ -690,6 +706,8 @@
 				    };
 				    
 				    if(num_view==0){
+				    	var upload_seq6 = list[idx6].upload_seq;
+				    	document.getElementById('upload_seq6').innerText = upload_seq6;
 				    	if(list[idx6].upload_subject==""){
 					    	title6 = "제목없음";
 					    }else{
@@ -718,6 +736,18 @@
 				    	document.getElementById('list-date6').innerText = list_date6;
 				    };
 		    	}else{
+		    		var upload_seq1 = list[idx1].upload_seq;
+		    		var upload_seq2 = list[idx2].upload_seq;
+		    		var upload_seq3 = list[idx3].upload_seq;
+		    		var upload_seq4 = list[idx4].upload_seq;
+		    		var upload_seq5 = list[idx5].upload_seq;
+		    		var upload_seq6 = list[idx6].upload_seq;
+		    		document.getElementById('upload_seq1').innerText = upload_seq1;
+		    		document.getElementById('upload_seq2').innerText = upload_seq2;
+		    		document.getElementById('upload_seq3').innerText = upload_seq3;
+		    		document.getElementById('upload_seq4').innerText = upload_seq4;
+		    		document.getElementById('upload_seq5').innerText = upload_seq5;
+		    		document.getElementById('upload_seq6').innerText = upload_seq6;
 		    		if(list[idx1].upload_subject==""){
 				    	title1 = "제목없음";
 				    }else{
@@ -929,6 +959,18 @@
 	$("#page-link-num10").click(function(){
 		loadlist();
 	});
+	</script>
+	
+	
+	<script>
+	function move_result(upload_seq){
+		window.sessionStorage.setItem("upload_seq_m",upload_seq);
+		var upload_seq_m = window.sessionStorage.getItem("upload_seq_m");
+		
+		var link = "save_upload_seq.do?upload_seq=";
+		var ref = link + upload_seq_m;
+		location.href=ref;
+	};
 	</script>
 </body>
 </html>

@@ -24,4 +24,5 @@ public interface tbl_memberMapper {
 	public tbl_deeplearning loaddeep(int upload_seq);	// 딥러닝결과 출력
 	public tbl_skeleton_video loadskeleton(tbl_upload vo); // 스켈레톤 vo출력
 	public List<tbl_upload> loaduploadlist(int m_idx); // 업로드한 목록 출력
+	public tbl_upload selectOneUpload(int upload_seq); // 선택한 업로드 vo 불러오기
 }

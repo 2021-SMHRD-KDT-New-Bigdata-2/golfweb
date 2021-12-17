@@ -189,7 +189,10 @@
 					</div>
 				</div>
 				<section class="section">
-					<div class="row sameheight-container">
+					<div class="hidden-text-box" id="hidden-text-box">
+                    		<div class="hidden-text-before-login">로그인을 하신 후에 사용가능한 서비스입니다.</div>
+                    </div>
+					<div class="row sameheight-container video_compared" id = "sameheight-container">
 						<div class="col-xl-4">
 							<div class="card sameheight-item sales-breakdown" data-exclude="xs,sm,lg" style="height: 488px;width: 750px;display: inline-block;position: absolute;top: 0;left: 15px;">
 								<div class="card-header">
@@ -501,6 +504,40 @@
         	},
     	});
 	}
+	</script>
+	
+	<script>
+	$(function() {
+		var check_login_state = null;
+		var ls = "<%=session.getAttribute("login_state")%>";
+	 	if(ls != null){
+			check_login_state = ls;
+		} else {
+			check_login_state = "N";
+		}; 
+		
+		if(check_login_state=="Y"){
+	    	// 로그인 상태박스에 active클래스 부여/ 로그아웃 상태 박스에서는 삭제
+	        $("#login_state").addClass("active");
+	        $("#logout_state").removeClass("active");
+	        $("#sameheight-container").css({
+	        	"visibility":"visible",
+	        });
+	        $("#hidden-text-box").css({
+	        	"visibility":"hidden",
+	        });
+	    }else{
+	    	// 로그아웃 상태박스에 active클래스 부여/ 로그인 상태 박스에서는 삭제
+	        $("#logout_state").addClass("active");
+	        $("#login_state").removeClass("active");
+	        $("#sameheight-container").css({
+	        	"visibility":"hidden",
+	        });
+	        $("#hidden-text-box").css({
+	        	"visibility":"visible",
+	        });
+      	};
+	});
 	</script>
 	
 	<!-- 스켈레톤 영상 불러오기 -->

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -153,7 +154,16 @@ public class golfController {
 			// 최근 분석결과 띄우기
 			int m_idx = (int)session.getAttribute("login_idx");
 			System.out.println(m_idx);
-			tbl_upload vo_upload = mapper.IRU(m_idx);
+			tbl_upload vo_upload = null;
+			
+			if(session.getAttribute("linked_upload_seq")!=null) {
+				int linked_upload_seq = (int)session.getAttribute("linked_upload_seq");
+				vo_upload = mapper.selectOneUpload(linked_upload_seq);
+			}else {
+				vo_upload = mapper.IRU(m_idx);
+			}
+			
+			//tbl_upload vo_upload = mapper.IRU(m_idx);
 			System.out.println(vo_upload);
 			
 			if(vo_upload!=null) {
@@ -253,60 +263,6 @@ public class golfController {
 				String file_skeleton = vo_skeleton.getVideo_path();
 				session.setAttribute("skeleton_file", file_skeleton);
 			};
-			
-//			int deep_seq = vo_deep.getDeep_seq();
-//			// 어드레스 스윙데이터 출력
-//			String swing_type = "address";
-//			
-//			tbl_swing vo_swing = mapper.loadswing(deep_seq,swing_type);	
-//			if(vo_swing!=null) {
-//				session.setAttribute("recent_upload_info", vo_swing);
-//				String head_action = vo_swing.getHead_action();
-//				String shoulder_action = vo_swing.getShoulder__action();
-//				String arm_action = vo_swing.getArm__action();
-//				String waist_action = vo_swing.getWaist_action();
-//				String core_action = vo_swing.getCore__action();
-//				String knee_action = vo_swing.getKnee_action();
-//				String foot_action = vo_swing.getFoot_action();
-//				String weight_center = vo_swing.getWeight_center();
-//				double head_code_x = vo_swing.getHead_code_x();
-//				double shoulder_code_x = vo_swing.getShoulder_code_x();
-//				double arm_code_x = vo_swing.getArm_code_x();
-//				double waist_code_x = vo_swing.getWaist_code_x();
-//				double core_code_x = vo_swing.getCore_code_x();
-//				double knee_code_x = vo_swing.getKnee_code_x();
-//				double foot_code_x = vo_swing.getFoot_code_x();
-//				double head_code_y = vo_swing.getHead_code_y();
-//				double shoulder_code_y = vo_swing.getShoulder_code_y();
-//				double arm_code_y = vo_swing.getArm_code_y();
-//				double waist_code_y = vo_swing.getWaist_code_y();
-//				double core_code_y = vo_swing.getCore_code_y();
-//				double knee_code_y = vo_swing.getKnee_code_y();
-//				double foot_code_y = vo_swing.getFoot_code_y();
-//				
-//				session.setAttribute("head_action", head_action);
-//				session.setAttribute("shoulder_action", shoulder_action);
-//				session.setAttribute("arm_action", arm_action);
-//				session.setAttribute("waist_action", waist_action);
-//				session.setAttribute("core_action", core_action);
-//				session.setAttribute("knee_action", knee_action);
-//				session.setAttribute("foot_action", foot_action);
-//				session.setAttribute("weight_center", weight_center);
-//				session.setAttribute("head_code_x", head_code_x);
-//				session.setAttribute("shoulder_code_x", shoulder_code_x);
-//				session.setAttribute("arm_code_x", arm_code_x);
-//				session.setAttribute("waist_code_x", waist_code_x);
-//				session.setAttribute("core_code_x", core_code_x);
-//				session.setAttribute("knee_code_x", knee_code_x);
-//				session.setAttribute("foot_code_x", foot_code_x);
-//				session.setAttribute("head_code_y", head_code_y);
-//				session.setAttribute("shoulder_code_y", shoulder_code_y);
-//				session.setAttribute("arm_code_y", arm_code_y);
-//				session.setAttribute("waist_code_y", waist_code_y);
-//				session.setAttribute("core_code_y", core_code_y);
-//				session.setAttribute("knee_code_y", knee_code_y);
-//				session.setAttribute("foot_code_y", foot_code_y);
-//			};
 			
 		};
 		return "video_compared";
@@ -464,7 +420,11 @@ public class golfController {
 //		}
 //	};
 	
-	
+	@RequestMapping(value = "save_upload_seq.do", method = RequestMethod.GET)
+	public String save_upload_seq(int upload_seq, HttpSession session) {
+		session.setAttribute("linked_upload_seq", upload_seq);
+		return "redirect:/video_compared";
+	};
 	
 	
 	@RequestMapping("/jsontest")

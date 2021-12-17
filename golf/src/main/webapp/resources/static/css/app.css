@@ -4283,3 +4283,11 @@ input.club_type {
 .sameheight-container.upload {
     visibility: hidden;
 }
+
+.sameheight-container.video_compared {
+    visibility: hidden;
+}
+
+.hidden-upload_seq {
+    visibility: hidden;
+}
