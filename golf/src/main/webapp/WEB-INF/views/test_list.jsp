@@ -152,7 +152,7 @@
 								</a>
 								<ul class="sidebar-nav collapse" style="height: 0px;">
 									<li>
-										<a href="#"> 정보1 </a>
+										<a href="golf_info_image.html"> 정보1 </a>
 									</li>
 									<li>
 										<a href="#"> 정보2 </a>
@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3 class="title"> 자세교정목록</h3>
-                                    <p class="title-description"> 코멘트. </p>
+                                    <p class="title-description"> ${login_name}님이 등록하신 분석목록입니다. </p>
                                 </div>
 								<div class="create_new">
 									<a href="upload_movie.html">

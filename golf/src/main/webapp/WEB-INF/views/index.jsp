@@ -259,7 +259,7 @@
 								골프 정보 <i class="fa arrow"></i>
 						</a>
 							<ul class="sidebar-nav collapse" style="height: 0px;">
-								<li><a href="#"> 정보1 </a></li>
+								<li><a href="golf_info_image.html"> 정보1 </a></li>
 								<li><a href="#"> 정보2 </a></li>
 							</ul></li>
 					</ul>
