@@ -38,7 +38,7 @@
     
     <!-- 업로드 영상 목록 출력 -->
     <select id="loaduploadlist" resultType="kr.golfproject.domain.tbl_upload" parameterType="int">
-        select * from tbl_upload where m_idx = #{m_idx}
+        select * from tbl_upload where m_idx = #{m_idx} order by upload_seq desc
     </select>
     
 </mapper>

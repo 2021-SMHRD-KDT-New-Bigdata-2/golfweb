@@ -117,7 +117,7 @@ ALTER TABLE tbl_swing
 select * from tbl_member;
 delete from tbl_member;
 
-select * from tbl_upload;
+select * from tbl_upload order by upload_seq desc;
 delete from tbl_upload;
 select * from tbl_upload where m_idx = 34 order by upload_seq desc LIMIT 1;
 
