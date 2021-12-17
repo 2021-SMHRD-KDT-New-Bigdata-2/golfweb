@@ -154,10 +154,10 @@
 								</a>
 								<ul class="sidebar-nav collapse" style="height: 0px;">
 									<li>
-										<a href="plot_chart.html"> 정보1 </a>
+										<a href="#"> 정보1 </a>
 									</li>
 									<li>
-										<a href="charts-morris.html"> 정보2 </a>
+										<a href="#"> 정보2 </a>
 									</li>
 								</ul>
 							</li>

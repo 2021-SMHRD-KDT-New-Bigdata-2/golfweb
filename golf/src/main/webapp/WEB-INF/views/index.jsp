@@ -259,8 +259,8 @@
 								골프 정보 <i class="fa arrow"></i>
 						</a>
 							<ul class="sidebar-nav collapse" style="height: 0px;">
-								<li><a href="plot_chart.html"> 정보1 </a></li>
-								<li><a href="charts-morris.html"> 정보2 </a></li>
+								<li><a href="#"> 정보1 </a></li>
+								<li><a href="#"> 정보2 </a></li>
 							</ul></li>
 					</ul>
 				</nav>
@@ -414,7 +414,7 @@
 
 		<!-- About-->
 		<section class="page-section"
-			style="background-color: #44bd32; padding: 30px 0 20px 0px; position: absolute; bottom: -1780px;"
+			style="background-color: #44bd32; padding: 30px 0 20px 0px; position: absolute; bottom: -130em;"
 			id="about">
 			<div class="container px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
@@ -428,6 +428,8 @@
 			</div>
 		</section>
 	</div>
+	
+
 
 	<!-- 사이드 툴바-->
 	<aside class="sidebar"></aside>
