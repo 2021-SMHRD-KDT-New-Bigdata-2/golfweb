@@ -228,8 +228,8 @@ input[type="checkbox"] {
 					<div class="title-block">
 						<div class="row">
 							<div class="col-md-6">
-								<h3 class="title"> 자세교정 분석결과</h3>
-								<p class="title-description"> 딥러닝 분석결과와 수정이 필요한 자세를 알려드립니다. </p>
+								<h3 class="title"> 딥러닝 진행중...</h3>
+								<p class="title-description"> 코멘트. </p>
 							</div>
 						</div>
 					</div>
