@@ -128,33 +128,33 @@
 								</a>
 							</li>
 
-							<li class = "active open">
+							<li>
 								<a href>
 									<i class="fa fa-th-large"></i>
 									스윙자세교정
 									<i class="fa arrow"></i>
 								</a>
-								<ul class="sidebar-nav collapse in">
+								<ul class="sidebar-nav collapse"  style="height: 0px;">
 									<li>
 										<a href="upload_movie.html"> 자세교정받기 </a>
 									</li>
-									<li class = "active">
+									<li>
 										<a href="test_list.html"> 나의 교정 목록 </a>
 									</li>
 								</ul>
 							</li>
 
-							<li class="">
+							<li class = "active open">
 								<a href="">
 									<i class="fa fa-bar-chart"></i> 골프 정보
 									<i class="fa arrow"></i>
 								</a>
-								<ul class="sidebar-nav collapse" style="height: 0px;">
-									<li>
+								<ul class="sidebar-nav collapse in">
+									<li class = "active">
 										<a href="info1.html"> 골프 영상 </a>
 									</li>
 									<li>
-										<a href="charts-morris.html"> 골프 상식 </a>
+										<a href="golf_info_image.html"> 골프 상식 </a>
 									</li>
 								</ul>
 							</li>

@@ -154,11 +154,11 @@
 									<i class="fa arrow"></i>
 								</a>
 								<ul class="sidebar-nav collapse in">
-									<li class = "active">
-										<a href="golf_info_image.html"> 골프 정보 </a>
-									</li>
 									<li>
-										<a href="info1.html"> 선수 영상 </a>
+										<a href="info1.html"> 골프 영상 </a>
+									</li>
+									<li class = "active">
+										<a href="golf_info_image.html"> 골프 상식 </a>
 									</li>
 								</ul>
 							</li>
