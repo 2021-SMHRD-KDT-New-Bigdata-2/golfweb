@@ -155,7 +155,7 @@ input[type="checkbox"] {
 								</a>
 								<ul class="sidebar-nav collapse" style="height: 0px;">
 									<li>
-										<a href="#"> 정보1 </a>
+										<a href="golf_info_image.html"> 정보1 </a>
 									</li>
 									<li>
 										<a href="#"> 정보2 </a>

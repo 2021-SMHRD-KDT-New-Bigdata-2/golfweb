@@ -442,6 +442,13 @@ public class golfController {
 		System.out.println(result);
 		return result;
 	}
+	
+	
+	// 골프정보 페이지 접속: http://localhost:13131/golf/golf_info_image.html
+		@RequestMapping("/golf_info_image")
+		public String golf_info_image() {
+			return "golf_info_image";
+		}
 }
 
 

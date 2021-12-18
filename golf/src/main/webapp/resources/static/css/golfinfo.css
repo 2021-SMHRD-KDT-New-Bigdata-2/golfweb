@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+.info-container {
+    height: 2950px;
+    padding: 0 20px 0 20px;
+}
+
+.info-box {
+    margin-bottom: 40px;
+    
+}
+
+.image-box {
+    width: 700px;
+    height: 500px;
+    display: inline-block;    
+}
+
+.image1 {
+	width: 100%;
+    height: 100%;
+	background-position: 55% 50%;
+    background-size: 100% 100%;
+	background-image: url(http://localhost:13131/golf/resources/static/images/로오고.jpg);
+}
+
+.image2 {
+	width: 100%;
+    height: 100%;
+	background-position: 55% 50%;
+    background-size: 100% 100%;
+	background-image: url(http://localhost:13131/golf/resources/static/images/로오고_하아양.jpg);
+}
+
+.image3 {
+	width: 100%;
+    height: 100%;
+	background-position: 55% 50%;
+    background-size: 100% 100%;
+	background-image: url(http://localhost:13131/golf/resources/static/images/lockon.png);
+}
+
+.image4 {
+	width: 100%;
+    height: 100%;
+	background-position: 55% 50%;
+    background-size: 100% 100%;
+	background-image: url(http://localhost:13131/golf/resources/static/images/join2.jpg);
+}
+
+.image5 {
+	width: 100%;
+    height: 100%;
+	background-position: 55% 50%;
+    background-size: 100% 100%;
+	background-image: url(http://localhost:13131/golf/resources/static/images/join1.jpg);
+}
+
+.comment-box {
+    display: inline-block;
+    width: 700px;
+    margin-left: 50px;
+    position: absolute;
+    margin-bottom: 15px;
+}
+
+.sub-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.bottom-bar {
+    background-color: #44bd32;
+    width: 1583px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    left: 300px;
+}
+
+.bottom-text {
+    color: #fff;
+    text-align: center;
+}
+
+.bottom-text.large {
+    font-size: 45px;
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+.bottom-text.small {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.middle-text {
+    margin-top: 150px;
+    margin-left: 150px;
+}
