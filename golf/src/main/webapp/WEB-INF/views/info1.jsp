@@ -201,11 +201,11 @@
 										</video>
 										<div class="analysis_list-textbox" id="analysis_list-textbox">
 											<div><span>선수 이름명</span></div>
-											<div class="analysis_list-writer">@@@작성자는 필요없을거같아요@@@</div><br>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -216,13 +216,13 @@
 										<video id="video2" class="list_video" muted>
 											<source id="movie_src2" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
 										</video>
-										<div class="analysis_list-textbox">
-											<div><span>제목2</span></div>
-											<div class="analysis_list-writer">작성자2</div>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -233,13 +233,13 @@
 										<video id="video3" class="list_video" muted>
 											<source id="movie_src3" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
 										</video>
-										<div class="analysis_list-textbox">
-											<div><span>제목3</span></div>
-											<div class="analysis_list-writer">작성자3</div>
-											<div class="analysis_list-swingtype">드라이버</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -252,13 +252,13 @@
 										<video id="video4" class="list_video" muted>
 											<source id="movie_src4" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
 										</video>
-										<div class="analysis_list-textbox">
-											<div><span>제목4</span></div>
-											<div class="analysis_list-writer">작성자4</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -269,13 +269,13 @@
 										<video id="video5" class="list_video" muted>
 											<source id="movie_src5" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
 										</video>
-										<div class="analysis_list-textbox">
-											<div><span>제목5</span></div>
-											<div class="analysis_list-writer">작성자5</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -286,13 +286,13 @@
 										<video id="video6" class="list_video" muted>
 											<source id="movie_src6" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
 										</video>
-										<div class="analysis_list-textbox">
-											<div><span>제목6</span></div>
-											<div class="analysis_list-writer">작성자6</div>
-											<div class="analysis_list-swingtype">아이언</div>
-											<div class="analysis_list-timecost"></div>
-											<div class="analysis_list-accuracy"></div>
-											<div class="analysis_list-date"></div>
+										<div class="analysis_list-textbox" id="analysis_list-textbox">
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer infopage">정보1</div>
+											<div class="analysis_list-swingtype infopage">정보2</div>
+											<div class="analysis_list-timecost infopage">정보3</div>
+											<div class="analysis_list-accuracy infopage">정보4</div>
+											<div class="analysis_list-date infopage">정보5</div>
 										</div>
 									</div>
 								</a>
@@ -431,282 +431,6 @@
         		location.href = "index.html";
         	},
     	});
-	};
-	</script>
-	
-	<script>
-	// 페이지에 따라 자동으로 영상이 보여지는 함수
-	$(function() {
-		loadlist();
-		});
-
-	function loadlist(){
-		$.ajax({
-			url:"${cpath}/listjson.do",
-			type:"GET",
-			datatype:"json",
-			success: loadimg,
-			error: function(){alert("제이슨실패!!!")}
-
-		})
-	}
-
-	function loadimg(data){
-	    var directory = 'http://localhost:13131/golf/resources/static/movie/';
-	    var video1 = document.getElementById('block_1').className;
-	    var video2 = document.getElementById('block_2').className;
-	    var video3 = document.getElementById('block_3').className;
-	    var video4 = document.getElementById('block_4').className;
-	    var video5 = document.getElementById('block_5').className;
-	    var video6 = document.getElementById('block_6').className;
-	
-	   	// 영상번호 출력
-	    var text1 = video1.replace('movie_column first_column videono','');
-	    var text2 = video2.replace('movie_column second_column videono','');
-	    var text3 = video3.replace('movie_column third_column videono','');
-	    var text4 = video4.replace('movie_column first_column videono','');
-	    var text5 = video5.replace('movie_column second_column videono','');
-	    var text6 = video6.replace('movie_column third_column videono','');
-
-	    // 인덱스 부여(후에 list.get(i)에 사용, ex: 1번은 1-1에 ~ 6번은 2-3에 가고 페이지 넘어가면 7~12번이 똑같이 반복)
-	    var idx1 = text1-1;
-	    var idx2 = text2-1;
-	    var idx3 = text3-1;
-	    var idx4 = text4-1;
-	    var idx5 = text5-1;
-	    var idx6 = text6-1;
-	    
-	    
-	    var list=data;
-	    
-	    console.log(list);
-	    
-	    if(list != null){
-		    // page번호
-		   	var pgnum = document.getElementById("present_pgnum").innerHTML;
-		    var lastpgnum = parseInt(list.length/6)+1;
-		    
-		    // 7, 13, 19
-		    var num_view = list.length%6;
-		    
-		    if(list.length!=0){
-		    	
-		    	$('.movie_column').css({
-		            "visibility" : "visible",
-		        });
-		    	
-		        if(lastpgnum<pgnum){
-		        	$('.movie_column').css({
-			            "visibility" : "hidden",
-			        });
-		        };
-		        
-		    	if(lastpgnum==pgnum){
-		    		if(num_view!=0){
-		    			$('#block_6').css({
-					        "visibility" : "hidden",
-					    });
-		    			if(num_view<=4){
-		    				$('#block_5').css({
-		    		            "visibility" : "hidden",
-		    		        });
-		    			};
-		    			if(num_view<=3){
-		    				$('#block_4').css({
-		    		            "visibility" : "hidden",
-		    		        });
-		    			};
-		    			if(num_view<=2){
-		    				$('#block_3').css({
-		    		            "visibility" : "hidden",
-		    		        });
-		    			};
-		    			if(num_view<=1){
-		    				$('#block_2').css({
-		    		            "visibility" : "hidden",
-		    		        });
-		    			};
-		    		};
-		    		
-		    		// 예외처리: 올린 분석 6개미만일 때
-				    if((num_view>=1 || num_view==0)){
-				    	if(list[idx1].upload_subject==""){
-					    	title1 = "제목없음";
-					    }else{
-					    	title1 = list[idx1].upload_subject;
-					    };
-				    	
-				    	var file1 = list[idx1].upload_file;
-				    	var dir1 = directory + file1;
-				    	if(file1==""){
-				    		dir1 = "";
-				    	};
-				    	$("#movie_src1").attr("src", dir1);
-				    	$("#video1").load();
-				    	document.getElementById('list-title1').innerText = title1;
-				    };
-				    
-				    if(num_view>=2 || num_view==0){
-				    	if(list[idx2].upload_subject==""){
-					    	title2 = "제목없음";
-					    }else{
-					    	title2 = list[idx2].upload_subject;
-					    };
-				    	
-				    	var file2 = list[idx2].upload_file;
-				    	var dir2 = directory + file2;
-				    	$("#movie_src2").attr("src", dir2);
-				    	$("#video2").load();
-				    	document.getElementById('list-title2').innerText = title2;
-				    };
-				    
-					if(num_view>=3 || num_view==0){
-						if(list[idx3].upload_subject==""){
-					    	title3 = "제목없음";
-					    }else{
-					    	title3 = list[idx3].upload_subject;
-					    };
-						
-				    	var file3 = list[idx3].upload_file;
-				    	var dir3 = directory + file3;
-				    	$("#movie_src3").attr("src", dir3);
-				    	$("#video3").load();
-				    	document.getElementById('list-title3').innerText = title3;
-				    };
-					
-					if(num_view>=4 || num_view==0){
-						if(list[idx4].upload_subject==""){
-					    	title4 = "제목없음";
-					    }else{
-					    	title4 = list[idx4].upload_subject;
-					    };
-					    
-				    	var file4 = list[idx4].upload_file;
-				    	var dir4 = directory + file4;
-				    	$("#movie_src4").attr("src", dir4);
-				    	$("#video4").load();
-				    	document.getElementById('list-title4').innerText = title4;
-				    };
-					
-					if(num_view>=5 || num_view==0){
-						if(list[idx5].upload_subject==""){
-					    	title5 = "제목없음";
-					    }else{
-					    	title5 = list[idx5].upload_subject;
-					    };
-					    
-				    	var file5 = list[idx5].upload_file;
-				    	var dir5 = directory + file5;
-				    	$("#movie_src5").attr("src", dir5);
-				    	$("#video5").load();
-				    	document.getElementById('list-title5').innerText = title5;
-				    };
-				    
-				    if(num_view==0){
-				    	if(list[idx6].upload_subject==""){
-					    	title6 = "제목없음";
-					    }else{
-					    	title6 = list[idx6].upload_subject;
-					    };
-					    
-				    	var file6 = list[idx6].upload_file;
-				    	var dir6 = directory + file6;
-				    	$("#movie_src6").attr("src", dir6);
-				    	$("#video6").load();
-				    	document.getElementById('list-title6').innerText = title6;
-				    };
-		    	}else{
-		    		if(list[idx1].upload_subject==""){
-				    	title1 = "제목없음";
-				    }else{
-				    	title1 = list[idx1].upload_subject;
-				    };
-				    if(list[idx2].upload_subject==""){
-				    	title2 = "제목없음";
-				    }else{
-				    	title2 = list[idx2].upload_subject;
-				    };
-				    if(list[idx3].upload_subject==""){
-				    	title3 = "제목없음";
-				    }else{
-				    	title3 = list[idx3].upload_subject;
-				    };
-				    if(list[idx4].upload_subject==""){
-				    	title4 = "제목없음";
-				    }else{
-				    	title4 = list[idx4].upload_subject;
-				    };
-				    if(list[idx5].upload_subject==""){
-				    	title5 = "제목없음";
-				    }else{
-				    	title5 = list[idx5].upload_subject;
-				    };
-				    if(list[idx6].upload_subject==""){
-				    	title6 = "제목없음";
-				    }else{
-				    	title6 = list[idx6].upload_subject;
-				    };
-		    		
-		    		var file1 = list[idx1].upload_file;
-			    	var dir1 = directory + file1;
-			    	if(file1==""){
-			    		dir1 = "";
-			    	};
-			    	$("#movie_src1").attr("src", dir1);
-			    	$("#video1").load();
-			    	document.getElementById('list-title1').innerText = title1;
-			    	
-			    	var file2 = list[idx2].upload_file;
-			    	var dir2 = directory + file2;
-			    	if(file2==""){
-			    		dir2 = "";
-			    	};
-			    	$("#movie_src2").attr("src", dir2);
-			    	$("#video2").load();
-			    	document.getElementById('list-title2').innerText = title2;
-			    	
-			    	var file3 = list[idx3].upload_file;
-			    	var dir3 = directory + file3;
-			    	if(file3==""){
-			    		dir3 = "";
-			    	};
-			    	$("#movie_src3").attr("src", dir3);
-			    	$("#video3").load();
-			    	document.getElementById('list-title3').innerText = title3;
-			    	
-			    	var file4 = list[idx4].upload_file;
-			    	var dir4 = directory + file4;
-			    	if(file4==""){
-			    		dir4 = "";
-			    	};
-			    	$("#movie_src4").attr("src", dir4);
-			    	$("#video4").load();
-			    	document.getElementById('list-title4').innerText = title4;
-			    	
-			    	var file5 = list[idx5].upload_file;
-			    	var dir5 = directory + file5;
-			    	if(file5==""){
-			    		dir5 = "";
-			    	};
-			    	$("#movie_src5").attr("src", dir5);
-			    	$("#video5").load();
-			    	document.getElementById('list-title5').innerText = title5;
-			    	
-			    	var file6 = list[idx6].upload_file;
-			    	var dir6 = directory + file6;
-			    	if(file6==""){
-			    		dir6 = "";
-			    	};
-			    	$("#movie_src6").attr("src", dir6);
-			    	$("#video6").load();
-			    	document.getElementById('list-title6').innerText = title6;
-		    	};
-		    	
-		    };
-	    };
-	    
-	    
-
 	};
 	</script>
 	

@@ -3717,12 +3717,22 @@ a.movie_link:hover {
   font-weight: 600;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   min-height: 24px;
   text-align: left;
   width: 80px;
   position: absolute;
+}
+
+.analysis_list-swingtype.infopage {
+    font-weight: normal;
+    font-size: 0.8em;
+    color: #4f5f6f;
+    position: relative;
+    text-align: right;
+    margin-top: 3%;
+    width: 40%;
 }
 
 /*.analysis_list-swingtype {
