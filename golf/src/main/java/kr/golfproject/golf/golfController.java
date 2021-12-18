@@ -182,94 +182,97 @@ public class golfController {
 				session.setAttribute("recent_upload_info", vo_upload);		
 				String file = vo_upload.getUpload_file();
 				session.setAttribute("recent_upload_file", file);
-			};
-			
-			int upload_seq = vo_upload.getUpload_seq();
-			session.setAttribute("upload_seq", upload_seq);
-			System.out.println(upload_seq);
-			// 스윙순간의 이미지 데이터 출력
-			tbl_deeplearning vo_deep = mapper.loaddeep(upload_seq);
-			System.out.println(vo_deep);
-			if (vo_deep != null) {
-				session.setAttribute("vo_deep", vo_deep);
-				String address = vo_deep.getAddress();
-				String top = vo_deep.getTop();
-				String downswing = vo_deep.getDownswing();
-				String impact = vo_deep.getImpact();
-				String followthrough = vo_deep.getFollowthrough();
-				session.setAttribute("address", address);
-				session.setAttribute("top", top);
-				session.setAttribute("downswing", downswing);
-				session.setAttribute("impact", impact);
-				session.setAttribute("followthrough", followthrough);
 				
-				
-				int deep_seq = vo_deep.getDeep_seq();
-				System.out.println(deep_seq);
-				// 어드레스 스윙데이터 출력
-				String swing_type = "address";
-				tbl_swing vo_swing =new tbl_swing();
-				vo_swing.setSwing_type(swing_type);
-				vo_swing.setDeep_seq(deep_seq);
-				vo_swing = mapper.loadswing(vo_swing);	
-				if(vo_swing!=null) {
-					session.setAttribute("recent_upload_info", vo_swing);
-					String head_action = vo_swing.getHead_action();
-					String shoulder_action = vo_swing.getShoulder__action();
-					String arm_action = vo_swing.getArm__action();
-					String waist_action = vo_swing.getWaist_action();
-					String core_action = vo_swing.getCore__action();
-					String knee_action = vo_swing.getKnee_action();
-					String foot_action = vo_swing.getFoot_action();
-					String weight_center = vo_swing.getWeight_center();
-//					double head_code_x = vo_swing.getHead_code_x();
-//					double shoulder_code_x = vo_swing.getShoulder_code_x();
-//					double arm_code_x = vo_swing.getArm_code_x();
-//					double waist_code_x = vo_swing.getWaist_code_x();
-//					double core_code_x = vo_swing.getCore_code_x();
-//					double knee_code_x = vo_swing.getKnee_code_x();
-//					double foot_code_x = vo_swing.getFoot_code_x();
-//					double head_code_y = vo_swing.getHead_code_y();
-//					double shoulder_code_y = vo_swing.getShoulder_code_y();
-//					double arm_code_y = vo_swing.getArm_code_y();
-//					double waist_code_y = vo_swing.getWaist_code_y();
-//					double core_code_y = vo_swing.getCore_code_y();
-//					double knee_code_y = vo_swing.getKnee_code_y();
-//					double foot_code_y = vo_swing.getFoot_code_y();
+				int upload_seq = vo_upload.getUpload_seq();
+				session.setAttribute("upload_seq", upload_seq);
+				System.out.println(upload_seq);
+				// 스윙순간의 이미지 데이터 출력
+				tbl_deeplearning vo_deep = mapper.loaddeep(upload_seq);
+				System.out.println(vo_deep);
+				if (vo_deep != null) {
+					session.setAttribute("vo_deep", vo_deep);
+					String address = vo_deep.getAddress();
+					String top = vo_deep.getTop();
+					String downswing = vo_deep.getDownswing();
+					String impact = vo_deep.getImpact();
+					String followthrough = vo_deep.getFollowthrough();
+					session.setAttribute("address", address);
+					session.setAttribute("top", top);
+					session.setAttribute("downswing", downswing);
+					session.setAttribute("impact", impact);
+					session.setAttribute("followthrough", followthrough);
 					
-					session.setAttribute("head_action", head_action);
-					session.setAttribute("shoulder_action", shoulder_action);
-					session.setAttribute("arm_action", arm_action);
-					session.setAttribute("waist_action", waist_action);
-					session.setAttribute("core_action", core_action);
-					session.setAttribute("knee_action", knee_action);
-					session.setAttribute("foot_action", foot_action);
-					session.setAttribute("weight_center", weight_center);
-//					session.setAttribute("head_code_x", head_code_x);
-//					session.setAttribute("shoulder_code_x", shoulder_code_x);
-//					session.setAttribute("arm_code_x", arm_code_x);
-//					session.setAttribute("waist_code_x", waist_code_x);
-//					session.setAttribute("core_code_x", core_code_x);
-//					session.setAttribute("knee_code_x", knee_code_x);
-//					session.setAttribute("foot_code_x", foot_code_x);
-//					session.setAttribute("head_code_y", head_code_y);
-//					session.setAttribute("shoulder_code_y", shoulder_code_y);
-//					session.setAttribute("arm_code_y", arm_code_y);
-//					session.setAttribute("waist_code_y", waist_code_y);
-//					session.setAttribute("core_code_y", core_code_y);
-//					session.setAttribute("knee_code_y", knee_code_y);
-//					session.setAttribute("foot_code_y", foot_code_y);
+					
+					int deep_seq = vo_deep.getDeep_seq();
+					System.out.println(deep_seq);
+					// 어드레스 스윙데이터 출력
+					String swing_type = "address";
+					tbl_swing vo_swing =new tbl_swing();
+					vo_swing.setSwing_type(swing_type);
+					vo_swing.setDeep_seq(deep_seq);
+					vo_swing = mapper.loadswing(vo_swing);	
+					if(vo_swing!=null) {
+						session.setAttribute("recent_upload_info", vo_swing);
+						String head_action = vo_swing.getHead_action();
+						String shoulder_action = vo_swing.getShoulder__action();
+						String arm_action = vo_swing.getArm__action();
+						String waist_action = vo_swing.getWaist_action();
+						String core_action = vo_swing.getCore__action();
+						String knee_action = vo_swing.getKnee_action();
+						String foot_action = vo_swing.getFoot_action();
+						String weight_center = vo_swing.getWeight_center();
+//						double head_code_x = vo_swing.getHead_code_x();
+//						double shoulder_code_x = vo_swing.getShoulder_code_x();
+//						double arm_code_x = vo_swing.getArm_code_x();
+//						double waist_code_x = vo_swing.getWaist_code_x();
+//						double core_code_x = vo_swing.getCore_code_x();
+//						double knee_code_x = vo_swing.getKnee_code_x();
+//						double foot_code_x = vo_swing.getFoot_code_x();
+//						double head_code_y = vo_swing.getHead_code_y();
+//						double shoulder_code_y = vo_swing.getShoulder_code_y();
+//						double arm_code_y = vo_swing.getArm_code_y();
+//						double waist_code_y = vo_swing.getWaist_code_y();
+//						double core_code_y = vo_swing.getCore_code_y();
+//						double knee_code_y = vo_swing.getKnee_code_y();
+//						double foot_code_y = vo_swing.getFoot_code_y();
+						
+						session.setAttribute("head_action", head_action);
+						session.setAttribute("shoulder_action", shoulder_action);
+						session.setAttribute("arm_action", arm_action);
+						session.setAttribute("waist_action", waist_action);
+						session.setAttribute("core_action", core_action);
+						session.setAttribute("knee_action", knee_action);
+						session.setAttribute("foot_action", foot_action);
+						session.setAttribute("weight_center", weight_center);
+//						session.setAttribute("head_code_x", head_code_x);
+//						session.setAttribute("shoulder_code_x", shoulder_code_x);
+//						session.setAttribute("arm_code_x", arm_code_x);
+//						session.setAttribute("waist_code_x", waist_code_x);
+//						session.setAttribute("core_code_x", core_code_x);
+//						session.setAttribute("knee_code_x", knee_code_x);
+//						session.setAttribute("foot_code_x", foot_code_x);
+//						session.setAttribute("head_code_y", head_code_y);
+//						session.setAttribute("shoulder_code_y", shoulder_code_y);
+//						session.setAttribute("arm_code_y", arm_code_y);
+//						session.setAttribute("waist_code_y", waist_code_y);
+//						session.setAttribute("core_code_y", core_code_y);
+//						session.setAttribute("knee_code_y", knee_code_y);
+//						session.setAttribute("foot_code_y", foot_code_y);
+					};
 				};
+				
+				vo_upload.setM_idx(m_idx);
+				// 스켈레톤 영상 출력
+				tbl_skeleton_video vo_skeleton = mapper.loadskeleton(vo_upload);
+				if(vo_skeleton!=null) {
+					session.setAttribute("skeleton_info", vo_skeleton);
+					String file_skeleton = vo_skeleton.getVideo_path();
+					session.setAttribute("skeleton_file", file_skeleton);
+				};
+				
 			};
 			
-			vo_upload.setM_idx(m_idx);
-			// 스켈레톤 영상 출력
-			tbl_skeleton_video vo_skeleton = mapper.loadskeleton(vo_upload);
-			if(vo_skeleton!=null) {
-				session.setAttribute("skeleton_info", vo_skeleton);
-				String file_skeleton = vo_skeleton.getVideo_path();
-				session.setAttribute("skeleton_file", file_skeleton);
-			};
+			
 			
 		};
 		return "video_compared";
