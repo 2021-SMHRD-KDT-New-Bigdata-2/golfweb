@@ -27,6 +27,6 @@ public interface tbl_memberMapper {
 	public List<tbl_upload> loaduploadlist(int m_idx); // 업로드한 목록 출력
 	public tbl_upload selectOneUpload(int upload_seq); // 선택한 업로드 vo 불러오기
 	
-	@Select("select * from tbl_tbl_skeleton_video where upload_seq=#{upload_seq},m_idx=#{m_idx}")
+	@Select("select * from tbl_skeleton_video where upload_seq=#{upload_seq} and m_idx=#{m_idx}")
 	public List<tbl_skeleton_video> skeletonlist(tbl_upload vo);
 }
