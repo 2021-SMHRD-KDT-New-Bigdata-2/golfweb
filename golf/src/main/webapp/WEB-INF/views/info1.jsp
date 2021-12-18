@@ -196,12 +196,12 @@
                             <div class="movie_column first_column videono01" id="block_1" style="visibility:visible">
 								<a href="" class="movie_link movie_link1">
 									<div class="videobox_list">
-										<video id="video1" class="list_video" poster="${pageContext.request.contextPath}/resources/images/1.jpg" style="background-color:transparent;">
-											<source id="movie_src1" type="video/mp4" src="${pageContext.request.contextPath}/resources/movie/01c9eb10-1cf9-4c0c-8e6c-83107b2c76cc-test3.mp4"/>
+										<video id="video1" class="list_video" controls preload>
+											<source id="movie_src1" type="video/mp4" src="${pageContext.request.contextPath}/resources/static/movie/test3.mp4"/>
 										</video>
 										<div class="analysis_list-textbox" id="analysis_list-textbox">
-											<div><span>제목1</span></div>
-											<div class="analysis_list-writer">작성자1</div>
+											<div><span>선수 이름명</span></div>
+											<div class="analysis_list-writer">@@@작성자는 필요없을거같아요@@@</div><br>
 											<div class="analysis_list-swingtype">드라이버</div>
 											<div class="analysis_list-timecost"></div>
 											<div class="analysis_list-accuracy"></div>
