@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import kr.golfproject.domain.tbl_deeplearning;
 import kr.golfproject.domain.tbl_member;
@@ -25,4 +26,7 @@ public interface tbl_memberMapper {
 	public tbl_skeleton_video loadskeleton(tbl_upload vo); // 스켈레톤 vo출력
 	public List<tbl_upload> loaduploadlist(int m_idx); // 업로드한 목록 출력
 	public tbl_upload selectOneUpload(int upload_seq); // 선택한 업로드 vo 불러오기
+	
+	@Select("select * from tbl_skeleton_video where upload_seq=#{upload_seq} and m_idx=#{m_idx}")
+	public List<tbl_skeleton_video> skeletonlist(tbl_upload vo);
 }

@@ -341,18 +341,22 @@ public class golfController {
 			return "video_compared";
 		};
 		
-	// tbl_skeleton에서 upload_seq에 맞는 스켈레톤 영상 가져오기
-//	@RequestMapping("/ImportSkeleton")
-//	public String ImportSkeleton(int m_idx, int upload_seq, HttpSession session, Model model) {
 		
-	//	tbl_skeleton_video vo = mapper.loadskeleton(m_idx, upload_seq);
-		//if(vo!=null) {
-			//session.setAttribute("skeleton_info", vo);
-			//String file = vo.getVideo_path();
-			//session.setAttribute("skeleton_file", file);
-	//	}
-	//	return "video_compared";
-//	};
+	// tbl_skeleton에서 upload_seq에 맞는 스켈레톤 영상 가져오기
+	@RequestMapping("/ImportSkeleton")
+	public String ImportSkeleton(int m_idx, int upload_seq, HttpSession session, Model model) {
+		tbl_upload se = new tbl_upload();
+		se.setM_idx(m_idx);
+		se.setUpload_seq(upload_seq);
+		tbl_skeleton_video vo = mapper.loadskeleton(se);
+		if(vo!=null) {
+			session.setAttribute("skeleton_info", vo);
+			String file = vo.getVideo_path();
+			session.setAttribute("skeleton_file", file);
+		}
+		return "video_compared";
+
+	 };
 	
 	// 자세교정코멘트 출력
 //	@Async

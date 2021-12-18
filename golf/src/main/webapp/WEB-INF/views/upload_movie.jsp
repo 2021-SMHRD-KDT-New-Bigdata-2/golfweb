@@ -23,18 +23,19 @@
 	<link rel="stylesheet" href="${cpath}/resources/static/css/app.scss">
 	<link rel="stylesheet" href="${cpath}/resources/static/css/sidebar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
 	<!-- Theme initialization -->
 	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 	<style>
-		input[type="checkbox"]{
+input[type="checkbox"] {
+	width: 30px; /*Desired width*/
+	height: 30px; /*Desired height*/
+	cursor: pointer;
+}
 
-		width: 30px; /*Desired width*/
 
-		height: 30px; /*Desired height*/
-
-		cursor: pointer;
-		}
-	</style>
+</style>
 </head>
 
 <body class = "loaded">
@@ -154,10 +155,10 @@
 								</a>
 								<ul class="sidebar-nav collapse" style="height: 0px;">
 									<li>
-										<a href="golf_info_image.html"> 정보1 </a>
+										<a href="plot_chart.html"> 정보1 </a>
 									</li>
 									<li>
-										<a href="#"> 정보2 </a>
+										<a href="charts-morris.html"> 정보2 </a>
 									</li>
 								</ul>
 							</li>
@@ -197,11 +198,11 @@
 									<table class="swing_type">
 										<div class="title" style="font-size:20px;margin-top: 0.5%;margin-left: 12%;"> 스윙타입: </div>
 										<tr>
-											<td class = "swing iron-swing selected" id="swing_type-iron" style="font-size: 15px;">
-												<input type="radio" id="club-type-iron" class="club_type" value="I" name="club_type">아이언
+											<td class = "swing iron-swing" id="swing_type-iron" style="font-size: 15px;">
+												<input type="radio" class="club_type" value="I" name="club_type">아이언
 											</td>
 											<td class = "swing driver-swing" id="swing_type-driver" style="font-size: 15px;">
-												<input type="radio" id="club-type-driver" class="club_type" value="D" name="club_type"> 드라이버 
+												<input type="radio" class="club_type" value="D" name="club_type"> 드라이버 
 											</td>
 										</tr>
 									</table>
@@ -228,7 +229,7 @@
 										<input type='file' name="input_file" id="input_file" class="upload-hidden" accept=".mp4, .avi"/>
 									</form>
 										<!--<a href="video_compared.html"></a>-->
-										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick" onclick="upload(${member_info.m_idx});this.onclick=null;">
+										<input type="button" class="btn btn-info" style="font-size: 19px; float: right; position: relative;right: 1%;top: 2%;" value="분석하기" id="uploadClick" onclick="upload(${member_info.m_idx});">
 										
 								</div>
 							</div>
@@ -251,6 +252,8 @@
 			</article>
 		</div>
 	</div>
+	
+
 	<script>
 		
 	</script>
@@ -298,44 +301,8 @@
 			data: formData,
 			type: 'POST',
 			success: function(result){
+				clickedBtn(result,m_idx)
 
-				var upload_file = result;
-				
-				console.log(upload_file);
-				var upload_title = $("#upload_title").val();
-				console.log(upload_title);
-				
-				console.log(index);
-				
-				if($("#swing_type-driver").hasClass("selected")){
-					var club_type = $("#club-type-driver").val();
-				};
-				
-				if($("#swing_type-iron").hasClass("selected")){
-					var club_type = $("#club-type-iron").val();
-				};
-				
-				console.log(club_type);
-				$.ajax({
-					url:"${cpath}/uploadata",
-					data: {"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
-					success: function(data){
-						//alert("드디어 성공!");
-						var upload_path = data
-						$.ajax({
-							url:"${cpath}/jsontest",
-							data:{"upload_path":upload_path,"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
-							success: function(){
-								//alert("성공!!!!!!!")
-							},
-							error:function(){
-								//alert("실패")
-							}
-						});	
-						// 분석완료 후 페이지에 일어날 변화
-						progress_change();
-					},
-				});
 			},
 			error: function(){alert("영상업로드에 실패했습니다!");}
 		});
@@ -343,6 +310,80 @@
 		
 	}
 	
+	function clickedBtn(result,m_idx){
+	    // 로딩 표시
+	    showLoading();
+		var upload_file = result;
+		
+		console.log(upload_file);
+		var upload_title = $("#upload_title").val();
+		console.log(upload_title);
+		
+//		console.log(index)
+		var club_type = $(".club_type").val();
+		console.log(club_type);
+		$.ajax({
+			url:"${cpath}/uploadata",
+			data: {"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
+			success: function(data){
+				
+				var upload_path = data
+				$.ajax({
+					url:"${cpath}/jsontest",
+					data:{"upload_path":upload_path,"upload_file":upload_file,"upload_subject":upload_title,"club_type":club_type,"m_idx":m_idx},
+					success: function(){
+						
+						closeLoadingWithMask();
+						progress_change();
+					},
+					error:function(){
+						alert("실패");
+					}
+				});	
+				// 분석완료 후 페이지에 일어날 변화
+				
+			},
+		});
+	    
+	    }
+
+	    function showLoading(){
+	    //화면의 높이와 너비를 구합니다.
+	    var maskHeight = $(document).height();
+	    var maskWidth  = window.document.body.clientWidth;
+
+	  //화면에 출력할 마스크를 설정해줍니다.
+	    var mask       ="<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
+	    var loadingImg ='';
+	     
+	    loadingImg +="<div id='loadingImg'>";
+	    loadingImg +=" <img src='${cpath}/resources/static/images/facman.gif' style='position: absolute; display: block; left:50%; top:50%; margin: 0px auto;'/>";
+	    loadingImg += "</div>"; 
+	    
+	    
+	    //화면에 레이어 추가
+	    $('body')
+	        .append(mask)
+	 	    .append(loadingImg)
+	    //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채웁니다.
+	    $('#mask').css({
+	            'width' : maskWidth,
+	            'height': maskHeight,
+	            'opacity' :'0.3'
+	    });
+	  
+	    //마스크 표시
+	    $('#mask').show();
+	  
+	    //로딩중 이미지 표시
+	    $('#loadingImg').append(loadingImg);
+	    $('#loadingImg').show();
+	}
+	 
+	function closeLoadingWithMask() {
+	    $('#mask, #loadingImg').hide();
+	    $('#mask, #loadingImg').remove(); 
+	}
 
 	</script>
 	<script>
