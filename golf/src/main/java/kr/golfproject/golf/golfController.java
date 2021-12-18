@@ -62,6 +62,13 @@ public class golfController {
 		return "login";
 	}
 	
+	// info1 페이지 접속: http://localhost:13131/golf/info1.html
+	@RequestMapping("/info1")
+	public String info() {
+		return "info1";
+	}
+	
+	
 	// 로그인시 아이디 입력버튼 클릭
 	@RequestMapping("/tbl_member_submit_ID.do")
 	public String tbl_member_submit_ID(String m_id, HttpSession session) {
