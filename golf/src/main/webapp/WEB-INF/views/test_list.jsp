@@ -47,7 +47,7 @@
 					</div>
 					<div class= "upper-tool third-tool">
 						<a class = "upper-link" href = "video_compared.html">
-							<div class = "upper-link-text">최근분석으로 이동</div>
+							<div class = "upper-link-text">마지막 분석으로</div>
 						</a>
 					</div>
 				</div>
@@ -152,10 +152,10 @@
 								</a>
 								<ul class="sidebar-nav collapse" style="height: 0px;">
 									<li>
-										<a href="golf_info_image.html"> 정보1 </a>
+										<a href="golf_info_image.html"> 골프 정보 </a>
 									</li>
 									<li>
-										<a href="#"> 정보2 </a>
+										<a href="info1.html"> 선수 영상 </a>
 									</li>
 								</ul>
 							</li>

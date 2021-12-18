@@ -57,7 +57,7 @@ input[type="checkbox"] {
 					</div>
 					<div class= "upper-tool third-tool">
 						<a class = "upper-link" href = "video_compared.html">
-							<div class = "upper-link-text">최근분석으로 이동</div>
+							<div class = "upper-link-text">마지막 분석으로</div>
 						</a>
 					</div>
 				</div>
